@@ -70,7 +70,7 @@ h5 {
   border: 0;
 }
 .navbar-default {
-  background-color: #586672; /* NAVIGATION */
+  background-color: #586672; /* EDITED: NAVIGATION */
   border-color: #293846;
 }
 .navbar-top-links li {
@@ -167,7 +167,7 @@ h5 {
 .nav.navbar-top-links .dropdown-alerts a {
   font-size: 12px;
 }
-.nav-header { /* NAVIGATION - top of sidebar*/
+.nav-header { /* EDITED: NAVIGATION - top of sidebar*/
   padding: 65px 0px 0px 0px;
   background-color: #2f4050;
 }
@@ -282,11 +282,11 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   left: 65px;
 }
 .navbar-default .special_link a {
-  background: #1ab394; /* NAVIGATION */
+  background: #1ab394; /* EDITED: NAVIGATION */
   color: white;
 }
 .navbar-default .special_link a:hover {
-  background: #17987e !important; /* NAVIGATION */
+  background: #17987e !important; /* EDITED: NAVIGATION */
   color: white;
 }
 .navbar-default .special_link a span.label {
@@ -331,7 +331,7 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
 }
 .navbar-fixed-top,
 .navbar-static-top {
-  background: #2f4050; /* NAVIGATION */
+  background: #2f4050; /* EDITED: NAVIGATION */
 }
 .fixed-nav #wrapper {
   margin-top: 0;
@@ -388,12 +388,12 @@ body.fixed-nav.fixed-nav-basic.fixed-sidebar.mini-navbar.body-small .navbar-fixe
   margin-left: 0;
 }
 body.mini-navbar .navbar-static-side {
-  width: 80px; /* NAVIGATION */
+  width: 80px; /* EDITED: NAVIGATION */
 }
 body.mini-navbar .profile-element,
 body.mini-navbar .nav-label,
 body.mini-navbar .navbar-default .nav li a span {
-  display: inline-block; /* NAVIGATION */
+  display: inline-block; /* EDITED: NAVIGATION */
   text-align: center;
 }
 body.canvas-menu .profile-element {
@@ -403,18 +403,18 @@ body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar .nav-second-level {
   display: none;
 }
 body.mini-navbar .navbar-default .nav > li > a {
-  font-size: 10px; /* NAVIGATION */
+  font-size: 10px; /* EDITED: NAVIGATION */
   text-align: center;
 }
 body.mini-navbar .logo-element {
-  display: block; /* NAVIGATION */
+  display: block; /* EDITED: NAVIGATION */
 }
 body.canvas-menu .logo-element {
   display: none;
 }
 body.mini-navbar .nav-header {
   padding: 0;
-  background-color: #1cc09f; /* NAVIGATION */
+  background-color: #1cc09f; /* EDITED: NAVIGATION */
 }
 body.canvas-menu .nav-header {
   padding: 33px 25px;
@@ -526,19 +526,19 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 }
 .top-navigation .nav > li > a {
   padding: 15px 5px 20px 5px;
-  color: #d5d8dc; /* NAVIGATION - link color */
+  color: #d5d8dc; /* EDITED: NAVIGATION - link color */
 }
 .top-navigation .nav > li a:hover,
 .top-navigation .nav > li a:focus {
-  background: #2f4050; /* NAVIGATION link Hover colors */
+  background: #2f4050; /* EDITED: NAVIGATION link Hover colors */
   color: #ffffff;
 }
 .top-navigation .navbar .nav > li.active {
-  background: #2f4050; /* NAVIGATION - link background color active */
+  background: #2f4050; /* EDITED: NAVIGATION - link background color active */
   border: none;
 }
 .top-navigation .nav > li.active > a {
-  color: #1ab394; /* NAVIGATION - link color active */
+  color: #1ab394; /* EDITED: NAVIGATION - link color active */
 }
 .top-navigation .navbar-right {
   margin-right: 10px;
@@ -556,7 +556,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
 }
 .top-navigation .navbar-brand {
   background: transparent;
-  color: #fff; /* NAVIGATION - link color active */
+  color: #fff; /* EDITED: NAVIGATION - link color active */
   padding: 15px 25px;
 }
 .top-navigation .navbar-top-links li:last-child {
@@ -574,14 +574,15 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   margin-top: 50px;
 }
 .top-navigation .footer.fixed {
-  /* Removed margin left to add to size parameters */
+  /* EDITED: Removed margin left to add to size parameters */
 }
 .top-navigation .wrapper.wrapper-content {
   padding: 40px;
 }
 .top-navigation.body-small .wrapper.wrapper-content,
 .body-small .top-navigation .wrapper.wrapper-content {
-  padding: 40px 0 40px 0;
+  padding: 60px 0 40px 0;
+  /* EDITED: Modified the padding from 40px 0 40px 0 to 60px 0 40px 0 */
 }
 .navbar-toggle {
   background-color: #1ab394;
@@ -1380,9 +1381,9 @@ button.dim:active:before {
 .fc-event a {
   padding: 4px 6px;
   background-color: #1ab394;
-  /* background color */
+  /* EDITED: background color */
   border-color: #1ab394;
-  /* border color */
+  /* EDITED: border color */
 }
 .fc-event-time,
 .fc-event-title {
@@ -3488,6 +3489,8 @@ body {
 html,
 body {
   height: 100%;
+  /* EDITED: Added min width to prevent page distort */ 
+  min-width: 320px;
 }
 body.full-height-layout #wrapper,
 body.full-height-layout #page-wrapper {
@@ -3687,6 +3690,8 @@ ol.unstyled {
   padding: 10px 20px;
   position: absolute;
   right: 0;
+  /* EDITED: Added min width to prevent page distort */ 
+  min-width: 320px;
 }
 .footer.fixed_full {
   position: fixed;
@@ -4169,6 +4174,10 @@ table.table-mail tr td {
 }
 .text-white {
   color: #ffffff;
+}
+.text-test {
+  /* EDITED: test new text color */
+  color: #ff69b4;
 }
 .simple_tag {
   background-color: #f3f3f4;
@@ -5597,6 +5606,7 @@ table.shoping-cart-table tr td:last-child {
   float: none;
 }
 .social-feed-box {
+  /* EDITED: not sure if this was custom or not */
   /*padding: 15px;*/
   border: 1px solid #e7eaec;
   background: #fff;
@@ -8446,8 +8456,8 @@ body.md-skin {
   .navbar-static-side {
     z-index: 2001;
     position: absolute;
-    width: 80px; /* NAVIGATION */
-    height: 100%; /* NAVIGATION - Sidebar height */
+    width: 80px; /* EDITED: NAVIGATION */
+    height: 100%; /* EDITED: NAVIGATION - Sidebar height */
   }
   .navbar-top-links .dropdown-messages,
   .navbar-top-links .dropdown-tasks,
