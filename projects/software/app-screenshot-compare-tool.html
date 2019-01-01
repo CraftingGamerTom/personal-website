@@ -46,7 +46,7 @@
                 <li>
                     <a href="../../blog.html"><i class="fa fa-comments fa-3x"></i><span class="nav-label">Blog</span></a>
                 </li>
-                
+
                 <li class="special_link">
                     <a href="../../contact.html"><i class="fa fa-send-o fa-3x"></i><span class="nav-label">Contact</span></a>
                 </li>
@@ -163,7 +163,7 @@
                 </table>
             </div>
         </div>
-    </div>        
+    </div>
     <div class="hr-line-solid"></div>
     <div class="row">
         <div class="text-center m-md">
@@ -202,7 +202,8 @@
                 <div class="col-sm-8">
                     <h1 style="font-weight:500; font-size:36px;">Comparison-Tool</h1>
                     <hr>
-                    <p style="font-size:18px;">In Progress</p>
+                    <p style="font-size:18px;">We required a system that can compare two screenshots but ignore specific areas of the app that are meant to change dynamically or on each app version. To do this I implemented a way to capture and use "masked images". Essentially, by crawling the app in a mode that marked areas that are meant to be 'masked' the screenshot tool is able to analize that imge and create an image mask to ignore ares in a comparison run. Alternatively in the comparison library I wrote there is a way to "create masked images". This is done by comparing two images and marking the area that is incorrect - just like a regular comparison, but the results are named differently to be used again later.</p>
+                    <p style="font-size:18px;">This code is available <a href="https://github.com/CraftingGamerTom/image-bay">here</a>.</p>
                 </div>
             </div>
     </div>
@@ -210,14 +211,32 @@
     <div class="row">
         <div class="text-center m-md">
             <div class="col-sm-8">
-                <h1 style="font-weight:500; font-size:36px;">Web-Application</h1>
-                <hr>
-                <p style="font-size:18px;">In Progress</p>
+              <h1 style="font-weight:500; font-size:36px;">REST API</h1>
+              <hr>
+              <p style="font-size:18px;">The REST Server, documented using swagger and available <a href="">here</a>, was created so that the devlopers had an easy way to control events as well as GET status updates and the information needed to understand results. This system allows the developer to upload our `.apk`/`.ipa` files for storing to be used with AWS Device Farm to get screenshots on hundreds of different phones, should we desire. Starting screenshot jobs, comparison jobs, or looking up information about a device has never been easier.</p>
+              </br>
+              <img src="../../resources/img/projects/software/screenshot-tool-aws/swagger-doc.svg" class="img-lg h-300" style="width:75%;">
+              <p style="font-size:18px;">The postgreSQL database I designed, with the guidance of my superiors, to support this project will help describe what it is that we are doing here. We need to track everything from screenshot, to device, to an app version, screenshot version, down to the user on the application. This is the beginnning of a more complicated and useful QA tool to support a growing start-up.</p>
+              </br>
+              <img src="../../resources/img/projects/software/screenshot-tool-aws/database.svg" class="img-lg h-300" style="width:75%;">
             </div>
             <div class="col-sm-4">
                 <img src="../../resources/img/projects/software/screenshot-tool-aws/spring-boot.svg" class="img-lg h-300" style="width:75%;">
             </div>
         </div>
+    </div>
+    <div class="hr-line-solid"></div>
+    <div class="row">
+        <div class="text-center m-md">
+                <div class="col-sm-4">
+                    <img src="../../resources/img/projects/software/screenshot-tool-aws/device_farm_2.svg" class="img-lg h-300" style="width:75%;">
+                </div>
+                <div class="col-sm-8">
+                    <h1 style="font-weight:500; font-size:36px;">Web-Server</h1>
+                    <hr>
+                    <p style="font-size:18px;">Running on the Spring Framework, the web server hosts the frontend static html files and resources needed for developer's ease of use. The REST API can easily be used just as well but does not provide the visual elements that make it easier to understand what is occuring.</p>
+               </div>
+            </div>
     </div>
     <div class="row" style="margin-bottom:5%;"></div>
 </div>
