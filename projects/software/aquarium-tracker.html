@@ -112,31 +112,35 @@
         <a href="../../projects.html" style="font-size:20px;" class="pull-left">
             <span><i class="fa fa-arrow-circle-o-left"></i> Back</span>
         </a>
-        <h1 style="font-weight:500; font-size:42px;" class="text-center text-success">Green Grow+ Mod (For Minecraft)</h1>
+        <h1 style="font-weight:500; font-size:42px;" class="text-center text-success">Aquarium Data Tracker</h1>
     </div>
     <div class="row">
         <div class="text-center m-md">
             <div class="col-lg-7">
                     <h1 style="font-weight:500; font-size:36px;">The Problem</h1>
-                    <p style="font-size:16px;">I have enjoyed many Modifications made for Minecraft on the PC. I'm mostly interested in modpacks (collection of mods in use together) that mix economy and business with growing crops. I always wished that one of my favorite mods, Psychedelicraft, which introduces marijuanna and tobacco to the game, had different kinds of marijuanna. So I was going to make a mod that had new strains and colors.</p>
+                    <p style="font-size:16px;">I wanted to create a thoughtful and creative Christmas gift for a family friend. About a year before this quick project the giftee lost many rare a cherished fish in a freak heater accident caused by a lack of monitoring and awareness. By the time the giftee realized the tank was too hot, it was too late. It was tragic.</p>
             </div>
             <div class="col-lg-5">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th class="text-center">Type</th>
+                            <th class="text-center">Feature</th>
                             <th class="text-center">Requirement</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Minecraft Version</td>
-                            <td class="text-navy"></i>1.7.10</td>
-                        </tr>
-                        <tr>
-                            <td>Development Stage</td>
-                            <td class="text-danger"></i>Alpha</td>
-                        </tr>
+                      <tr>
+                          <td>Computer placement</td>
+                          <td class="text-navy"></i>Concealed & Maintenance Free</td>
+                      </tr>
+                      <tr>
+                          <td>Notifications</td>
+                          <td class="text-navy"></i>iOS & Android</td>
+                      </tr>
+                      <tr>
+                          <td>Current Temp Monitoring</td>
+                          <td class="text-navy"></i>Webview</td>
+                      </tr>
                     </tbody>
                 </table>
             </div>
@@ -146,14 +150,16 @@
     <div class="row">
         <div class="text-center m-md">
                 <div class="col-sm-4">
-                    <img src="../../resources/img/projects/software/greengrow/greengrow-logo.svg" class="img-lg h-300" style="width:75%;">
+                    <img src="../../resources/img/projects/software/aquarium/aquarium.jpg" class="img-lg h-300" style="width:75%;">
                 </div>
                 <div class="col-sm-8">
                     <h1 style="font-weight:500; font-size:36px;">Solution</h1>
                     <hr>
-                    <p style="font-size:18px;">This was my first real java project. I learned about building with gradle and began learning how to better organize code. I wrote the application, implementing multiple new kinds of plant alternatives. </p>
-                    <p style="font-size:18px;">I decided to move away from the project. I does have a few bugs but I was successful in learning a lot about programming and object oriented programming.</p>
-                    <p style="font-size:18px;">The code can still be found on my <a href="github.com/CraftingGamerTom">Github</a>.</p>
+                    <p style="font-size:16px;">So for Christmas (just 3 days away at the time) I decided to construct a simple system monitoring the current temperature allowing the giftee to view the current temperature remotely and recieve notifications (Twilio) if the fish tank goes outside of a safe range for the fish. With this, the giftee will be able to prevent any futher fish casualties.</p>
+                    <p style="font-size:16px;">Most importantly we want to design a system that can be easily built upon as new sensors / motors could be requested later</p>
+                    <p style="font-size:16px;">Strategy is to use Raspberry Pi 3 B+ as our microcontroller which would have a temperature sensor soldered (not Sodder) to it for data collection, python to do the actual data collection and processing on the software side, data storage occuring on the Raspberry Pi on MongoDB and Spring Framework driving the web server.</p>
+                    <p style="font-size:16px;">For now, we just want to see the current Temperature, but by implementing a database we can later add graphs to our front end to call the REST API to show cool trends.</p>
+                    <p style="font-size:18px;">The code can be found on my <a href="github.com/CraftingGamerTom">Github</a>.</p>
                 </div>
             </div>
     </div>
@@ -161,15 +167,28 @@
     <div class="row">
         <div class="text-center m-md">
             <div class="col-sm-8">
-                <h1 style="font-weight:500; font-size:36px;">More Info</h1>
+                <h1 style="font-weight:500; font-size:36px;">Software</h1>
                 <hr>
-                <p style="font-size:18px;">Check it out on CurseForge for more info. There you will see a full description and tutorial video.</p>
-                <p style="font-size:18px;"><a href="https://minecraft.curseforge.com/projects/greengrow">CurseForge</a></p>
+                <p style="font-size:18px;">One major struggle I has was will Spring Boot. As it turns out, Raspberry Pi only supports MongoDB v1 (32-bit). This means that I could not use the latest Spring Boot Starter as a Parent in my maven POM right out of the box. I did a lot of fighting since I went ahead and wrote all my database accessor code for the new version of MongoDB without realizing this to be an issue. As a neared my expected completion I realized this was a very time consuming mistake. I was required to change a lot of code to accommodate the legacy version of MongoDB. I began doing this by downgrading Spring. This broke a lot of other functionality I was using for hosting webpages and using controllers for a REST API. Once I had everything with the REST API working on the latest Spring and the Mongo DB Accessors working on legacy code I needed to find a way to mix the two.</p>
+                <p style="font-size:18px;">I needed to override the controlled versions of the libraries that controlled MongoDB in my POM and PRESTO, everything came together and functioned properly.</p>
             </div>
             <div class="col-sm-4">
-                <img src="../../resources/img/projects/software/greengrow/page.svg" class="img-lg h-300" style="width:75%;">
+                <img src="../../resources/img/projects/software/aquarium/aquarium-software.svg" class="img-lg h-300" style="width:75%;">
             </div>
         </div>
+    </div>
+    <div class="hr-line-solid"></div>
+    <div class="row">
+        <div class="text-center m-md">
+                <div class="col-sm-4">
+                    <img src="../../resources/img/projects/software/aquarium/aquarium-hardware.jpg" class="img-lg h-300" style="width:75%;">
+                </div>
+                <div class="col-sm-8">
+                    <h1 style="font-weight:500; font-size:36px;">Hardware</h1>
+                    <hr>
+                    <p style="font-size:16px;">Simple soldering job. There is probably a lot of well deserved hate for soldering directly to the board but this was my first Raspberry Pi project and I was under a time crunch and needed the system to be easy to install. I am open to suggestions as to how to properly solve this issue in a prettier way.</p>
+                </div>
+            </div>
     </div>
     <div class="hr-line-solid"></div>
     <div class="row">
@@ -178,7 +197,7 @@
             <div class="col-lg-6">
                 <h1 style="font-weight:500; font-size:36px;">Source Code</h1>
                 <hr>
-                <p style="font-size:16px;"><a href="https://github.com/CraftingGamerTom/GreenGrow-Plus">View on Github</a></p>
+                <p style="font-size:16px;"><a href="https://github.com/CraftingGamerTom/aqua-iot">View on Github</a></p>
             <div class="col-lg-3"></div>
         </div>
     </div>
