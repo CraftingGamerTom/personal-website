@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!" property="og:description">
+  <meta name="author" content="Thomas Rokicki">
+
+  <title>Thomas Rokicki</title>
+  <link rel="shortcut icon" href="resources/img/boy.png"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="resources/css/agency.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> <!-- Title -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> <!-- Text -->
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> <!-- Important -->
+
+<meta content="Thomas Rokicki" property="og:title">
+<meta content="http://www.thomasrokicki.com/" property="og:url">
+<meta content="http://www.thomasrokicki.com/resources/img/header-bg.png" property="og:image">
+<meta content="Thomas Rokicki" property="og:site_name">
+<meta content="Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!" property="og:description">
+<meta content="Thomas Rokicki" itemprop="name">
+<meta content="Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Technology / Let's Build Something!" itemprop="description">
+<meta content="http://www.thomasrokicki.com/resources/img/header-bg.png" itemprop="image">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Thomas Rokicki" name="twitter:title">
+<meta content="Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!" name="twitter:description">
+<meta content="http://www.thomasrokicki.com/resources/img/header-bg.png" name="twitter:image">
+<meta content="Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!" name="description">
+
+<style>
+header.masthead {
+  background-image: url(resources/img/header-bg.jpg);
+  height: 100vh;
+}
+header.masthead .intro-text .intro-heading {
+  font-family: 'Raleway';
+  font-size: 50px;
+}
+header.masthead .intro-text .intro-lead-in {
+  font-family: 'Raleway';
+  font-size: 30px;
+}
+a, a:hover {
+  color: #212529;
+  text-decoration: none;
+}
+p {
+  font-family: 'Open Sans Condensed'!important;
+}
+
+.btn-primary {
+  font-family: 'PT Sans';
+  border-radius: 15px;
+  background-color: #60c5de;
+  border-color: transparent;
+  padding: 10px 15px;
+  width: 15vw;
+  min-width: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-shadow: 2px 2px rgba(0,0,0,0.2);
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: #55839f!important;
+    border-color: #55839f!important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
+}
+.tom-job-img {
+  border-radius: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+section {
+  padding: 75px 0;
+}
+section h2.section-heading {
+  font-family: 'Raleway';
+}
+@media (max-width: 768px) {
+  section {
+    padding: 50px 0!important;
+  }
+  .tom-job-heading {
+    margin-top: 30px!important;
+  }
+
+}
+@media (min-width: 767px) {
+  .project-item {
+    margin: 0 0 30px!important;
+    display: block!important;
+    width: 100%!important;
+  }
+  .scrolling-wrapper {
+    overflow: hidden!important;
+  }
+  .scrolling-wrapper .row {
+    flex-wrap: wrap!important;
+  }
+  .project-col {
+    padding-right: 15px!important;
+    padding-left: 15px!important;
+  }
+  .project-caption h4 {
+    font-size: 1.5rem!important;
+  }
+  .project-caption p {
+    font-size: 1.2rem!important;
+  }
+}
+
+.tom-job-heading {
+  margin: 0;
+  text-transform: none;
+  text-align: left;
+  font-family: 'PT Sans';
+  font-weight: 500;
+  color: #60c5de;
+}
+.row-job {
+  padding-bottom: 30px;
+}
+.tom-job-desc {  
+  margin-top: 10px;
+  text-transform: none;
+  text-align: left;
+  font-family: 'PT Sans';
+  font-size: 1.2rem;
+  color: #62b83d;
+}
+.tom-job-list {
+  padding: 0 15px;
+}
+.job-text {
+  line-height: 1.5;
+  text-align: left;
+  font-family: 'Open Sans Condensed';
+  margin-bottom: 10px;
+}
+
+.project-item {
+  width: 35vw;
+  margin: 0 0 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+}
+.project-item:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
+  cursor: pointer;
+}
+
+.project-item .project-img {
+  border-radius: 15px 15px 0 0;
+}
+.project-item .project-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: left;
+}
+.project-caption h4 {
+  font-size: .75rem;
+}
+.project-caption p {
+  font-size: 1rem;
+}
+
+/* scrolling */
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.scrolling-wrapper .row {
+  flex-wrap: nowrap;
+}
+.project-col {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+ul.social-buttons li a {
+  background-color: #60c5de;
+}
+ul.social-buttons li a:hover {
+  background-color: #55839f!important;
+  border-color: #55839f!important;
+}
+
+#back2Top {
+    width: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    background-color: #DDD;
+    color: #555;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+#back2Top:hover {
+    background-color: #DDF;
+    color: #000;
+}
+</style>
+
+</head>
+
+<body id="page-top">
+
+<a id="back2Top" title="Back to top" href="#"><i class="fas fa-arrow-right"></i></a>
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">Hey, I'm</div>
+        <div class="intro-heading text-uppercase">Thomas Rokicki</div>
+        <div class="intro-lead-in">Let's Build Something!</div>
+        <br>
+        <br>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" target="_blank" href="https://drive.google.com/file/d/1cDr2-JurKnziEpslMjFZroDU1QYnPVmV/edit">Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Jobs -->
+  <section id="jobs">
+    <div class="container">
+      <div class="row scroll-effect">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">It's what I do</h2>
+          <h3 class="section-subheading text-muted">What I have been up to lately.</h3>
+        </div>
+      </div>
+      <!-- Job 1 -->
+      <div class="row text-center row-job scroll-effect">
+        <div class="col-md-4">
+          <img class="tom-job-img img-fluid" src="resources/img/jobs/worcester-state.jpg">
+        </div>
+        <div class="col-md-8">
+          <h4 class="tom-job-heading">Worcester State University</h4>
+          <h4 class="tom-job-desc">Bachelor of Science - Computer Science, 2020</h4>
+          <br>
+          <ul class="tom-job-list">
+            <li class="text-muted job-text">3.4 GPA</li>
+            <li class="text-muted job-text">Computer Science Club</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Job 2 -->
+      <div class="row text-center row-job scroll-effect">
+        <div class="col-md-4">
+          <img class="tom-job-img img-fluid" src="resources/img/jobs/blustream.jpg">
+        </div>
+        <div class="col-md-8">
+          <h4 class="tom-job-heading">Blustream</h4>
+          <h4 class="tom-job-desc">Full Stack Software Engineer, Since May 2018</h4>
+          <br>
+          <ul class="tom-job-list">
+            <li class="text-muted job-text">Designed, built, implemented, & maintained micro-service built on SPRING using Docker, AWS Device Farm, S3, ELB, & EC2 
+            [Screenshot + Comparison tool to warn developers of undesired changes to UI/UX] </li>
+            <li class="text-muted job-text">Designed and maintained PostgreSQL Database (Screenshot + Comparison DB) </li>
+            <li class="text-muted job-text">Agile (Scrum) environment using the GitFlow Branching Model </li>
+            <li class="text-muted job-text">Various Front-end and Back-end tasks needed (Startup environment) </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Job 3 -->
+      <div class="row text-center row-job scroll-effect">
+        <div class="col-md-4">
+          <img class="tom-job-img img-fluid" src="resources/img/jobs/spudata.jpg">
+        </div>
+        <div class="col-md-8">
+          <h4 class="tom-job-heading">Spudata</h4>
+          <h4 class="tom-job-desc">Full Stack Software Engineer, Since May 2018</h4>
+          <br>
+          <ul class="tom-job-list">
+            <li class="text-muted job-text">Design build and maintain authentication services and REST APIs using Spring Boot in front of MongoDB</li>
+            <li class="text-muted job-text">Front-end implementation and advising for iOS, Android, Desktop App, and Web</li>
+            <li class="text-muted job-text">Development Team Leader</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Job 4 -->
+      <div class="row text-center row-job scroll-effect">
+        <div class="col-md-4">
+          <img class="tom-job-img img-fluid" src="resources/img/jobs/qcc.jpg">
+        </div>
+        <div class="col-md-8">
+          <h4 class="tom-job-heading">Quinsigamond Community College</h4>
+          <h4 class="tom-job-desc">Associate in Science - Computer Science, 2018</h4>
+          <br>
+          <ul class="tom-job-list">
+            <li class="text-muted job-text">Phi Theta Kappa Honor Society Member</li>
+            <li class="text-muted job-text">Volunteer work for Phi Theta Kappa Greenhouse</li>
+            <li class="text-muted job-text">3.8 GPA</li>
+          </ul>
+        </div>
+      </div><!-- Job 5 -->
+      <div class="row text-center row-job scroll-effect">
+        <div class="col-md-4">
+          <img class="tom-job-img img-fluid" src="resources/img/jobs/blustream.jpg">
+        </div>
+        <div class="col-md-8">
+          <h4 class="tom-job-heading">Blustream</h4>
+          <h4 class="tom-job-desc">Mobile App QA Intern, Oct 2017 - Dec 2018</h4>
+          <br>
+          <ul class="tom-job-list">
+            <li class="text-muted job-text">Quality Assurance Testing on mobile applications for multiple Blustream partner companies</li>
+            <li class="text-muted job-text">Regression Testing for releases</li>
+            <li class="text-muted job-text">Intern Training</li>
+          </ul>
+        </div>
+      </div><!-- Job 6 -->
+      <div class="row text-center row-job scroll-effect">
+        <div class="col-md-4">
+          <img class="tom-job-img img-fluid" src="resources/img/jobs/PTK.jpg">
+        </div>
+        <div class="col-md-8">
+          <h4 class="tom-job-heading">PTK Greenhouse</h4>
+          <h4 class="tom-job-desc">Full Stack Software Engineer, Since April 2017</h4>
+          <br>
+          <ul class="tom-job-list">
+            <li class="text-muted job-text">Worked with team of learners to design and develop software and hardware to track our greenhouse</li>
+            <li class="text-muted job-text">Designed and built front-end, back-end, and MongoDB for sensor data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Projects -->
+  <section class="bg-light" id="projects">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center scroll-effect">
+          <h2 class="section-heading">Let's Talk Projects</h2>
+          <h3 class="section-subheading text-muted">Here are a few projects I have worked on so far.</h3>
+        </div>
+      </div>
+      <div class="scrolling-wrapper">
+        <div class="row">
+          <!-- Project 01 -->
+          <div class="col-md-4 col-sm-6 project-col">
+            <div class="project-item scroll-effect">
+              <a target="_blank" href="projects/blustream-qa-automation.html">
+                <img class="img-fluid project-img" src="resources/img/projects/main-site/device_farm_2.png" alt="">
+                <div class="project-caption">
+                  <h4>QA Automation</h4>
+                  <p class="text-muted">Blustream</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Project 02 -->
+          <div class="col-md-4 col-sm-6 project-col">
+            <div class="project-item scroll-effect">
+              <a target="_blank" href="projects/fuelio-text-to-csv.html">
+                <img class="img-fluid project-img" src="resources/img/projects/main-site/fuelio.png" alt="">
+                <div class="project-caption">
+                  <h4>Fuelio Data I/O</h4>
+                  <p class="text-muted">Self</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Project 03 -->
+          <div class="col-md-4 col-sm-6 project-col">
+            <div class="project-item scroll-effect">
+              <a target="_blank" href="projects/image-bay.html">
+                <img class="img-fluid project-img" src="resources/img/projects/main-site/01-thumbnail.jpg" alt="">
+                <div class="project-caption">
+                  <h4>Image Bay</h4>
+                  <p class="text-muted">Blustream</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Project 04 -->
+          <div class="col-md-4 col-sm-6 project-col">
+            <div class="project-item scroll-effect">
+              <a target="_blank" href="projects/aqua-iot.html">
+                <img class="img-fluid project-img" src="resources/img/projects/main-site/aquarium-hardware.jpg" alt="">
+                <div class="project-caption">
+                  <h4>Aqua IoT</h4>
+                  <p class="text-muted">For Gift</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Project 05 -->
+          <div class="col-md-4 col-sm-6 project-col">
+            <div class="project-item scroll-effect">
+              <a target="_blank" href="projects/greengrow-plus.html">
+                <img class="img-fluid project-img" src="resources/img/projects/main-site/greengrow-logo.svg" alt="">
+                <div class="project-caption">
+                  <h4>GreenGrow+</h4>
+                  <p class="text-muted">Big Gaming</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Project 06 -->
+          <div class="col-md-4 col-sm-6 project-col">
+            <div class="project-item scroll-effect">
+              <a target="_blank" href="projects/view-all.html">
+                <img class="img-fluid project-img" src="resources/img/projects/main-site/01-thumbnail.jpg" alt="">
+                <div class="project-caption">
+                  <h4>View More</h4>
+                  <p class="text-muted"><i class="fas fa-arrow-right"></i></p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center scroll-effect">
+          <h2 class="section-heading">Time Well Spent</h2>
+          <h3 class="section-subheading text-muted">Although I love programming, I do get away sometimes.</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="timeline">
+            <li class="timeline-inverted scroll-effect">
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="resources/img/about/snowboarding.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>Snowboarding</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">I've been snowboarding for about 10 years now. I love the feeling of carving over fresh corduroy. You'll find e mostly in the terrain park - riding rails and rocking the flat-ground tricks. I taught people of all ages to ride for 5 years and worked in the terrain park, maintaining / installing features for a few as well. I enjoyed every moment of it - the cold never bothered me anyway.</p>
+                </div>
+              </div>
+            </li>
+            <li class="scroll-effect">
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="resources/img/about/gardening.jpg" alt="">
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>Gardening</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">I don't garden as much as I'd like to, growing up I had my very own garden for my family and I have had a helping hand in the Phi Thete Kappa Greenhouse on Quinsigamond Community College's main campus. Recently I have been very interested in Bonsai. I plan to start my very own Japanese Red Maple Bonsai tree - and collect some data with a Raspberry Pi along the way!</p>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted scroll-effect">
+              <div class="timeline-image">
+                <img class="rounded-circle img-fluid" src="resources/img/about/outdoors.jpg" alt="">
+                <!-- <img class="rounded-circle img-fluid" src="resources/img/about/swimming.jpg" alt=""> -->
+              </div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4>Swimming</h4>
+                </div>
+                <div class="timeline-body">
+                  <p class="text-muted">Up until recently I have always been a cat around water. Now you'll see me diving in the pool after a hot day of yardwork. It is a relaxing way to cool off and enjoy a beautiful summer afternoon - it's even better with friends!</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social -->
+  <section class="bg-light" id="social">
+    <div class="container scroll-effect">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Let's Build Something!</h2>
+          <h3 class="section-subheading text-muted">Message me on LinkedIn.</h3>
+          <ul class="list-inline social-buttons scroll-effect">
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/tcrokicki/">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-stack-overflow"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="resources/vendor/jquery/jquery.min.js"></script>
+  <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="resources/js/jqBootstrapValidation.js"></script>
+  <script src="resources/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="resources/js/agency.min.js"></script>
+
+  <script> 
+
+  $(window).on("load",function() {
+    $(window).scroll(function() {
+      var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+      $(".scroll-effect").each(function() {
+        /* Check the location of each desired element */
+        var objectBottom = $(this).offset().top + $(this).outerHeight();
+        var objectTop = $(this).offset().top;
+        var unvanishPoint = objectTop + 25;
+        
+        /* If the element is completely within bounds of the window, fade it in */
+        if (unvanishPoint < windowBottom) { //object comes into view (scrolling down)
+          if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+        } else { //object goes out of view (scrolling up)
+          if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+        }
+      });
+    }).scroll(); //invoke scroll-handler on page-load
+  });
+  </script>
+
+  <script>
+    $(window).scroll(function() {
+        var height = $(window).scrollTop();
+        if (height > 100) {
+            $('#back2Top').fadeIn();
+        } else {
+            $('#back2Top').fadeOut();
+        }
+    });
+    $(document).ready(function() {
+        $("#back2Top").click(function(event) {
+            event.preventDefault();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+
+    });
+  </script>
+
+</body>
+
+</html>
