@@ -1,0 +1,21 @@
+<template>
+  <div>
+    <p>
+      <a
+        href="https://www.jqueryscript.net/plus/search.php?keyword=CraftingGamerTom"
+        target="_blank"
+      >
+        JQueryScript
+      </a>
+    </p>
+
+    <p>
+      <a
+        href="https://dev.to/craftinggamertom"
+        target="_blank"
+      >
+        DEV
+      </a>
+    </p>
+  </div>
+</template>
