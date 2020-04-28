@@ -12,8 +12,29 @@
           class="mb-2 text-center"
         >
           <b-avatar class="card-avatar" rounded="lg" src="~/assets/page/edu/wsu/cs/383-cloud/contributors/trokicki.jpeg" />
-          <b-card-text>
-            Software Nerd. Let's Build Something!
+          <b-card-text style="font-size:0.8rem;">
+            Full Stack Software Developer
+          </b-card-text>
+
+          <b-card-text style="text-align:left; font-size:0.6rem;">
+            <p>Responsibilities</p>
+            <ul>
+              <li>
+                Created Ranked Data
+              </li>
+              <li>
+                Visualized Ranked Data
+              </li>
+              <li>
+                Created Website using Nuxt & Vue
+              </li>
+              <li>
+                Association Rule Mining using Python
+              </li>
+              <li>
+                Set up Git Repository and used on SageMaker
+              </li>
+            </ul>
           </b-card-text>
 
           <a href="https://www.linkedin.com/in/tcrokicki/" target="_blank"><font-awesome-icon class="avatar-social" :icon="['fab', 'linkedin']" /></a>
@@ -32,15 +53,50 @@
           tag="article"
           class="mb-2 text-center"
         >
-          <b-avatar rounded="lg" src="~/assets/page/edu/wsu/cs/383-cloud/contributors/oduro.jpeg" />
-          <b-card-text>
+          <b-avatar class="text-center" rounded="lg" src="~/assets/page/edu/wsu/cs/383-cloud/contributors/oduro.jpeg" />
+          <b-card-text style="font-size:0.8rem;">
             Data Scientist
+          </b-card-text>
+
+          <b-card-text style="text-align:left; font-size:0.6rem;">
+            <p>Responsibilities</p>
+            <ul>
+              <li>
+                Ran computations on Hadoop Cluster
+              </li>
+              <li>
+                Computed Recommendations using Ranked Data
+              </li>
+              <li>
+                Created Slideshow for Presentation
+              </li>
+              <li>
+                Forecasted Number of Crimes beyond 2019
+              </li>
+              <li>
+                Created multiple Time Series Visualizations
+              </li>
+            </ul>
           </b-card-text>
 
           <a href="https://www.linkedin.com/in/oresti-duro-a7473513a/" target="_blank"><font-awesome-icon class="avatar-social" :icon="['fab', 'linkedin']" /></a>
           <a href="https://github.com/oduro22" target="_blank"><font-awesome-icon class="avatar-social" :icon="['fab', 'github']" /></a>
           <a href="https://gitlab.com/oduro" target="_blank"><font-awesome-icon class="avatar-social" :icon="['fab', 'gitlab']" /></a>
         </b-card>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col cols="6 offset-3">
+        <p class="text-center">
+          We would also like to thank those who contribute to Kaggle. It was a great point of reference for this project. Specifically we used the following links for sure. But there may be more.
+        </p>
+        <p>
+          <ul>
+            <li>
+              <a target="_blank" href="https://www.kaggle.com/currie32/crimes-in-chicago/kernels">Crimes in Chicago</a>
+            </li>
+          </ul>
+        </p>
       </b-col>
     </b-row>
   </div>
@@ -78,9 +134,10 @@ export default {
 .b-avatar {
   width: 100px!important;
   height: 100px!important;
-  top: -19vh;
+  margin-bottom: 15px;
+  /* top: -19vh;
   position: relative;
-  text-align: center
+  text-align: center */
 }
 .b-avatar img {
 }

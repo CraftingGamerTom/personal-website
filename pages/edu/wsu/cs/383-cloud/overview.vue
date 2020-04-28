@@ -13,7 +13,7 @@
           <b-card
             id="overview-title-card"
             overlay
-            img-src="~/assets/page/edu/wsu/cs/383-cloud/worcester.jpg"
+            img-src="~/assets/page/edu/wsu/cs/383-cloud/overview/worcester.jpg"
             img-alt="worcester-img"
             text-variant="white"
             title="Analysing Worcester Crime Data using Amazon Web Services"
@@ -32,26 +32,26 @@
             </b-card-text>
           </b-card>
         </div>
-        <b-row class="d-sm-block d-md-none">
-          <b-col cols="12">
-            <h1 class="text-center">
-              Analyzing Worcester Crime Data using Amazon Web Services
-            </h1>
-            <h6 class="text-center">
-              Oresti Duro & Thomas Rokicki
-            </h6>
-            <h6 class="text-center">
-              Cloud Final Project
-            </h6>
-            <h6 class="text-center">
-              Spring 2020
-            </h6>
-            <hr>
-          </b-col>
-        </b-row>
       </b-col>
       <b-row style="margin:2.5%;">
-        <b-col class="wrapper" cols="lg-7 sm-12">
+        <b-col class="wrapper" cols="lg-6 sm-12">
+          <b-row class="d-sm-block d-md-none">
+            <b-col cols="12">
+              <h1 class="text-center">
+                Analyzing Worcester Crime Data using Amazon Web Services
+              </h1>
+              <h6 class="text-center">
+                Oresti Duro & Thomas Rokicki
+              </h6>
+              <h6 class="text-center">
+                Cloud Final Project
+              </h6>
+              <h6 class="text-center">
+                Spring 2020
+              </h6>
+              <hr>
+            </b-col>
+          </b-row>
           <b-row>
             <h1>Abstract</h1>
             <p>We obtained records for all Worcester crime incidents from 2003 to 2019 from Worcester City Hall. The goal of this project is to practice using tools on AWS, machine learning using python, and to predict how crimes rates may trend in the future. We will predict whether Worcester will have an increase or decrease in crimes. The packages in Python will help us to predict and visualize these trends of the years to come.</p>
@@ -105,9 +105,28 @@
             <p>We felt it necessary to work as a group of two as a means to do more with this real dataset from our home city. We want to analyze, clean, and transform the data into other useful information. Additionally, we want to do machine learning (association mining) and produce visualizations of our work. All of this will be performed on AWS, which we will need to learn about and research.</p>
           </b-row>
         </b-col>
-        <b-col class="wrapper" cols="lg-5 sm-12">
+        <b-col class="wrapper" cols="lg-5 offset-lg-1 sm-12">
           <h1>The Dataset</h1>
-          <p>You may view the raw data below.</p>
+          <b-img style="height:auto; width:100%; margin-bottom:25px;" src="~/assets/page/edu/wsu/cs/383-cloud/overview/overview-dataset.png" fluid alt="overview-dataset" @click="$parent.expandImage" />
+          <h4>Attributes</h4>
+          <p>
+            Year <br>
+            P_INCID_NO <br>
+            ACTUAL_DTE <br>
+            PRIMARY_STREET_NUM <br>
+            PRIMARY_STREET_NAME <br>
+            PRIMARY_CITY <br>
+            PRIMARY_STATE_CD <br>
+            PRIMARY_ZIP_CD <br>
+            PRIMARY_ADDR_NO <br>
+            LATITUDE <br>
+            LONGITUDE <br>
+            IBR_TYPE <br>
+            IBR_TYPE_DESC <br>
+          </p>
+          <br>
+          <h4>Frame to Google Sheet data</h4>
+          <p>You may view the raw data below, or view it on <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSIkma8W0Nx6TKaNSIewGAzFxZnW5YT9PbkGkbvYfB66EsRJdehteDCyCRKkBNqGDMywG9qfmnuuIWx/pubhtml" target="_blank">Google Sheets</a>.</p>
           <b-alert variant="warning" show>
             <span style="font-weight:800">WARNING:</span> There is a lot of data. Make sure you are on wifi - this may be slow to load
           </b-alert>

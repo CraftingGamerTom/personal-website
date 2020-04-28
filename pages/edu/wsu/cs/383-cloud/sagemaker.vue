@@ -9,7 +9,6 @@
         <h2>
           Table of Contents
         </h2>
-        <p><a href="#">test</a></p>
         <b-list-group>
           <b-list-group-item>
             <nuxt-link to="#toc-1">
@@ -18,80 +17,111 @@
           </b-list-group-item>
           <b-list-group-item>
             <nuxt-link to="#toc-2">
-              Using Condas Python Kernal
+              Using Conda Python Kernal
             </nuxt-link>
           </b-list-group-item>
           <b-list-group-item>
             <nuxt-link to="#toc-3">
+              Importing Packages
+            </nuxt-link>
+          </b-list-group-item>
+          <b-list-group-item>
+            <nuxt-link to="#toc-4">
               Saving Data
             </nuxt-link>
           </b-list-group-item>
         </b-list-group>
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img src="https://d1.awsstatic.com/re19/Sagemaker/Rhinestone%20SageMaker%20Studio%20Page%202%20-%20v2_full%20size.5390b79fd038865e0816b7275b73b1abaad21121.png" fluid alt="sagemaker-image" />
+        <b-img src="https://d1.awsstatic.com/re19/Sagemaker/Rhinestone%20SageMaker%20Studio%20Page%202%20-%20v2_full%20size.5390b79fd038865e0816b7275b73b1abaad21121.png" fluid alt="sagemaker-image" @click="$parent.expandImage" />
         <cite><a target="_blank" href="https://aws.amazon.com/sagemaker/">Image Source</a>
         </cite>
       </b-col>
     </b-row>
     <hr>
     <b-row id="toc-1">
-      <b-col cols="md-8 sm-12">
+      <b-col cols="md-6 sm-12">
         <h2>
           Setting Up
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, lobortis prodesset an sea, ei possit eleifend patrioque vel. Cum semper quodsi habemus te, ad eam ludus regione gloriatur. Iriure vulputate his te. Debitis maluisset incorrupte mea in, graece latine an sit.
+          Using our AWS Student accounts we chose to run on a free-tier ml.t2.medium instance. For Analyzing, Ranking, and some of the machine learning the total cost was under $3. Using small Servers for the relatively small amount of work is perfect and much faster than running locally.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, lobortis prodesset an sea, ei possit eleifend patrioque vel. Cum semper quodsi habemus te, ad eam ludus regione gloriatur. Iriure vulputate his te. Debitis maluisset incorrupte mea in, graece latine an sit.
-        </p>
-        <p>
-          Ei aliquid volumus adversarium sea, eos modus facilisi eu. Duo an atqui verear. Ne platonem aliquando reformidans eam, mea ex omnis vulputate argumentum, pri homero dicunt latine ne. Discere erroribus vulputate ea mea, id feugait expetenda qui. Duo te paulo splendide, id vel antiopam mediocrem. Ex vix incorrupte consectetuer, est ne eros nonumy liberavisse, cu natum dicat persequeris eos. Et nulla consetetur eum.
+          During this set up process we opted to set up a Git repository on the SageMaker instance to make collaborating easier and faster. By putting our Git repository on the instance we can push our code to the project and share it with each other. It is also very convenient because if we decide we need a more powerful server to run some code in the future we can easily deploy the code without much setup on the new instance.
         </p>
       </b-col>
-      <b-col style="text-align:center;" cols="md-4 sm-12">
-        <b-img style="height:250px; width:auto;" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/setting-up.png" fluid alt="sagemaker-setting-up" />
+      <b-col style="text-align:center;" cols="md-6 sm-12">
+        <b-img
+          class="body-image"
+          src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/setting-up.png"
+          fluid
+          alt="sagemaker-setting-up"
+          @click="$parent.expandImage"
+        />
       </b-col>
     </b-row>
     <hr>
     <b-row id="toc-2">
-      <b-col cols="md-8 sm-12">
+      <b-col cols="md-6 sm-12">
         <h2>
-          Setting Up
+          Using Conda Python Kernal
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, lobortis prodesset an sea, ei possit eleifend patrioque vel. Cum semper quodsi habemus te, ad eam ludus regione gloriatur. Iriure vulputate his te. Debitis maluisset incorrupte mea in, graece latine an sit.
+          We ran a Conda Python Kernel to have a simple interface to run our analysis and visualizations. By doing this we did not need to worry about starting a cluster in AWS EMR and connect to it via a Livy Server.
         </p>
         <p>
-          Lorem ipsum dolor sit amet, lobortis prodesset an sea, ei possit eleifend patrioque vel. Cum semper quodsi habemus te, ad eam ludus regione gloriatur. Iriure vulputate his te. Debitis maluisset incorrupte mea in, graece latine an sit.
-        </p>
-        <p>
-          Ei aliquid volumus adversarium sea, eos modus facilisi eu. Duo an atqui verear. Ne platonem aliquando reformidans eam, mea ex omnis vulputate argumentum, pri homero dicunt latine ne. Discere erroribus vulputate ea mea, id feugait expetenda qui. Duo te paulo splendide, id vel antiopam mediocrem. Ex vix incorrupte consectetuer, est ne eros nonumy liberavisse, cu natum dicat persequeris eos. Et nulla consetetur eum.
+          This was confusing at first because we are not very experienced with SageMaker. At first I was trying to use a PySpark kernel but that of course resulted in errors because there was no cluster to talk to. Once I switched to a Conda Python kernal everything was very straightforward and fast.
         </p>
       </b-col>
-      <b-col style="text-align:center;" cols="md-4 sm-12">
-        <b-img style="height:250px; width:auto;" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/setting-up.png" fluid alt="sagemaker-setting-up" />
+      <b-col style="text-align:center;" cols="md-6 sm-12">
+        <b-img
+          class="body-image"
+          src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/using-conda-python.png"
+          fluid
+          alt="sagemaker-using-conda-python"
+          @click="$parent.expandImage"
+        />
       </b-col>
     </b-row>
     <hr>
     <b-row id="toc-3">
-      <b-col cols="md-8 sm-12">
+      <b-col cols="md-6 sm-12">
+        <h2>
+          Importing Packages
+        </h2>
+        <p>
+          SageMaker python kernels come with many common packages already installed - like pandas. However, it obviously does not have everything. For this reason we need to install libraries we want to use. There are many ways that this can be achieved but we found an easy way that does not require opening another kernel or terminal. You can run bash scripts in the python notebook by creating a new section and appending "!" to the beginning of the line. Then run it like any other code. This was very useful to us.
+        </p>
+        <p> To name a few packages we needed to import, we needed Facebook's <span style="font-weight:700">Prophet</span> for time series visualizations and <span style="font-weight:700">Apyori</span> for association rule mining.</p>
+      </b-col>
+      <b-col style="text-align:center;" cols="md-6 sm-12">
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/importing-packages.png" fluid alt="sagemaker-saving-data" @click="$parent.expandImage" />
+      </b-col>
+    </b-row>
+    <hr>
+    <b-row id="toc-4">
+      <b-col cols="md-6 sm-12">
         <h2>
           Saving Data
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, lobortis prodesset an sea, ei possit eleifend patrioque vel. Cum semper quodsi habemus te, ad eam ludus regione gloriatur. Iriure vulputate his te. Debitis maluisset incorrupte mea in, graece latine an sit.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, lobortis prodesset an sea, ei possit eleifend patrioque vel. Cum semper quodsi habemus te, ad eam ludus regione gloriatur. Iriure vulputate his te. Debitis maluisset incorrupte mea in, graece latine an sit.
-        </p>
-        <p>
-          Ei aliquid volumus adversarium sea, eos modus facilisi eu. Duo an atqui verear. Ne platonem aliquando reformidans eam, mea ex omnis vulputate argumentum, pri homero dicunt latine ne. Discere erroribus vulputate ea mea, id feugait expetenda qui. Duo te paulo splendide, id vel antiopam mediocrem. Ex vix incorrupte consectetuer, est ne eros nonumy liberavisse, cu natum dicat persequeris eos. Et nulla consetetur eum.
+          We saved data in three different ways.
+          <ul>
+            <li>
+              We used code to generate new CSV files to streamline the process of machine learning and visualizations whenever we wanted to. The data sets are available on the <a href="https://github.com/CraftingGamerTom/wsu-computer-science/tree/master/CS-383_Cloud-Computing_2020-Spring" target="_blank">Github</a> for the project.
+            </li>
+            <li>
+              As mentioned above, we set up our instance with our Git Repository. This made it fast and easy to share code with eachother. To share we simply pushed the code to Git and we could pull eachothers code to our own instance and run it right away. No emails, messages, or copy-paste required. This is also convienent because we can share out notebook files with anyone. Check it out <a href="https://github.com/CraftingGamerTom/wsu-computer-science/tree/master/CS-383_Cloud-Computing_2020-Spring" target="_blank">here</a>.
+            </li>
+            <li>
+              Finally, we also saved data to AWS S3 from the SageMaker Instance to practice keeping data in AWS for other purposes. This is extremely useful if we wanted to use other AWS Services to do other processing on the data. <a href="https://aws.amazon.com/quicksight/" target="_blank">AWS QuickSight</a> can connect to S3 to pull in data to create dashboard quickly.
+            </li>
+          </ul>
         </p>
       </b-col>
-      <b-col style="text-align:center;" cols="md-4 sm-12">
-        <b-img style="height:250px; width:auto;" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/setting-up.png" fluid alt="sagemaker-setting-up" />
+      <b-col style="text-align:center;" cols="md-6 sm-12">
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/saving-data.png" fluid alt="sagemaker-saving-data" @click="$parent.expandImage" />
       </b-col>
     </b-row>
   </div>

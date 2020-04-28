@@ -7,17 +7,23 @@
           <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/overview">
             Overview
           </b-nav-item>
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/common-code">
+            Common Code
+          </b-nav-item>
           <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/sagemaker">
             SageMaker
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/forecasting">
-            Forecasting
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/ranking-areas">
+            Ranking Areas
           </b-nav-item>
           <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/machine-learning">
             Machine Learning
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/ranking-areas">
-            Ranking Areas
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/forecasting">
+            Forecasting
+          </b-nav-item>
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/conclusions">
+            Conclusions
           </b-nav-item>
           <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/contributors">
             Contributors
@@ -31,6 +37,17 @@
         -->
         <!-- Or if using Nuxt.js -->
         <nuxt-child />
+
+        <b-modal
+          id="common-image-modal"
+          ref="common-image-modal"
+          size="xl"
+          title="ImageModal"
+          hide-footer
+          hide-header
+        >
+          <b-img v-b-modal.common-image-modal style="height:auto; width:100%;" :src="this.commonImageModalSrc" fluid alt="common-image-model-img" />
+        </b-modal>
       </b-card-body>
     </b-card>
   </div>
@@ -47,6 +64,12 @@
 <style>
   .img-fluid {
     box-shadow: 0px 0px 15px #000;
+    border-radius: 10px;
+  }
+  .body-image {
+    height: auto;
+    width: 100%;
+    cursor: pointer;
   }
 
   .codeblock {
@@ -59,13 +82,22 @@
     width: 200px;
     line-height: normal;
     font-size: 0.9rem;
+    margin-bottom: 25px;
   }
 </style>
 
 <script>
 export default {
   data () {
-    return {}
+    return {
+      commonImageModalSrc: '~/assets/page/edu/wsu/cs/383-cloud/missing.png'
+    }
+  },
+  methods: {
+    expandImage (elem) {
+      this.commonImageModalSrc = elem.target.src
+      this.$refs['common-image-modal'].show()
+    }
   },
   middleware: 'edu/redirects'
 }
