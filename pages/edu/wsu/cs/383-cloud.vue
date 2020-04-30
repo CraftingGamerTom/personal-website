@@ -64,7 +64,7 @@
 <style>
   .img-fluid {
     box-shadow: 0px 0px 15px #000;
-    border-radius: 10px;
+    border-radius: 6px;
   }
   .body-image {
     height: auto;
