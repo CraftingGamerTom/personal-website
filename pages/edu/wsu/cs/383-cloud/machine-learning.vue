@@ -32,6 +32,12 @@
           Association Rule Mining
         </h2>
         <p>
+          Apriori Association Rule Mining works by finding records that meet our minimum support, confidence, and lift standard. Support refers to the popularity of an item (average number of times it shows up). Confidence refers the the accuracy of a particular rule. It is calculated by dividing the items in the entire by the values in one side of the rule. Lift refers to ratio between the parts of a rule. It is calculated by dividing the confidence of the rule by the support of the result of a rule. The output is similar to Naive Bayes algorithm. In fact, Naive Bayes may have been a better algorithm to apply for this kind of data. If I did it again I would try that algorithm instead.
+        </p>
+        <p>
+          For more information about the Apriori Algorithm check out these awesome resources on <a target="_blank" href="https://adataanalyst.com/machine-learning/apriori-algorithm-python-3-0/">Data Analyst</a> and <a target="_blank" href="https://stackabuse.com/association-rule-mining-via-apriori-algorithm-in-python/">Stack Abuse</a>.
+        </p>
+        <p>
           <span style="font-weight:700;">
             Setting Up
           </span>
