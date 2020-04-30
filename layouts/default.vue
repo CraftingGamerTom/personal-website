@@ -21,6 +21,9 @@
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
+    <b-alert variant="danger" show>
+      <span style="font-weight:800">MIGRATION IN PROGRESS</span> Please excuse the ugliness while I transition from my static site code to using Nuxt.js and Vue.js - Thank you for understanding!
+    </b-alert>
 
     <nuxt />
   </div>
