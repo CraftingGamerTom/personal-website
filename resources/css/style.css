@@ -70,9 +70,9 @@ h5 {
   border: 0;
 }
 .navbar-default {
-  /*background-color: #586672;*/ /* EDITED: NAVIGATION */
-  /*border-color: #293846;*/
-  background-image: linear-gradient(to bottom, #60c5de , #55839f);
+  background-color: #586672; /* EDITED: NAVIGATION */
+  border-color: #293846;
+  /* background-image: linear-gradient(to bottom, #60c5de , #55839f); */
 }
 .navbar-top-links li {
   display: inline-block;
@@ -179,7 +179,7 @@ ul.nav-second-level {
   background: #293846;
 }
 .nav > li.active {
-  /*border-left: 4px solid #19aa8d; */
+  border-left: 2px solid #19aa8d;
   background: rgba(0,0,0,0.2);
 }
 .nav.nav-second-level > li.active {
@@ -534,7 +534,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   /*background: #2f4050; */ /* EDITED: NAVIGATION link Hover colors */
   color: #ffffff;
   background: rgba(0,0,0,0.2);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .top-navigation .navbar .nav > li.active {
   background: #2f4050; /* EDITED: NAVIGATION - link background color active */
@@ -3488,7 +3488,7 @@ body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #2f4050;
   font-size: 13px;
-  color: #55839f;
+  color: #676a6c;
   overflow-x: hidden;
 }
 html,
@@ -4648,7 +4648,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
 }
 /* CONTACTS */
 .contact-box {
-  background-color: ##f8f8f8;
+  background-color: #f8f8f8;
   border: 1px solid #e7eaec;
   padding: 20px;
   margin-bottom: 20px;
