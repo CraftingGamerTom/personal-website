@@ -3,7 +3,7 @@
     <b-row>
       <b-col cols="md-6 sm-12">
         <h2>Forecasting</h2>
-        <p>We used Facebook's Python library Prophet to predict what the future crime ratings my be based on the past crim rating. It was clear from our results that perhaps having more types of data would be helpful in making good recommendations.</p>
+        <p>Facebook's Python library, Prophet, was used to predict what the future crime ratings may be - based on the past crime rating. It became clear from the results that perhaps having more types of data would be helpful in making good recommendations.</p>
         <p>Take a look at the Kaggle exercises that was critical to this project: <a target="_blank" href="https://www.kaggle.com/currie32/crimes-in-chicago/kernels">Crimes in Chicago</a> & <a target="_blank" href="https://facebook.github.io/prophet">Prophet</a></p>
         <br>
         <!-- <h2>
@@ -77,26 +77,26 @@
 export default {
   data () {
     return {
-      showDataFrame: false,
-      breadcrumbItems: [
-        {
-          text: 'Education',
-          to: '/edu'
-        }, {
-          text: 'Worcester State University',
-          to: '/edu/wsu'
-        }, {
-          text: 'CS383 - Cloud, Parallel & Distributed Computing',
-          to: '/edu/wsu/cs/383-cloud'
-        }, {
-          text: 'Forecasting',
-          active: true
-        }
-      ]
+      showDataFrame: false
+
     }
   },
-  mounted () {
-    this.$store.commit('breadcrumbs/set', this.breadcrumbItems)
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Education',
+        to: '/edu'
+      }, {
+        text: 'Worcester State University',
+        to: '/edu/wsu'
+      }, {
+        text: 'CS383 - Cloud, Parallel & Distributed Computing',
+        to: '/edu/wsu/cs/383-cloud'
+      }, {
+        text: 'Forecasting',
+        active: true
+      }
+    ]
   }
 }
 </script>

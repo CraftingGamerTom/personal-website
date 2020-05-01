@@ -32,7 +32,7 @@
           Association Rule Mining
         </h2>
         <p>
-          Apriori Association Rule Mining works by finding records that meet our minimum support, confidence, and lift standard. Support refers to the popularity of an item (average number of times it shows up). Confidence refers the the accuracy of a particular rule. It is calculated by dividing the items in the entire by the values in one side of the rule. Lift refers to ratio between the parts of a rule. It is calculated by dividing the confidence of the rule by the support of the result of a rule. The output is similar to Naive Bayes algorithm. In fact, Naive Bayes may have been a better algorithm to apply for this kind of data. If I did it again I would try that algorithm instead.
+          Apriori Association Rule Mining works by finding records that meet our minimum support, confidence, and lift standard. Support refers to the popularity of an item (average number of times it shows up). Confidence refers the the accuracy of a particular rule. It is calculated by dividing the items in the entire by the values in one side of the rule. Lift refers to ratio between the parts of a rule. It is calculated by dividing the confidence of the rule by the support of the result of a rule. The output is similar to Naive Bayes algorithm. In fact, Naive Bayes may have been a better algorithm to apply for this kind of data. In hindsight that algorithm may have been a better choice.
         </p>
         <p>
           For more information about the Apriori Algorithm check out these awesome resources on <a target="_blank" href="https://adataanalyst.com/machine-learning/apriori-algorithm-python-3-0/">Data Analyst</a> and <a target="_blank" href="https://stackabuse.com/association-rule-mining-via-apriori-algorithm-in-python/">Stack Abuse</a>.
@@ -43,12 +43,12 @@
           </span>
         </p>
         <p>
-          We are using the Ranked Area data that we created in the <nuxt-link to="/edu/wsu/cs/383-cloud/ranking-areas">
+          Using the Ranked Area data that we created in the <nuxt-link to="/edu/wsu/cs/383-cloud/ranking-areas">
             Ranking Areas
           </nuxt-link> section. First step is to read in the data and import the needed libraries.
         </p>
         <p>
-          We had a goal to practice applying machine learning algorithms to our data. I opted to use the Apyori Library for python to perform Association Rule Mining. I ran into some issues that made it a great learning experience.
+          Another goal of the project was to practice applying machine learning algorithms to our data. I opted to use the Apyori Library for python to perform Association Rule Mining. I ran into some issues that made it a great learning experience.
         </p>
         <p>
           First step is to read the data into memory. We will be running these rules against the ranked areas data sets we made before. I only ran these against the Daily and the Yearly data sets because they are the largest and smallest data sets created, respectively.
@@ -356,7 +356,7 @@ Noteable Attempt 1
           </span>
         </p>
         <p>
-          In attempt number two (which I started before attempt 1 was complete) I wanted to find a way to speed up the algorithm. It was suggested to me by a friend to use pandas ".values" rather than using a python array as arrays are very slow for these kinds of operations. It was indeed much faster.
+          In attempt number two (which was started before attempt 1 was complete) the goal was to find a way to speed up the algorithm. A suggestion was given by an external data scientist to use pandas ".values" rather than using a python array as arrays are very slow for these kinds of operations. It was indeed much faster.
         </p>
         <b-button v-b-toggle.collapse-toc1c class="view-code-btn" variant="secondary">
           View Code
@@ -766,7 +766,7 @@ Noteable Attempt 2
           </span>
         </p>
         <p>
-          I was not happy with the results I was getting. Im surprised there are not more rules and I begun to see that association rule mining is not great for crime data. As I grew more desperate I decided to remove the RANK column from the data set to see if it would come up with better rules.
+          Not happy with the results, surprised there are not more rules, it started becoming clear  that association rule mining is not great for crime data. In attempt to simplify the rules and maybe get more broad rules, the RANK column from the data set to see if it would come up with better rules.
         </p>
         <b-button v-b-toggle.collapse-toc1d class="view-code-btn" variant="secondary">
           View Code
@@ -998,7 +998,7 @@ Noteable Attempt 3
           </span>
         </p>
         <p>
-          Applying the same logic. trying to get better results I also tried running the algorithm with everything except the WEIGHTED_INCIDENT_SCORE column.
+          Applying the same logic, trying to get better results, the algorithm was run with everything except the WEIGHTED_INCIDENT_SCORE column.
         </p>
         <b-button v-b-toggle.collapse-toc1e class="view-code-btn" variant="secondary">
           View Code
@@ -1206,42 +1206,36 @@ Noteable Attempt 4
           Mahout Recommendation
         </h2>
         <p>
-          I used WinSCP to manage the Hadoop hdfs.
-          Created a cluster and copied the ssh and used the key to WinSCP.
-          I drag and dropped the dataset that I would perform mahout algorithm.
-          The data set I used is generated from the original dataset of crimes.
+          WinSCP was used to manage the Hadoop HDFS. A cluster was created, the ssh key was copied and used to connect via WinSCP. The data set that the mahout algorithm was transferred. The data set was generated from the original data set of crimes.
         </p>
         <p>
-          The first problem that I encountered with the recommender was that it does not read or process strings, only numbers because it uses the matrix and SIMILARITY_COSINE which processes nonzero instances.
-          As a work-around I used the Ranked dataset because the original data set had many string instances and attributes and the date format was not numeric but was date object format.
-          The mahout algorithm read the attribute names as strings, and it displayed an error.
+          The first problem encountered with the recommendation engine was that it does not read or process strings. The algorithm would work only with numbers because it uses the matrix and a SIMILARITY_COSINE which processes nonzero instances. As a work-around, the Ranked Areas data set was used because the original data set had many string instances and attributes and the date format was not numeric. The mahout algorithm read the attribute names as strings, and it displayed an error.
         </p>
         <p>
-          First I removed some columns I took out 5 of them (Data cleaning).
+          First, 5 columns were removed (Data cleaning).
           <pre>
 <code style="font-size:.65rem;">cat WorcesterData_BinRanked_Day1.csv | sed 's/ /,/g' | cut -f1-5 -d, > WorcesterData_BinRanked.csv</code>
           </pre>
-          Then I put the file in a directory:
+          File was put into a directory:
           <pre>
 <code style="font-size:.65rem;">hadoop fs -put WorcesterData_BinRanked.csv /WorcesterData_BinRanked.csv</code>
           </pre>
-          After that I run the recommender
+          The recommendation code was then run
           <pre>
 <code style="font-size:.65rem;">mahout recommenditembased --input /WorcesterData_BinRanked.csv --output recommendations --numRecommendations 10 --outputPathForSimilarityMatrix similarity-matrix --similarityClassname SIMILARITY_COSINE</code>
           </pre>
         </p>
         <p>
-          I merged everything in one output file:
+          Everything was merged in one output file:
           <pre>
 <code style="font-size:.65rem;">hadoop fs -getmerge recommendations output.txt</code>
           </pre>
         </p>
         <p>
-          I ran the recommender many times including all the columns. I also ran it only using some columns and I got the same tuples results.
+          The recommendation algorithm ran many times against all columns. Afterwards, it was run only using some columns, the resulting tuples were the same.
         </p>
         <p>
-          The way to interpret them is the first column is the year, then inside the brackets are the tuples containing the month and the days which comes as an average as I see(30.714018).
-          The recommender looks for similarity patterns on the data and creates the tuples with that.
+          The way to interpret them is the first column is the year, then inside the brackets are the tuples containing the month and the days which comes as an average  (30.714018). The recommendation algorithm looks for similarity patterns on the data and creates the tuples with that.
         </p>
       </b-col>
       <b-col style="text-align:center;" cols="md-6 sm-12">
@@ -1258,26 +1252,26 @@ Noteable Attempt 4
 export default {
   data () {
     return {
-      showDataFrame: false,
-      breadcrumbItems: [
-        {
-          text: 'Education',
-          to: '/edu'
-        }, {
-          text: 'Worcester State University',
-          to: '/edu/wsu'
-        }, {
-          text: 'CS383 - Cloud, Parallel & Distributed Computing',
-          to: '/edu/wsu/cs/383-cloud'
-        }, {
-          text: 'Machine Learning',
-          active: true
-        }
-      ]
+      showDataFrame: false
+
     }
   },
-  mounted () {
-    this.$store.commit('breadcrumbs/set', this.breadcrumbItems)
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Education',
+        to: '/edu'
+      }, {
+        text: 'Worcester State University',
+        to: '/edu/wsu'
+      }, {
+        text: 'CS383 - Cloud, Parallel & Distributed Computing',
+        to: '/edu/wsu/cs/383-cloud'
+      }, {
+        text: 'Machine Learning',
+        active: true
+      }
+    ]
   }
 }
 </script>

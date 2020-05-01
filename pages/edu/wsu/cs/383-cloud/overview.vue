@@ -19,7 +19,7 @@
             title="Analysing Worcester Crime Data using Amazon Web Services"
             title-tag="h1"
             title-text-variant="white"
-            sub-title="Oresti Duro & Thomas Rokicki"
+            sub-title="Thomas Rokicki & Oresti Duro"
             sub-title-tag="h3"
             sub-title-text-variant="white"
             class="text-center"
@@ -183,27 +183,9 @@
 export default {
   data () {
     return {
-      showDataFrame: false,
-      breadcrumbItems: [
-        {
-          text: 'Education',
-          to: '/edu'
-        }, {
-          text: 'Worcester State University',
-          to: '/edu/wsu'
-        }, {
-          text: 'CS383 - Cloud, Parallel & Distributed Computing',
-          to: '/edu/wsu/cs/383-cloud'
-        }, {
-          text: 'Overview',
-          active: true
-        }
-      ]
+      showDataFrame: false
+
     }
-  },
-  mounted () {
-    this.runFitText()
-    this.$store.commit('breadcrumbs/set', this.breadcrumbItems)
   },
   methods: {
     runFitText () {
@@ -216,6 +198,23 @@ export default {
 
       ]
     }
+  },
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Education',
+        to: '/edu'
+      }, {
+        text: 'Worcester State University',
+        to: '/edu/wsu'
+      }, {
+        text: 'CS383 - Cloud, Parallel & Distributed Computing',
+        to: '/edu/wsu/cs/383-cloud'
+      }, {
+        text: 'Overview',
+        active: true
+      }
+    ]
   }
 }
 </script>

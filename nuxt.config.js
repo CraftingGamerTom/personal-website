@@ -28,7 +28,11 @@ export default {
   ** Router Settings
   */
   router: {
-    trailingSlash: false
+    trailingSlash: false,
+    middleware: [
+      'edu/breadcrumbItems'
+      //      'theme'
+    ]
   },
   /*
   ** Customize the progress-bar color
