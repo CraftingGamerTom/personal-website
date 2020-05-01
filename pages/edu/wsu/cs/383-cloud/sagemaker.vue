@@ -3,7 +3,7 @@
     <b-row>
       <b-col cols="md-6 sm-12">
         <h2>SageMaker</h2>
-        <p>Amazon SageMaker is a service that provides many components to make computing and deploying machine learning models quickly and in a distributed fashion. Although we did not need to make use of Spark across a distributed Livy server, it was a great oppertunity to become more familiar with how to use SageMaker.</p>
+        <p>Amazon SageMaker is a service that provides many components to make computing and deploying machine learning models quickly and in a distributed fashion. Although we did not need to make use of Spark across a distributed Livy server, it was a great opportunity to become more familiar with how to use SageMaker.</p>
         <p>Read more about SageMaker <a target="_blank" href="https://aws.amazon.com/sagemaker/">here</a>.</p>
         <br>
         <h2>
@@ -71,7 +71,7 @@
           We ran a Conda Python Kernel to have a simple interface to run our analysis and visualizations. By doing this we did not need to worry about starting a cluster in AWS EMR and connect to it via a Livy Server.
         </p>
         <p>
-          This was confusing at first because we are not very experienced with SageMaker. At first I was trying to use a PySpark kernel but that of course resulted in errors because there was no cluster to talk to. Once I switched to a Conda Python kernal everything was very straightforward and fast.
+          This was confusing at first because we are not very experienced with SageMaker. At first I was trying to use a PySpark kernel but that of course resulted in errors because there was no cluster to talk to. Once I switched to a Conda Python kernel everything was very straightforward and fast.
         </p>
       </b-col>
       <b-col style="text-align:center;" cols="md-6 sm-12">
@@ -112,7 +112,7 @@
               We used code to generate new CSV files to streamline the process of machine learning and visualizations whenever we wanted to. The data sets are available on the <a href="https://github.com/CraftingGamerTom/wsu-computer-science/tree/master/CS-383_Cloud-Computing_2020-Spring" target="_blank">Github</a> for the project.
             </li>
             <li>
-              As mentioned above, we set up our instance with our Git Repository. This made it fast and easy to share code with eachother. To share we simply pushed the code to Git and we could pull eachothers code to our own instance and run it right away. No emails, messages, or copy-paste required. This is also convienent because we can share out notebook files with anyone. Check it out <a href="https://github.com/CraftingGamerTom/wsu-computer-science/tree/master/CS-383_Cloud-Computing_2020-Spring" target="_blank">here</a>.
+              As mentioned above, we set up our instance with our Git Repository. This made it fast and easy to share code with each other. To share we simply pushed the code to Git and we could pull each others code to our own instance and run it right away. No emails, messages, or copy-paste required. This is also convenient because we can share out notebook files with anyone. Check it out <a href="https://github.com/CraftingGamerTom/wsu-computer-science/tree/master/CS-383_Cloud-Computing_2020-Spring" target="_blank">here</a>.
             </li>
             <li>
               Finally, we also saved data to AWS S3 from the SageMaker Instance to practice keeping data in AWS for other purposes. This is extremely useful if we wanted to use other AWS Services to do other processing on the data. <a href="https://aws.amazon.com/quicksight/" target="_blank">AWS QuickSight</a> can connect to S3 to pull in data to create dashboard quickly.
@@ -132,26 +132,25 @@ export default {
   scrollToTop: true,
   data () {
     return {
-      showDataFrame: false,
-      breadcrumbItems: [
-        {
-          text: 'Education',
-          to: '/edu'
-        }, {
-          text: 'Worcester State University',
-          to: '/edu/wsu'
-        }, {
-          text: 'CS383 - Cloud, Parallel & Distributed Computing',
-          to: '/edu/wsu/cs/383-cloud'
-        }, {
-          text: 'SageMaker',
-          active: true
-        }
-      ]
+      showDataFrame: false
     }
   },
-  mounted () {
-    this.$store.commit('breadcrumbs/set', this.breadcrumbItems)
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Education',
+        to: '/edu'
+      }, {
+        text: 'Worcester State University',
+        to: '/edu/wsu'
+      }, {
+        text: 'CS383 - Cloud, Parallel & Distributed Computing',
+        to: '/edu/wsu/cs/383-cloud'
+      }, {
+        text: 'SageMaker',
+        active: true
+      }
+    ]
   }
 }
 </script>

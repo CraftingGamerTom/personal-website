@@ -24,19 +24,18 @@
 export default {
   data () {
     return {
-      breadcrumbItems: [
-        {
-          text: 'Education',
-          to: '/edu'
-        }, {
-          text: 'Worcester State University',
-          active: true
-        }
-      ]
     }
   },
-  mounted () {
-    this.$store.commit('breadcrumbs/set', this.breadcrumbItems)
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Education',
+        to: '/edu'
+      }, {
+        text: 'Worcester State University',
+        active: true
+      }
+    ]
   }
 }
 </script>
