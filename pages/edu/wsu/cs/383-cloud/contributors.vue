@@ -106,26 +106,25 @@
 export default {
   data () {
     return {
-      showDataFrame: false,
-      breadcrumbItems: [
-        {
-          text: 'Education',
-          to: '/edu'
-        }, {
-          text: 'Worcester State University',
-          to: '/edu/wsu'
-        }, {
-          text: 'CS383 - Cloud, Parallel & Distributed Computing',
-          to: '/edu/wsu/cs/383-cloud'
-        }, {
-          text: 'Contributors',
-          active: true
-        }
-      ]
+      showDataFrame: false
     }
   },
-  mounted () {
-    this.$store.commit('breadcrumbs/set', this.breadcrumbItems)
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Education',
+        to: '/edu'
+      }, {
+        text: 'Worcester State University',
+        to: '/edu/wsu'
+      }, {
+        text: 'CS383 - Cloud, Parallel & Distributed Computing',
+        to: '/edu/wsu/cs/383-cloud'
+      }, {
+        text: 'Contributors',
+        active: true
+      }
+    ]
   }
 }
 </script>

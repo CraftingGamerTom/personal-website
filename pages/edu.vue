@@ -34,16 +34,7 @@ export default {
   },
   data () {
     return {
-      breadcrumbItems: [
-        {
-          text: 'Education',
-          active: true
-        }
-      ]
     }
-  },
-  mounted () {
-    this.$store.commit('breadcrumbs/set', this.breadcrumbItems)
   },
   // page component definitions
   head () {
@@ -59,6 +50,14 @@ export default {
         }
       ]
     }
+  },
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Education',
+        active: true
+      }
+    ]
   }
 }
 </script>
