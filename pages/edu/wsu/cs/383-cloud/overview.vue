@@ -55,6 +55,11 @@
           <b-row>
             <h1>Abstract</h1>
             <p>We obtained records for all Worcester crime incidents from 2003 to 2019 from Worcester City Hall. The goal of this project is to practice using tools on AWS, machine learning using python, and to predict how crimes rates may trend in the future. We will predict whether Worcester will have an increase or decrease in crimes. The packages in Python will help us to predict and visualize these trends of the years to come.</p>
+            <p>
+              For more information about this data set check out our <nuxt-link to="/edu/wsu/cs/483-big-data-capstone/overview">
+                Capstone Project
+              </nuxt-link>.
+            </p>
           </b-row>
           <b-row>
             <h1>Goals</h1>
@@ -107,7 +112,14 @@
         </b-col>
         <b-col class="wrapper" cols="lg-5 offset-lg-1 sm-12">
           <h1>The Dataset</h1>
-          <b-img style="height:auto; width:100%; margin-bottom:25px;" src="~/assets/page/edu/wsu/cs/383-cloud/overview/overview-dataset.png" fluid alt="overview-dataset" @click="$parent.expandImage" />
+          <b-img
+            class="body-image"
+            style="margin-bottom:25px;"
+            src="~/assets/page/edu/wsu/cs/383-cloud/overview/overview-dataset.png"
+            fluid
+            alt="overview-dataset"
+            @click="$parent.$parent.expandImage"
+          />
           <h4>Attributes</h4>
           <p>
             Year <br>
