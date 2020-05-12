@@ -151,6 +151,53 @@ hchart(damage_tseries, name = "Destruction/Damage/Vandalism of Property") %>%
         <b-img class="body-image" src="~/assets/page/edu/wsu/cs/483-big-data-capstone/interactive-maps/top-4-crimes.png" fluid alt="top-4-crimes" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
+    <br>
+    <b-row>
+      <b-col cols="md-6 sm-12">
+        <h2>Time Series</h2>
+        <p>A Time Series graph of all crimes across all the years.</p>
+        <br>
+        <p>
+          <a target="_blank" href="/page/edu/wsu/cs/483-big-data-capstone/time-series.html">View Graph</a>
+        </p>
+        <br>
+        <b-button v-b-toggle.collapse-toc-4a class="view-code-btn" variant="secondary">
+          View Code
+        </b-button>
+        <b-collapse id="collapse-toc-4a" class="mt-2">
+          <b-card class="codeblock">
+            <code class="card-text">
+              <pre>
+install.packages('prophet')
+install.packages("highcharter")
+library(dplyr)
+library(prophet)
+library(xts)
+library(highcharter)
+#loading the dataset
+crimes = read.csv("WorcesterData_03_19.csv")
+#changing the data format
+crimes$ACTUAL_DTE = as.Date(crimes$ACTUAL_DTE, format = "%m/%d/%Y")
+by_Date = na.omit(crimes) %>% group_by(ACTUAL_DTE) %>% summarise(Total = n())
+tseries = xts(by_Date$Total, order.by=as.POSIXct(by_Date$ACTUAL_DTE))
+ df = crimes %>% group_by(ACTUAL_DTE) %>% summarise(y = n()) %>% mutate(y = log(y))
+ names(df) = c("ds", "y")
+ df$ds = factor(df$ds)
+hchart(tseries, name = "Crimes Number") %>%
+  hc_add_theme(hc_theme_darkunica()) %>%
+  hc_credits(enabled = TRUE, text = "Sources: City of Worcester Administration and the Worcester Police Department", style = list(fontSize = "12px")) %>%
+  hc_title(text = "Times Series plot of Worcester Crimes") %>%
+  hc_legend(enabled = TRUE)
+              </pre>
+            </code>
+          </b-card>
+        </b-collapse>
+      </b-col>
+      <b-col cols="md-6 sm-12">
+        <b-img src="~/assets/page/edu/wsu/cs/483-big-data-capstone/interactive-maps/time-series.png" fluid alt="time-series" @click="$parent.$parent.expandImage" />
+      </b-col>
+    </b-row>
+    <hr>
   </div>
 </template>
 

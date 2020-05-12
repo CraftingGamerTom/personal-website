@@ -47,10 +47,7 @@
           Setting Up
         </h2>
         <p>
-          Using our AWS Student accounts we chose to run on a free-tier ml.t2.medium instance. For Analyzing, Ranking, and some of the machine learning the total cost was under $3. Using small Servers for the relatively small amount of work is perfect and much faster than running locally.
-        </p>
-        <p>
-          During this set up process we opted to set up a Git repository on the SageMaker instance to make collaborating easier and faster. By putting our Git repository on the instance we can push our code to the project and share it with each other. It is also very convenient because if we decide we need a more powerful server to run some code in the future we can easily deploy the code without much setup on the new instance.
+          To begin, simply run the code in Common Code to load the data set into memory.
         </p>
       </b-col>
     </b-row>
