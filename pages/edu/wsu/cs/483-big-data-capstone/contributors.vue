@@ -17,7 +17,7 @@
           </b-card-text>
 
           <b-card-text style="text-align:left; font-size:0.6rem;">
-            <p>Responsibilities</p>
+            <p>Contributions</p>
             <ul>
               <li>
                 Created Merged Data (Common Code) from Provided Data Set
@@ -59,7 +59,7 @@
           </b-card-text>
 
           <b-card-text style="text-align:left; font-size:0.6rem;">
-            <p>Responsibilities</p>
+            <p>Contributions</p>
             <ul>
               <li>
                 Created Heat Map Visualization of Crime Incidents

@@ -7,45 +7,22 @@
           <span style="font-weight:800;">Statistics</span>
           <ul>
             <li>
-              XXXXXX
+              Specified the most dangerous places in Worcester
             </li>
             <li>
-              XXXXXX
+              Crime Incidents (reported) are steadily decreasing
             </li>
           </ul>
         </p>
-        <p>
-          <span style="font-weight:800;">Incident Maps</span>
-          <ul>
-            <li>
-              XXXXXX
-            </li>
-            <li>
-              XXXXXX
-            </li>
-          </ul>
-        </p>
-        <p>
-          <span style="font-weight:800;">Interactive Maps</span>
-          <ul>
-            <li>
-              XXXXXX
-            </li>
-            <li>
-              XXXXXX
-            </li>
-          </ul>
-        </p>
-        <p>
-          <span style="font-weight:800;">Forecasting</span>
-          <ul>
-            <li>
-              XXXXXX
-            </li>
-            <li>
-              XXXXXX
-            </li>
-          </ul>
+        <span style="font-weight:800;">Forecasting</span>
+        <ul>
+          <li>
+            The forecasting shows that the crime rates will continue to decrease after 2019
+          </li>
+          <li>
+            COVID-19 may play a significant role in how much or how little crime occurs this year
+          </li>
+        </ul>
         </p>
         <p>
           <span style="font-weight:800;">Weather</span>
