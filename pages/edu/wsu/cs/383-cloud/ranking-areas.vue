@@ -18,7 +18,7 @@
         <br>
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img src="~assets/page/edu/wsu/cs/383-cloud/ranking-areas/ranking-areas.png" fluid alt="ranking-areas" @click="$parent.expandImage" />
+        <b-img src="~assets/page/edu/wsu/cs/383-cloud/ranking-areas/ranking-areas.png" fluid alt="ranking-areas" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
     <hr>
@@ -326,7 +326,7 @@ rankedBins_day.to_csv(dataPath + 'WorcesterData_BinRanked_Day.csv')
         </b-collapse>
       </b-col>
       <b-col style="text-align:center;" cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/ranking-areas/ranking-areas-output.png" fluid alt="ranking-areas-output" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/ranking-areas/ranking-areas-output.png" fluid alt="ranking-areas-output" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
     <hr>

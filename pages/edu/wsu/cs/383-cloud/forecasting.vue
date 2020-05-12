@@ -28,46 +28,46 @@
         </b-list-group> -->
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-12.png" fluid alt="sagemaker-image" @click="$parent.expandImage" />
+        <b-img src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-12.png" fluid alt="sagemaker-image" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
     <hr>
     <b-row id="toc-1">
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-1.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-1.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-2.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-2.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-7.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-7.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-13.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-13.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-3.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-3.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-4.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-4.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-5.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-5.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-6.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-6.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-8.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-8.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-10.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-10.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-9.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-9.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-11.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/forecasting/prophet-11.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
   </div>

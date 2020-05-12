@@ -3,7 +3,7 @@
     <b-row>
       <b-col cols="md-6 sm-12">
         <h2>Common Code</h2>
-        <p>Some code is used frequently for different applications and parts of our project. Instead of showing the same code everywhere we will put the common code here and reference it.</p>
+        <p>Some code is used frequently for different applications and parts of the project. Instead of showing the same code everywhere the common code is available here and referenced where needed.</p>
         <br>
         <h2>
           Table of Contents
@@ -30,7 +30,7 @@
           Merge Data
         </h2>
         <p>
-          The data we from the Worcester Resource Office received was separated between years. This was not ideal for what we wanted to do. So we wrote some code to merge the data together then create a new csv file with the merged data in it.
+          The Worcester Resource Office provided data that was separated between years. This was not ideal for running analysis on all of it at once. Code was created to merge the data together then create a new csv file with the merged data in it.
         </p>
         <b-button v-b-toggle.collapse-toc1 class="view-code-btn" variant="secondary">
           View Code
@@ -100,7 +100,7 @@ print('Dataset concatenated..')
           Read Data
         </h4>
         <p>
-          This code reads in the saved csv file containing the merged data (2003-2019). It then converts the types, cleans the data, and sets the index to be the time as it is time series data. In some cases we do not want the data to be time series, so we did not always run that line of code.
+          This code reads in the saved csv file containing the merged data (2003-2019). It then converts the types, cleans the data, and sets the index to be the time as it is time series data. In some cases it is not ideal for the data to be time series, it was not always run that line of code.
         </p>
         <b-button v-b-toggle.collapse-toc2 class="view-code-btn" variant="secondary">
           View Code

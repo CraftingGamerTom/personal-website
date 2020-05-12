@@ -22,7 +22,7 @@
         </b-list-group>
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/mahout-3.png" fluid alt="mahout-3" @click="$parent.expandImage" />
+        <b-img src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/mahout-3.png" fluid alt="mahout-3" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
     <hr>
@@ -1188,15 +1188,15 @@ Noteable Attempt 4
         </b-collapse>
       </b-col>
       <b-col style="text-align:center;" cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/association-rule-apriori-steps.png" fluid alt="apriori-steps" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/association-rule-apriori-steps.png" fluid alt="apriori-steps" @click="$parent.$parent.expandImage" />
         <b-img
           class="body-image"
           src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/association-rule-1.png"
           fluid
           alt="sagemaker-setting-up"
-          @click="$parent.expandImage"
+          @click="$parent.$parent.expandImage"
         />
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/association-rule-2.png" fluid alt="sagemaker-setting-up" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/association-rule-2.png" fluid alt="sagemaker-setting-up" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
     <hr>
@@ -1239,9 +1239,9 @@ Noteable Attempt 4
         </p>
       </b-col>
       <b-col style="text-align:center;" cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/mahout-4.png" fluid alt="mahout-4" @click="$parent.expandImage" />
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/mahout-2.jpg" fluid alt="mahout-2" @click="$parent.expandImage" />
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/mahout-5.png" fluid alt="mahout-5" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/mahout-4.png" fluid alt="mahout-4" @click="$parent.$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/mahout-2.jpg" fluid alt="mahout-2" @click="$parent.$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/machine-learning/mahout-5.png" fluid alt="mahout-5" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
     <hr>

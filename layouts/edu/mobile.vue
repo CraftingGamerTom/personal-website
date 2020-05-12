@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="primary">
+    <b-navbar toggleable="lg" type="dark" variant="primary" sticky>
       <b-navbar-brand href="#">
         Thomas Rokicki
       </b-navbar-brand>

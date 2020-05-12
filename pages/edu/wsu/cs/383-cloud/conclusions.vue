@@ -54,7 +54,7 @@
         <br>
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img src="https://ihg.scene7.com/is/image/ihg/holiday-inn-express-worcester-4063689404-2x1?wid=940&hei=470&qlt=85,0&resMode=sharp2&op_usm=1.75,0.9,2,0" fluid alt="conclusion-image" @click="$parent.expandImage" />
+        <b-img src="https://ihg.scene7.com/is/image/ihg/holiday-inn-express-worcester-4063689404-2x1?wid=940&hei=470&qlt=85,0&resMode=sharp2&op_usm=1.75,0.9,2,0" fluid alt="conclusion-image" @click="$parent.$parent.expandImage" />
         <cite><a target="_blank" href="https://www.ihg.com/holidayinnexpress/hotels/us/en/worcester/orhwr/hoteldetail">Image Source</a>
         </cite>
       </b-col>

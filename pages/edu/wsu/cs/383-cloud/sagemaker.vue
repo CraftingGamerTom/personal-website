@@ -33,7 +33,7 @@
         </b-list-group>
       </b-col>
       <b-col cols="md-6 sm-12">
-        <b-img src="https://d1.awsstatic.com/re19/Sagemaker/Rhinestone%20SageMaker%20Studio%20Page%202%20-%20v2_full%20size.5390b79fd038865e0816b7275b73b1abaad21121.png" fluid alt="sagemaker-image" @click="$parent.expandImage" />
+        <b-img src="https://d1.awsstatic.com/re19/Sagemaker/Rhinestone%20SageMaker%20Studio%20Page%202%20-%20v2_full%20size.5390b79fd038865e0816b7275b73b1abaad21121.png" fluid alt="sagemaker-image" @click="$parent.$parent.expandImage" />
         <cite><a target="_blank" href="https://aws.amazon.com/sagemaker/">Image Source</a>
         </cite>
       </b-col>
@@ -57,7 +57,7 @@
           src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/setting-up.png"
           fluid
           alt="sagemaker-setting-up"
-          @click="$parent.expandImage"
+          @click="$parent.$parent.expandImage"
         />
       </b-col>
     </b-row>
@@ -80,7 +80,7 @@
           src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/using-conda-python.png"
           fluid
           alt="sagemaker-using-conda-python"
-          @click="$parent.expandImage"
+          @click="$parent.$parent.expandImage"
         />
       </b-col>
     </b-row>
@@ -96,7 +96,7 @@
         <p> To name a few packages we needed to import, we needed Facebook's <span style="font-weight:700">Prophet</span> for time series visualizations and <span style="font-weight:700">Apyori</span> for association rule mining.</p>
       </b-col>
       <b-col style="text-align:center;" cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/importing-packages.png" fluid alt="sagemaker-saving-data" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/importing-packages.png" fluid alt="sagemaker-saving-data" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
     <hr>
@@ -121,7 +121,7 @@
         </p>
       </b-col>
       <b-col style="text-align:center;" cols="md-6 sm-12">
-        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/saving-data.png" fluid alt="sagemaker-saving-data" @click="$parent.expandImage" />
+        <b-img class="body-image" src="~/assets/page/edu/wsu/cs/383-cloud/sagemaker/saving-data.png" fluid alt="sagemaker-saving-data" @click="$parent.$parent.expandImage" />
       </b-col>
     </b-row>
   </div>
