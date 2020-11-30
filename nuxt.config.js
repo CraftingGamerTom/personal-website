@@ -64,6 +64,9 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/svg',
+    'nuxt-logger',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     // Doc: https://github.com/nuxt-community/redirect-module
@@ -86,6 +89,25 @@ export default {
       }
     ]
   ],
+  styleResources: {
+    scss: [
+      '~assets/style/_constants.scss',
+      '~assets/style/_media.scss',
+      '~assets/style/_colors.scss',
+      '~assets/style/_fonts.scss',
+      '~assets/style/_borders.scss',
+      '~assets/style/global/common.scss',
+      '~assets/style/global/components.scss',
+      '~assets/style/global/grid.scss',
+      '~assets/style/global/scroll.scss',
+      '~assets/style/global/forms/checkbox.scss',
+      '~assets/style/global/forms/input.scss'
+    ]
+  },
+  logger: {
+    isEnabled: true, // true or false, defaults to true
+    logLevel: 'debug' // debug, info, warn or error, defaults to debug
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

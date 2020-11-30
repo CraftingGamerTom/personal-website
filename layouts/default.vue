@@ -1,6 +1,8 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="primary">
+    <top-navigation />
+    <div id="wrapper">
+    <!-- <b-navbar toggleable="lg" type="dark" variant="primary">
       <b-navbar-brand href="#">
         Thomas Rokicki
       </b-navbar-brand>
@@ -15,19 +17,61 @@
           <b-nav-item to="/projects">
             Projects
           </b-nav-item>
-          <b-nav-item to="/edu">
-            Education
+          <b-nav-item to="/career">
+            Career
+          </b-nav-item>
+          <b-nav-item to="/learn">
+            Learn
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
-    </b-navbar>
-    <b-alert variant="danger" show>
-      <span style="font-weight:800">MIGRATION IN PROGRESS</span> Please excuse the ugliness while I transition from my static site code to using Nuxt.js and Vue.js - Thank you for understanding!
-    </b-alert>
+    </b-navbar> -->
+
+<button @click="setTheme('dark')" type="button">Toggle dark mode</button>
+<button @click="setTheme('light')" type="button">Toggle light mode</button>
+<button @click="setTheme('purple')" type="button">Toggle purple mode</button>
+<button @click="setTheme('yellow')" type="button">Toggle yellow mode</button>
 
     <nuxt />
+    </div>
   </div>
 </template>
+
+<script>
+import { CONST_STORAGE_KEY_THEME } from '~/utils/constants';
+import TopNavigation from '~/components/utils/navigation/TopNavigation.vue'
+
+export default {
+  components: {
+    TopNavigation
+  },
+  data () {
+    return {
+    }
+  },
+  mounted() {
+    let theme = localStorage.getItem(CONST_STORAGE_KEY_THEME);
+
+    if(theme === undefined) {
+      theme = "light"
+      setTheme("light")
+    }
+
+    let htmlElement = document.documentElement;
+    htmlElement.setAttribute('theme', theme)
+  },
+  computed: {
+    breadcrumbItems () { return this.$store.state.breadcrumbs.crumbs }
+  },
+  methods: {
+    setTheme(themeString) {
+      localStorage.setItem(CONST_STORAGE_KEY_THEME, themeString);
+      let htmlElement = document.documentElement;
+      htmlElement.setAttribute('theme', themeString);
+    }
+  }
+}
+</script>
 
 <style>
 html {
@@ -76,5 +120,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+#wrapper {
+  margin-top: 55px;
 }
 </style>
