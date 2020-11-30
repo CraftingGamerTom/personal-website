@@ -1,0 +1,14 @@
+$radii: (
+    container: 20px,
+    inner-container: 12.5px,
+    nav-btn: 7.5px,
+    button: 10px,
+    form-field: 10px,
+    scrollbar-thumb: 5px
+);
+
+// Functions
+
+@function border-radius($container-type) {
+    @return map-get($radii, $container-type)
+};

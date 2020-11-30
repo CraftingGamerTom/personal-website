@@ -1,0 +1,26 @@
+.container {
+    margin-bottom: 10px;
+    border-radius: border-radius(container);
+    font-family: font(secondary);
+    display: block;
+
+    padding-bottom: 10px;
+  
+    width: 100%;
+    min-height: 50px;
+}
+
+
+// theme colors
+html[theme="light"] {
+    & .container {
+        background-color: color("light", layout-20);
+        color: color("light", text);
+    }
+}
+html[theme="dark"] {
+    & .container {
+        background-color: color("dark", layout-20);
+        color: color("dark", text);
+    }
+}

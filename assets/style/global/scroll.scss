@@ -1,0 +1,56 @@
+/* Overall Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Buttons */
+::-webkit-scrollbar-button {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: border-radius(scrollbar-thumb);
+    &:hover {
+        // placeholder
+    }
+}
+
+/* Track (handle rides on track) */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Track (not covered by handle) */
+::-webkit-scrollbar-track-piece {
+    
+}
+
+
+/* Vertical and horizontal scrollbar meeting point */
+::-webkit-scrollbar-corner {
+
+}
+
+/* Draggable Resize (at bottom) */
+::-webkit-resizer {
+
+}
+
+// theme colors
+html[theme="light"] {
+    & ::-webkit-scrollbar-thumb {
+        background: color("light", layout-10);
+        &:hover {
+            background: color("light", layout-20);
+        }
+    }
+}
+html[theme="dark"] {
+    & ::-webkit-scrollbar-thumb {
+        background: color("dark", layout-10);
+        &:hover {
+            background: color("dark", layout-20);
+        }
+    }
+}
