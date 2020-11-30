@@ -4,9 +4,7 @@
 
 
 <script>
-
 import { NavigationTopbar } from '@craftinggamertom/webslack-bits'
-// import { NavigationTopbar } from '~/components/node_copies/webslack_bits/bits'
 
 export default {
   components: {
@@ -16,10 +14,6 @@ export default {
       return {
           
       topbarItems: [
-            {
-              title: 'home',
-              link: '/home'
-            },
             {
               title: 'projects',
               link: '/projects'

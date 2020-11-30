@@ -1,27 +1,32 @@
+import webpack from 'webpack'
 export default {
   mode: 'spa',
   /*
   ** Headers of the page
   */
+  
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Thomas Rokicki',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [
-      {
-        hid: 'jquery',
-        src: 'https://code.jquery.com/jquery-3.4.1.slim.min.js',
-        type: 'text/javascript',
-        callback: () => { this.isJqueryLoaded = true }
-      }, {
-        hid: 'textfit', src: '~/static/common/js/libs/jquery/fittext.js', defer: true
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // TODO Host font files ourselves https://stackoverflow.com/questions/51436344/how-to-embed-font-to-all-page-with-nuxt-js
+      { rel: 'preload', as: 'font', href: 'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap' },
+      { rel: 'preload', as: 'font', href: 'https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap' }
+    // ],
+    // script: [
+    //   {
+    //     hid: 'jquery',
+    //     src: 'https://code.jquery.com/jquery-3.4.1.slim.min.js',
+    //     type: 'text/javascript',
+    //     callback: () => { this.isJqueryLoaded = true }
+    //   }, {
+    //     hid: 'textfit', src: '~/static/common/js/libs/jquery/fittext.js', defer: true
+    //   }
     ]
   },
   /*
@@ -134,7 +139,17 @@ export default {
     /*
     ** Include libraries
     */
-    vendor: []
+    vendor: [],
+    /*
+    ** webpack config
+    */
+    plugins: [
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    ]
 
   },
   /*
