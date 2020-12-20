@@ -40,16 +40,20 @@
 // theme colors
 html[theme="light"] {
     & ::-webkit-scrollbar-thumb {
+        @include theme-transition();
         background: color("light", layout-10);
         &:hover {
+            @include theme-transition();
             background: color("light", layout-20);
         }
     }
 }
 html[theme="dark"] {
     & ::-webkit-scrollbar-thumb {
+        @include theme-transition();
         background: color("dark", layout-10);
         &:hover {
+            @include theme-transition();
             background: color("dark", layout-20);
         }
     }

@@ -101,6 +101,7 @@ export default {
       '~assets/style/_colors.scss',
       '~assets/style/_fonts.scss',
       '~assets/style/_borders.scss',
+      '~assets/style/transitions.scss',
       '~assets/style/global/common.scss',
       '~assets/style/global/components.scss',
       '~assets/style/global/grid.scss',

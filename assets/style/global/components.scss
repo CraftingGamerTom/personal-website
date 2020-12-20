@@ -8,18 +8,22 @@
   
     width: 100%;
     min-height: 50px;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.50); // TODO decide if non theme is okay
 }
 
 
 // theme colors
 html[theme="light"] {
     & .container {
+        @include theme-transition();
         background-color: color("light", layout-20);
         color: color("light", text);
     }
 }
 html[theme="dark"] {
     & .container {
+        @include theme-transition();
         background-color: color("dark", layout-20);
         color: color("dark", text);
     }

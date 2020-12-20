@@ -58,39 +58,47 @@ nav {
 
 html[theme="light"] {
     & nav {
+        @include theme-transition();
         background-color: color("light", primary);
 
         & .navbar-nav a.nav-link {
-            color: color("light", text-accent);
+          @include theme-transition();
+          color: color("light", text-accent);
         }
 
         & .vertical {
-            border-left: 1px solid color("light", text-accent);
+          @include theme-transition();
+          border-left: 1px solid color("light", text-accent);
         }
 
         & svg {
-            // color: color("light", text-accent);
-            fill: color("light", text-accent);
-            // stroke: color("light", text-accent);
+          @include theme-transition();
+          // color: color("light", text-accent);
+          fill: color("light", text-accent);
+          // stroke: color("light", text-accent);
         }
     }
 }
 html[theme="dark"] {
     & nav {
+        @include theme-transition();
         background-color: color("dark", primary);
 
         & .navbar-nav a.nav-link {
-            color: color("dark", text-accent);
+          @include theme-transition();
+          color: color("dark", text-accent);
         }
 
         & .vertical {
-            border-left: 1px solid color("dark", text-accent);
+          @include theme-transition();
+          border-left: 1px solid color("dark", text-accent);
         }
 
         & svg {
-            // color: color("dark", text-accent);
-            fill: color("dark", text-accent);
-            // stroke: color("dark", text-accent);
+          @include theme-transition();
+          // color: color("dark", text-accent);
+          fill: color("dark", text-accent);
+          // stroke: color("dark", text-accent);
         }
     }
 }

@@ -27,18 +27,22 @@ input {
 // theme colors
 html[theme="light"] {
     & input {
+        @include theme-transition();
         background-color: color("light", form-field);
         color: color("light", text-accent);
         border: 1px solid color("light", form-field-border);
     
         &.form-control:active, &.form-control:focus {
-        background-color: color("light", form-field-active);
-        color: color("light", text-accent);
+            @include theme-transition();
+            background-color: color("light", form-field-active);
+            color: color("light", text-accent);
         }
         &[type=number]::-webkit-inner-spin-button {
+            @include theme-transition();
             background-color: red
         }
         &[type=number]::-webkit-outer-spin-button { 
+            @include theme-transition();
             background-color: color("light", layout-40);
             color: color("light", text);
         }
@@ -46,18 +50,22 @@ html[theme="light"] {
 }
 html[theme="dark"] {
     & input {
+        @include theme-transition();
         background-color: color("dark", form-field);
         color: color("dark", text-accent);
         border: 1px solid color("dark", form-field-border);
     
         &.form-control:active, &.form-control:focus {
-        background-color: color("dark", form-field-active);
-        color: color("dark", text-accent);
+            @include theme-transition();
+            background-color: color("dark", form-field-active);
+            color: color("dark", text-accent);
         }
         &[type=number]::-webkit-inner-spin-button {
+            @include theme-transition();
             background-color: red
         }
         &[type=number]::-webkit-outer-spin-button { 
+            @include theme-transition();
             background-color: color("dark", layout-40);
             color: color("dark", text);
         }
