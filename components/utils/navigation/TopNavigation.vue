@@ -28,7 +28,7 @@ export default {
             }
           ],
           brandImage: {
-            icon: "long-logo",
+            icon: "logo-long",
             managedIconLocation: "~/assets/icons",
             width: "1",
             size: "1",
@@ -51,7 +51,7 @@ nav {
     }
 
     &.navbar a svg.size--1x { 
-      height: inherit;
+      height: 1.5em;
       width: inherit;
     }
 }
@@ -69,9 +69,9 @@ html[theme="light"] {
         }
 
         & svg {
-            color: color("light", text-accent);
+            // color: color("light", text-accent);
             fill: color("light", text-accent);
-            stroke: color("light", text-accent);
+            // stroke: color("light", text-accent);
         }
     }
 }
@@ -88,9 +88,9 @@ html[theme="dark"] {
         }
 
         & svg {
-            color: color("dark", text-accent);
+            // color: color("dark", text-accent);
             fill: color("dark", text-accent);
-            stroke: color("dark", text-accent);
+            // stroke: color("dark", text-accent);
         }
     }
 }
