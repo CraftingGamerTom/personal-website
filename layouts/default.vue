@@ -84,6 +84,16 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+
+  background-image: url(~assets/icons/background-code.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: 125vw 125vh;
+}
+
+body {
+  background-color: transparent;
 }
 
 *,
