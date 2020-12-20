@@ -95,7 +95,7 @@
 <script>
 
 export default {
-  components: { QuickIcon },
+  // components: { QuickIcon },
   data () {
     return {
       title: 'Home | Thomas Rokicki'

@@ -23,7 +23,6 @@
             COVID-19 may play a significant role in how much or how little crime occurs this year
           </li>
         </ul>
-        </p>
         <p>
           <span style="font-weight:800;">Weather</span>
           <ul>

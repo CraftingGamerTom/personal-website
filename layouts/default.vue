@@ -50,11 +50,11 @@ export default {
     }
   },
   mounted() {
-    let theme = localStorage.getItem(CONST_STORAGE_KEY_THEME);
+    let theme = localStorage.getItem[CONST_STORAGE_KEY_THEME];
 
     if(theme === undefined) {
       theme = "light"
-      setTheme("light")
+      this.setTheme("light")
     }
 
     let htmlElement = document.documentElement;
