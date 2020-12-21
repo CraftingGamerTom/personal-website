@@ -50,9 +50,11 @@ export default {
     }
   },
   mounted() {
-    let theme = localStorage.getItem[CONST_STORAGE_KEY_THEME];
+    let theme = localStorage.getItem(CONST_STORAGE_KEY_THEME);
 
-    if(theme === undefined) {
+    console.log('theme found', theme)
+
+    if(theme === null) {
       theme = "light"
       this.setTheme("light")
     }
@@ -75,8 +77,6 @@ export default {
 
 <style>
 html {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -94,6 +94,8 @@ html {
 
 body {
   background-color: transparent;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 *,
