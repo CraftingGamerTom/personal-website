@@ -1,5 +1,5 @@
 .container {
-    margin-bottom: 10px;
+    margin-bottom:50px;
     border-radius: border-radius(container);
     font-family: font(secondary);
     display: block;
@@ -19,6 +19,11 @@ html[theme="light"] {
         @include theme-transition();
         background-color: color("light", layout-20);
         color: color("light", text);
+
+        &.ctnr-40 {
+            @include theme-transition();
+            background-color: color("light", layout-40);
+        }
     }
 }
 html[theme="dark"] {
@@ -26,5 +31,10 @@ html[theme="dark"] {
         @include theme-transition();
         background-color: color("dark", layout-20);
         color: color("dark", text);
+
+        &.ctnr-40 {
+            @include theme-transition();
+            background-color: color("dark", layout-40)
+        }
     }
 }

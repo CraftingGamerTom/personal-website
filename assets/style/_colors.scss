@@ -30,8 +30,8 @@ $colors-light: (
     // Text
     text-hover: #353535,
     text: #141414,
-    text-accent: #2F1313,
-    text-disabled: #484848,
+    text-accent: #424242,
+    text-disabled: #727272,
 
     // Buttons
     btn: #676767, 
@@ -67,13 +67,13 @@ $colors-dark: (
 
     // Main Colors
     layout: #121212,
-    layout-10: #363636,
+    layout-10: #292929,
     layout-11: lighten(#121212, 6.5%),
-    layout-20: #4D4D4D, // container 1
+    layout-20: #414141, // container 1
     layout-21: lighten(#121212, 13%),
-    layout-30: #5B5B5B,
+    layout-30: #595959,
     layout-31: lighten(#121212, 19.5%),
-    layout-40: #6f6f6f, // container 2
+    layout-40: #707070, // container 2
     layout-41: lighten(#121212, 26%),
 
     // Navigation
