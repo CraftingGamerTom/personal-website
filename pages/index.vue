@@ -54,7 +54,7 @@
               </b-col>
             </b-row>
 
-            <b-button style="margin-bottom:15px;">View All</b-button>
+            <b-button style="margin-bottom:15px;" :to="'/projects'">View All</b-button>
 
           </b-container>
         </b-col>
@@ -64,25 +64,60 @@
     <h1 id="index-skills-title">Skills</h1>
 
     <section id="skills">
-      <b-row>
+      <b-row class="align-self-md-stretch">
         <b-col cols="12" md="3">
-          <b-container class="bigger-ctnr-margin"> 
-            <h1>Microservices</h1>
+          <b-container class="bigger-ctnr-margin h-100"> 
+            <QuickIcon :location="''" :name="'love_2154176'" viewBox="0 0 100 100" />
+            <h2>Microservices</h2>
+            <p>I believe a well planned API is the cornerstone of a good product.</p>
+            <h6>My go-to frameworks</h6>
+            <p>Spring, NodeJS</p>
+            <h6>Technology</h6>
+            <p>AWS (ECR, ECS, EC2, RDS, S3, KMS)</p>
+            <p>Spring Boot, ExpressJS</p>
+            <p>PostgreSQL, MongoDB, MySQL</p>
+            <p>JUnit (Juniper), Should.js</p>
           </b-container>
         </b-col>
         <b-col cols="12" md="3">
-          <b-container class="bigger-ctnr-margin"> 
-            <h1>UI / UX</h1>
+          <b-container class="bigger-ctnr-margin h-100"> 
+            <QuickIcon :location="''" :name="'love_2154176'" viewBox="0 0 100 100" />
+            <h2>UI / UX</h2>
+            <p>I value simple problem-solving content.<br/>I also love dark modes.</p>
+            <h6>I enjoy designing</h6>
+            <p>Websites, Mobile Apps, Components</p>
+            <h6>Design Tools</h6>
+            <p>Sketch</p>
+            <p>Abstract, Plant, Zeplin</p>
+            <p>Adobe Illustrator</p>
+            <p>Figma</p>
           </b-container>
         </b-col>
         <b-col cols="12" md="3">
-          <b-container class="bigger-ctnr-margin"> 
-            <h1>Front-End</h1>
+          <b-container class="bigger-ctnr-margin h-100"> 
+            <QuickIcon :location="''" :name="'love_2154176'" viewBox="0 0 100 100" />
+            <h2>Front-End</h2>
+            <p>A solid product looks and feels complete to the user.</p>
+            <h6>Frameworks of choice</h6>
+            <p>Vue, Nuxt, Wordpress, Android</p>
+            <h6>Languages</h6>
+            <p>Bootstrap, Vuetify</p>
+            <p>JS, HTML, CSS, SASS, PHP</p>
+            <p>Java, Kotlin, Android Studio</p>
+            <p>Segment, Mixpanel, AWS QuickSight (Analytics)</p>
           </b-container>
         </b-col>
         <b-col cols="12" md="3">
-          <b-container class="bigger-ctnr-margin"> 
-            <h1>Automation</h1>
+          <b-container class="bigger-ctnr-margin h-100"> 
+            <QuickIcon :location="''" :name="'love_2154176'" viewBox="0 0 100 100" />
+            <h2>Automation</h2>
+            <p>Test Driven Development streamlines productivity and reduces rework cycles.</p>
+            <h6>My specialty</h6>
+            <p>Selenium, Appium, AWS Device Farm</p>
+            <h6>Familiar Optimizations</h6>
+            <p>Daily App Screenshot Comparisons (UI Integrity)</p>
+            <p>Unit Test Coverage and Result Auditing</p>
+            <p>Functional Automated Testing (Regression, Smoke, Sanity)</p>
           </b-container>
         </b-col>
       </b-row>
@@ -98,8 +133,6 @@
       </b-row>
     </section>
 
-<!-- no-undef: "error"  -->
-    <!-- eslint-disable-next-line -->
     <h5 style="margin-top:25px;text-align:center;">Made with <QuickIcon :location="''" :color="'red'" :name="'love_2154176'" :width="'20'" :size="'1'" viewBox="0 0 100 100" /> in Worcester, MA</h5>
     <h5 id="copyright" style="text-align:center;">&copy; Thomas Rokicki <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></h5>
 
@@ -108,7 +141,6 @@
 </template>
 
 <script>
-/* eslint-disable no-undef */
 import { QuickIcon } from '@craftinggamertom/webslack-bits'
 
 export default {
@@ -201,35 +233,101 @@ export default {
     z-index: 201;
   }
 }
+
+#index-recent-projects {
+  & a.btn {
+    background-color: transparent;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+}
+
+#skills {
+  text-align: center;
+  .col-12 {
+    margin-bottom: 70px;
+  }
+  svg {
+    margin-top: 15px;
+    height: 50px;
+    width: auto;
+  }
+  h2 {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  h6 {
+    font-weight: 900;
+    margin-top: 25px;
+  }
+
+}
+
 // theme colors
 html[theme="light"] {
     & #index-intro p {
       @include theme-transition();
-      color: color("light", text-accent);
+      color: color("light", tertiary);
+    }
+    & #index-recent-projects {
+      & a.btn {
+        background-color: transparent;
+        color: color("light", text);
+        border: 2px solid color("light", text);
+
+        &:hover {
+          background-color: color("light", primary);
+          color: color("light", text);
+        }
+      }
     }
     & #index-skills-title {
       @include theme-transition();
-      color: color("light", layout-30);
+      color: color("light", tertiary);
     }
     & .circle {
       @include theme-transition();
       background-color: color("light", layout-30);
       color: color("light", text);
     }
+    & #skills h6, & #skills svg {
+      @include theme-transition();
+      color: color("light", tertiary);
+      fill: color("light", tertiary);
+    }
 }
 html[theme="dark"] {
     & #index-intro p {
       @include theme-transition();
-      color: color("dark", text-accent);
+      color: color("dark", tertiary);
+    }
+    & #index-recent-projects {
+      & a.btn {
+        background-color: transparent;
+        color: color("dark", text);
+        border: 2px solid color("dark", text);
+
+        &:hover {
+          background-color: color("dark", primary);
+          color: color("dark", text);
+        }
+      }
     }
     & #index-skills-title {
       @include theme-transition();
-      color: color("dark", layout-30);
+      color: color("dark", tertiary);
     }
     & .circle {
       @include theme-transition();
       background-color: color("dark", layout-30);
       color: color("dark", text);
+    }
+    & #skills h6, & #skills svg {
+      @include theme-transition();
+      color: color("dark", tertiary);
+      fill: color("dark", tertiary);
     }
 }
 </style>
