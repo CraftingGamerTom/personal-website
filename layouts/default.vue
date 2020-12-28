@@ -27,6 +27,7 @@
       </b-collapse>
     </b-navbar> -->
 
+<slide-out-navigation class="color-picker" />
 <button @click="setTheme('dark')" type="button">Toggle dark mode</button>
 <button @click="setTheme('light')" type="button">Toggle light mode</button>
 <button @click="setTheme('purple')" type="button">Toggle purple mode</button>
@@ -40,10 +41,12 @@
 <script>
 import { CONST_STORAGE_KEY_THEME } from '~/utils/constants';
 import TopNavigation from '~/components/utils/navigation/TopNavigation.vue'
+import SlideOutNavigation from '~/components/utils/navigation/SlideOutNavigation.vue';
 
 export default {
   components: {
-    TopNavigation
+    TopNavigation,
+    SlideOutNavigation
   },
   data () {
     return {
@@ -136,5 +139,12 @@ body {
 
 #wrapper {
   margin-top: 55px;
+}
+</style>
+
+<style lang="scss" scoped>
+.color-picker {
+  position: fixed;
+  z-index: 1000;
 }
 </style>

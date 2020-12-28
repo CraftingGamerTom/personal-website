@@ -17,16 +17,28 @@ export default {
       // TODO Host font files ourselves https://stackoverflow.com/questions/51436344/how-to-embed-font-to-all-page-with-nuxt-js
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap' }
-    // ],
-    // script: [
-    //   {
-    //     hid: 'jquery',
-    //     src: 'https://code.jquery.com/jquery-3.4.1.slim.min.js',
-    //     type: 'text/javascript',
-    //     callback: () => { this.isJqueryLoaded = true }
-    //   }, {
-    //     hid: 'textfit', src: '~/static/common/js/libs/jquery/fittext.js', defer: true
-    //   }
+    ],
+    script: [
+      {
+      //   hid: 'jquery',
+      //   src: 'https://code.jquery.com/jquery-3.4.1.slim.min.js',
+      //   type: 'text/javascript',
+      //   callback: () => { this.isJqueryLoaded = true }
+      // }, {
+      //   hid: 'textfit', src: '~/static/common/js/libs/jquery/fittext.js', defer: true
+      // }, { 
+        hid: 'animejs', // index
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js',
+        defer: true 
+      }, { // slide-out-navigation
+        hid: 'gsap', 
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js',
+        defer: true 
+      }, { // slide-out-navigation
+        hid: 'cssruleplugin', 
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js',
+        defer: true 
+      }
     ]
   },
   /*

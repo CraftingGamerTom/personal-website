@@ -65,11 +65,12 @@
 
     <section id="skills">
       <b-row class="align-self-md-stretch">
-        <b-col cols="12" md="3">
+        <b-col cols="12" md="6" lg="3">
           <b-container class="bigger-ctnr-margin h-100"> 
-            <QuickIcon :location="''" :name="'love_2154176'" viewBox="0 0 100 100" />
+            <QuickIcon :location="''" :name="'index/microservice_2324122'" viewBox="0 0 128 128" />
             <h2>Microservices</h2>
             <p>I believe a well planned API is the cornerstone of a good product.</p>
+            <br/>
             <h6>My go-to frameworks</h6>
             <p>Spring, NodeJS</p>
             <h6>Technology</h6>
@@ -79,11 +80,12 @@
             <p>JUnit (Juniper), Should.js</p>
           </b-container>
         </b-col>
-        <b-col cols="12" md="3">
+        <b-col cols="12" md="6" lg="3">
           <b-container class="bigger-ctnr-margin h-100"> 
-            <QuickIcon :location="''" :name="'love_2154176'" viewBox="0 0 100 100" />
+            <QuickIcon :location="''" :name="'index/ui-ux_2234590'" viewBox="0 0 64 64" />
             <h2>UI / UX</h2>
             <p>I value simple problem-solving content.<br/>I also love dark modes.</p>
+            <br/>
             <h6>I enjoy designing</h6>
             <p>Websites, Mobile Apps, Components</p>
             <h6>Design Tools</h6>
@@ -93,11 +95,12 @@
             <p>Figma</p>
           </b-container>
         </b-col>
-        <b-col cols="12" md="3">
+        <b-col cols="12" md="6" lg="3">
           <b-container class="bigger-ctnr-margin h-100"> 
-            <QuickIcon :location="''" :name="'love_2154176'" viewBox="0 0 100 100" />
+            <QuickIcon :location="''" :name="'index/web-design_750444'" viewBox="0 0 50 50" />
             <h2>Front-End</h2>
             <p>A solid product looks and feels complete to the user.</p>
+            <br/>
             <h6>Frameworks of choice</h6>
             <p>Vue, Nuxt, Wordpress, Android</p>
             <h6>Languages</h6>
@@ -107,11 +110,12 @@
             <p>Segment, Mixpanel, AWS QuickSight (Analytics)</p>
           </b-container>
         </b-col>
-        <b-col cols="12" md="3">
+        <b-col cols="12" md="6" lg="3">
           <b-container class="bigger-ctnr-margin h-100"> 
-            <QuickIcon :location="''" :name="'love_2154176'" viewBox="0 0 100 100" />
+            <QuickIcon :location="''" :name="'index/automation_1455005'" viewBox="0 0 64 64" />
             <h2>Automation</h2>
             <p>Test Driven Development streamlines productivity and reduces rework cycles.</p>
+            <br/>
             <h6>My specialty</h6>
             <p>Selenium, Appium, AWS Device Farm</p>
             <h6>Familiar Optimizations</h6>
@@ -127,7 +131,9 @@
       <b-row>
         <b-col cols="12">
           <b-container class="bigger-ctnr-margin"> 
-            <h1>hi</h1>
+            <h1 id="lets-build-text">Let's Build <timeline-text class="animated-text"/>!</h1>
+            <p style="margin-top:20px;margin-bottom:35px;">Interested in building something together? <br/> Let's make it happen.</p>
+            <b-button style="margin-bottom:15px;" :to="'/contact'">Chat with me</b-button>
           </b-container>
         </b-col>
       </b-row>
@@ -142,15 +148,18 @@
 
 <script>
 import { QuickIcon } from '@craftinggamertom/webslack-bits'
+import TimelineText from '~/components/utils/animations/TimelineText.vue'
 
 export default {
   
   components: { 
-    QuickIcon 
+    QuickIcon,
+    TimelineText 
   },
   data () {
     return {
-      title: 'Home | Thomas Rokicki'
+      title: 'Home | Thomas Rokicki',
+      loopsCompleted: 0
     }
   },
   head () {
@@ -234,14 +243,10 @@ export default {
   }
 }
 
-#index-recent-projects {
-  & a.btn {
-    background-color: transparent;
-    color: #000000;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    font-weight: 500;
-  }
+.container a.btn  {
+  background-color: transparent;
+  border-radius: 10px;
+  font-weight: 500;
 }
 
 #skills {
@@ -250,8 +255,9 @@ export default {
     margin-bottom: 70px;
   }
   svg {
-    margin-top: 15px;
-    height: 50px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    height: 40px;
     width: auto;
   }
   h2 {
@@ -265,69 +271,104 @@ export default {
 
 }
 
+#lets-build {
+  text-align: center;
+
+  & h1#lets-build-text {
+    font-kerning: 0.5em;
+    font-style: italic;
+    font-weight: font-weight(light);
+    font-family: font(primary);
+  }
+
+  & .animated-text {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    font-size: 0.8em;
+    position: relative;
+    top: 6px;
+    width: 20vw;
+    min-width: 275px;
+    text-align: center;
+    border-bottom: 5px solid black;
+    border-radius: 2px;
+    line-height: .5em;
+  }
+
+}
+
 // theme colors
 html[theme="light"] {
-    & #index-intro p {
-      @include theme-transition();
-      color: color("light", tertiary);
-    }
-    & #index-recent-projects {
-      & a.btn {
-        background-color: transparent;
-        color: color("light", text);
-        border: 2px solid color("light", text);
+  & #index-intro p {
+    @include theme-transition();
+    color: color("light", tertiary);
+  }
+  & .container a.btn  {
+    @include theme-transition();
+    background-color: transparent;
+    color: color("light", text);
+    border: 2px solid color("light", text);
 
-        &:hover {
-          background-color: color("light", primary);
-          color: color("light", text);
-        }
-      }
-    }
-    & #index-skills-title {
+    &:hover {
       @include theme-transition();
-      color: color("light", tertiary);
-    }
-    & .circle {
-      @include theme-transition();
-      background-color: color("light", layout-30);
+      background-color: color("light", primary);
       color: color("light", text);
     }
-    & #skills h6, & #skills svg {
-      @include theme-transition();
-      color: color("light", tertiary);
-      fill: color("light", tertiary);
-    }
+  }
+  & #index-skills-title {
+    @include theme-transition();
+    color: color("light", tertiary);
+  }
+  & .circle {
+    @include theme-transition();
+    background-color: color("light", layout-30);
+    color: color("light", text);
+  }
+  & #skills h6, & #skills svg {
+    @include theme-transition();
+    color: color("light", tertiary);
+    fill: color("light", tertiary);
+  }
+  & #lets-build .animated-text {
+    @include theme-transition();
+    border-bottom-color: color("light", text);
+  }
 }
 html[theme="dark"] {
-    & #index-intro p {
-      @include theme-transition();
-      color: color("dark", tertiary);
-    }
-    & #index-recent-projects {
-      & a.btn {
-        background-color: transparent;
-        color: color("dark", text);
-        border: 2px solid color("dark", text);
+  & #index-intro p {
+    @include theme-transition();
+    color: color("dark", tertiary);
+  }
+  & .container a.btn  {
+    @include theme-transition();
+    background-color: transparent;
+    color: color("dark", text);
+    border: 2px solid color("dark", text);
 
-        &:hover {
-          background-color: color("dark", primary);
-          color: color("dark", text);
-        }
-      }
-    }
-    & #index-skills-title {
+    &:hover {
       @include theme-transition();
-      color: color("dark", tertiary);
-    }
-    & .circle {
-      @include theme-transition();
-      background-color: color("dark", layout-30);
+      background-color: color("dark", primary);
       color: color("dark", text);
     }
-    & #skills h6, & #skills svg {
-      @include theme-transition();
-      color: color("dark", tertiary);
-      fill: color("dark", tertiary);
-    }
+  }
+  & #index-skills-title {
+    @include theme-transition();
+    color: color("dark", tertiary);
+  }
+  & .circle {
+    @include theme-transition();
+    background-color: color("dark", layout-30);
+    color: color("dark", text);
+  }
+  & #skills h6, & #skills svg {
+    @include theme-transition();
+    color: color("dark", tertiary);
+    fill: color("dark", tertiary);
+  }
+  & #lets-build .animated-text {
+    @include theme-transition();
+    border-bottom-color: color("dark", text);
+  }
 }
 </style>
