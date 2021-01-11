@@ -158,8 +158,7 @@ export default {
   },
   data () {
     return {
-      title: 'Home | Thomas Rokicki',
-      loopsCompleted: 0
+      title: 'Home | Thomas Rokicki'
     }
   },
   head () {
@@ -190,6 +189,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#about-me {
+  padding-top: 25px;
+}
+
 #index-intro, #index-recent-projects {
   text-align: center;
 }
@@ -279,6 +282,7 @@ export default {
     font-style: italic;
     font-weight: font-weight(light);
     font-family: font(primary);
+    padding-top: 15px;
   }
 
   & .animated-text {

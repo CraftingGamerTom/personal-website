@@ -2,38 +2,9 @@
   <div>
     <top-navigation />
     <div id="wrapper">
-    <!-- <b-navbar toggleable="lg" type="dark" variant="primary">
-      <b-navbar-brand href="#">
-        Thomas Rokicki
-      </b-navbar-brand>
-
-      <b-navbar-toggle target="nav-collapse" />
-
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item to="/">
-            Home
-          </b-nav-item>
-          <b-nav-item to="/projects">
-            Projects
-          </b-nav-item>
-          <b-nav-item to="/career">
-            Career
-          </b-nav-item>
-          <b-nav-item to="/learn">
-            Learn
-          </b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar> -->
-
-<slide-out-navigation class="color-picker" />
-<button @click="setTheme('dark')" type="button">Toggle dark mode</button>
-<button @click="setTheme('light')" type="button">Toggle light mode</button>
-<button @click="setTheme('purple')" type="button">Toggle purple mode</button>
-<button @click="setTheme('yellow')" type="button">Toggle yellow mode</button>
-
-    <nuxt />
+      <nuxt />
+      <socials-navigation />
+      <settings-modal/>
     </div>
   </div>
 </template>
@@ -41,12 +12,14 @@
 <script>
 import { CONST_STORAGE_KEY_THEME } from '~/utils/constants';
 import TopNavigation from '~/components/utils/navigation/TopNavigation.vue'
-import SlideOutNavigation from '~/components/utils/navigation/SlideOutNavigation.vue';
+import SocialsNavigation from '~/components/utils/navigation/SocialsNavigation.vue';
+import SettingsModal from '~/components/utils/modals/SettingsModal.vue';
 
 export default {
   components: {
     TopNavigation,
-    SlideOutNavigation
+    SocialsNavigation,
+    SettingsModal
   },
   data () {
     return {
@@ -64,6 +37,8 @@ export default {
 
     let htmlElement = document.documentElement;
     htmlElement.setAttribute('theme', theme)
+
+    this.$root.$on('changethemeviasettings', filter => { this.setTheme(filter.theme) })
   },
   computed: {
     breadcrumbItems () { return this.$store.state.breadcrumbs.crumbs }
@@ -108,6 +83,18 @@ body {
   margin: 0;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+button:focus {
+  outline: none;
+}
+
 .button--green {
   display: inline-block;
   border-radius: 4px;
@@ -139,12 +126,5 @@ body {
 
 #wrapper {
   margin-top: 55px;
-}
-</style>
-
-<style lang="scss" scoped>
-.color-picker {
-  position: fixed;
-  z-index: 1000;
 }
 </style>
