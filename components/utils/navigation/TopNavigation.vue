@@ -9,16 +9,24 @@
       <template v-slot:user-actions-mobile-bar>
         <b-button variant="info">Button</b-button>
       </template> -->
+      <template v-slot:user-actions-mobile-bar> 
+        <settings-on-navigation />
+      </template>
+      <template v-slot:user-actions-desktop>
+        <settings-on-navigation />
+      </template>
     </navigation-topbar>
 </template>
 
 
 <script>
 import { NavigationTopbar } from '@craftinggamertom/webslack-bits'
+import SettingsOnNavigation from '~/components/utils/navigation/SettingsOnNavigation.vue';
 
 export default {
   components: {
-    NavigationTopbar
+    NavigationTopbar,
+    SettingsOnNavigation
   },
   data() {
       return {
@@ -45,8 +53,7 @@ export default {
             iconType: "managed"
           }
       }
-  },
-    
+  }
 }
 </script>
 
@@ -87,6 +94,15 @@ html[theme="light"] {
           fill: color("light", text-accent);
           // stroke: color("light", text-accent);
         }
+
+        & .navbar-toggler {
+          @include theme-transition();
+          border-color: color("light", text-accent);
+
+          & svg {
+            color: color("light", text-accent);
+          }
+        }
     }
 }
 html[theme="dark"] {
@@ -109,6 +125,15 @@ html[theme="dark"] {
           // color: color("dark", text-accent);
           fill: color("dark", text-accent);
           // stroke: color("dark", text-accent);
+        }
+
+        & .navbar-toggler {
+          @include theme-transition();
+          border-color: color("dark", text-accent);
+
+          & svg {
+            color: color("dark", text-accent);
+          }
         }
     }
 }
