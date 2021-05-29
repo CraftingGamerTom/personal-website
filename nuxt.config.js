@@ -13,7 +13,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       // TODO Host font files ourselves https://stackoverflow.com/questions/51436344/how-to-embed-font-to-all-page-with-nuxt-js
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap' }
