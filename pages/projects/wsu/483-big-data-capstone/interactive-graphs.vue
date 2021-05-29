@@ -4,7 +4,7 @@
       <b-col cols="md-6 sm-12">
         <h2>Interactive Graphs</h2>
         <p>
-          To add a special touch and enable users to find their own conclusions using Worcester's Crime data multiple interactive graphs were created. For the best user experience these graphs open up in a different tab. Follow any of the links below to view the interactive graphs.
+          To add a special touch and enable users to find their own conclusions using Worcester's Crime data multiple interactive graphs were created. For a better user experience these graphs open up in a different tab. Follow any of the links below to view the interactive graphs.
         </p>
         <br>
       </b-col>
@@ -17,7 +17,7 @@
           Crime Type Bargraph
         </h2>
         <p>
-          This bar graph depicts the number of each crime type. This data is across all the years in the data set analyzed. We can expect the ratio of incident count to incident type to remain pretty constant - as it has over many years.
+          This bar graph depicts the number of each crime type using all data from 2003 to 2019. We can expect the ratio of incident count to incident type to remain pretty constant - as it has over many years.
         </p>
         <p>
           <a target="_blank" href="/page/edu/wsu/cs/483-big-data-capstone/crime-type-bargraph.html">View Graph</a>
@@ -55,7 +55,7 @@ hchart(by_type, "column", hcaes(IBR_TYPE_DESC, y = Total, color = Total)) %>%
           Locations with the Most Crimes
         </h2>
         <p>
-          The streets with the most crimes are Main Street, Lincoln Street, and Park Ave. There are areas that are not as safe as others but the majority of these areas are safe. What makes these roads stand out so much is how long they are and the population density. It may be more precise to divide up the city into blocks and find the most dangerous areas. For more information on this check out <nuxt-link to="http://localhost:3000/edu/wsu/cs/383-cloud/ranking-areas">
+          The streets with the most crimes are Main Street, Lincoln Street, and Park Ave. From this data we may infer these areas are the least safe, perhaps we need more data. Taking a set away from the dataset being utilized: Many of these areas are typically safe from experience. What makes these roads stand out so much is how long they are and the population density. It may be more precise to divide up the city into blocks and find the most dangerous areas. For more information on this check out <nuxt-link to="http://localhost:3000/edu/wsu/cs/383-cloud/ranking-areas">
             Ranked Data
           </nuxt-link> from our Cloud Project.
         </p>
@@ -212,14 +212,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
         text: 'CS483 - Big Data Capstone',
-        to: '/edu/wsu/cs/483-big-data-capstone'
+        to: '/projects/wsu/483-big-data-capstone'
       }, {
         text: 'Interactive Graphs',
         active: true

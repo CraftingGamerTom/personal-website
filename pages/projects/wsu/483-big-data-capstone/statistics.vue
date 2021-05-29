@@ -3,7 +3,7 @@
     <b-row>
       <b-col cols="md-6 sm-12">
         <h2>Statistics</h2>
-        <p>The bulk of the project was analyizing the incident data requested from the Worcester Resource Office. There are many metrics computed here. It was best to support most statistics with a visualization.</p>
+        <p>The bulk of the project was analyzing the incident data requested from the Worcester Resource Office. There are many metrics computed here. Visualizations were used to better support the statistics.</p>
         <br>
         <h2>
           Table of Contents
@@ -42,7 +42,7 @@
           Setting Up
         </h2>
         <p>
-          Simply run the <nuxt-link to="/edu/wsu/cs/483-big-data-capstone/common-code">
+          Simply run the <nuxt-link to="/projects/wsu/483-big-data-capstone/common-code">
             Common Code
           </nuxt-link>.
         </p>
@@ -59,7 +59,7 @@
         <p>
           The streets with the most crimes we queried across all 16 years (2003 -> 2019). Main Street has the most, this may not be surprising as it is a long street, downtown. The problem with this statistic is that it does not accommodate population density or sections of the city vs the street name.
         </p><p>
-          Check out our <nuxt-link to="/edu/wsu/cs/383-cloud/overview">
+          Check out our <nuxt-link to="/projects/wsu/383-cloud/overview">
             Cloud Project
           </nuxt-link> to see how we binned areas, grouped crime types, weighted them, then ranked areas by how dangerous they are in a time series.
         </p>
@@ -224,7 +224,7 @@ plt.show()
               A heatmap to represent correlation between each value type of the dataset was also created. It became clear that there is not a lot of strongly correlated fields - perhaps more types of data could highlight some ways crimes are related - like weather maybe.
             </p>
             <p>
-              First heat map is for the main data set. The second was run against the ranked areas data set - see the <nuxt-link to="/edu/wsu/cs/383-cloud/overview">
+              First heat map is for the main data set. The second was run against the ranked areas data set - see the <nuxt-link to="/projects/wsu/383-cloud/overview">
                 Cloud Project
               </nuxt-link> for more details.
             </p><p>
@@ -764,7 +764,7 @@ plt.show()
               The first three visualizations show the number of crimes by month of the year, number of crimes by hour of the day, and number of crimes by day of the week (respectively). Most crimes happen in July, least in February - maybe related to temperature? Two most common times of the day for crime is 12:00pm and 5:00pm. The least amount of crimes happen between 4:00am and 5:00am. The least amount of crimes happen on Sundays and Fridays have the most.
             </p>
             <p>
-              Heat map of crime per month over each year is shown in the fourth visualization. It really shows off how crime has decreased over time. It shows that the month with the least crime in 2003 (February) has just about the same number of crimes as the month the with most crime in 2019 (July). That is an amazing change!
+              Heat map of crime per month over each year is shown in the fourth visualization. It highlights crime has decreased over time. It shows that the month with the least crime in 2003 (February) has just about the same number of crimes as the month the with most crime in 2019 (July). That is an amazing change!
             </p>
             <p>
               Fifth Visualization shows a normalized distribution of theft types for all of the years. This shows how Breaking and Entering is almost x4 more common than theft from a building. There are other interpretations of this graph as well - check it out.
@@ -963,14 +963,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
         text: 'CS483 - Big Data Capstone',
-        to: '/edu/wsu/cs/483-big-data-capstone'
+        to: '/projects/wsu/483-big-data-capstone'
       }, {
         text: 'Incident Maps',
         active: true

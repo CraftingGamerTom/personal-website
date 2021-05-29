@@ -4,28 +4,28 @@
     <b-card bg-variant="default" text-variant="default" title="Card Title" no-body>
       <b-card-header header-tag="nav" style="background-color:inherit" class="sticky-top">
         <b-nav card-header tabs>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/overview">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/383-cloud/overview">
             Overview
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/common-code">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/383-cloud/common-code">
             Common Code
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/sagemaker">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/383-cloud/sagemaker">
             SageMaker
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/ranking-areas">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/383-cloud/ranking-areas">
             Ranking Areas
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/machine-learning">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/383-cloud/machine-learning">
             Machine Learning
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/forecasting">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/383-cloud/forecasting">
             Forecasting
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/conclusions">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/383-cloud/conclusions">
             Conclusions
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/383-cloud/contributors">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/383-cloud/contributors">
             Contributors
           </b-nav-item>
         </b-nav>
@@ -52,5 +52,12 @@
 
 <script>
 export default {
+  middleware: [
+    function({ route, redirect }) {
+      if (route.fullPath === "/projects/wsu/383-cloud") {
+        return redirect("/projects/wsu/383-cloud/overview");
+      }
+    }
+  ],
 }
 </script>

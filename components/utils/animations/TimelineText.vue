@@ -30,14 +30,33 @@
 </style>
 
 <script>
-var styleindex = 0;
-var stylearray = ["APIs","an app", "an experience", "a website", "better tests", "libraries", "a process", "tech", "a relationship"];
-
-var animation;
-
 export default {
+    data() {
+        return {
+            alreadyInitialized: false,
+            animation: {},
+            styleindex: 0,
+            stylearray: ["APIs","an app", "an experience", "a website", "better tests", "libraries", "a process", "tech", "a relationship"]
+
+        }
+    },
   mounted() {
-      this.initLetters()
+    //   if(animation) {animation.remove()}
+      if(!this.alreadyInitialized) {
+          this.$log.debug("run mounted")
+        // eslint-disable-next-line
+    anime.remove( ".animate1 .letter" );
+        this.alreadyInitialized = true;
+        this.initLetters()
+      } else {
+          this.$log.debug("already initialized")
+      }
+  },
+  beforeDestroy() {
+          this.$log.debug("run beforeDestroy")
+        // eslint-disable-next-line
+    anime.remove( ".animate1 .letter" );
+    this.animation = {};
   },
   updated() {
     // TODO fix case where making an update the the page causes overlapping animations
@@ -45,11 +64,12 @@ export default {
     // this.initLetters()
   },
   methods: {
-      runAnimation() {
+      async runAnimation() {
+          this.$log.debug("RUN ANIMATION")
 
           let _this = this
         // eslint-disable-next-line
-        animation = anime.timeline({loop: false})
+        this.animation = anime.timeline({loop: false})
         .add({
             targets: '.animate1 .letter',
             translateY: ["1.1em", 0],
@@ -68,19 +88,21 @@ export default {
             delay: 1000,
             // eslint-disable-next-line
             complete: function(anim) {
+        //   console.log("COMPLETE RUN ANIMATION")
 
-                document.querySelector('.animate1 .letters').innerText = stylearray[styleindex];
+                document.querySelector('.animate1 .letters').innerText = _this.stylearray[_this.styleindex];
 
-                styleindex ++;
-                if (styleindex >= stylearray.length) {
-                    styleindex = 0;
+                _this.styleindex++;
+                if (_this.styleindex >= _this.stylearray.length) {
+                    _this.styleindex = 0;
                 }
                 _this.initLetters();
 
             }
         });
       },
-      initLetters() {
+      async initLetters() {
+        this.$log.debug("INIT LETTERS")
         // Wrap every letter in a span
         var textWrapper = document.querySelector('.animate1 .letters');
         textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");

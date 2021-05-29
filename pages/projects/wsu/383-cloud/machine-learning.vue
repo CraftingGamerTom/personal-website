@@ -3,7 +3,7 @@
     <b-row>
       <b-col cols="md-6 sm-12">
         <h2>Machine Learning</h2>
-        <p>We wanted to practice running machine learning algorithms we have learned this semester on SageMaker and Hadoop as a means to practice using cloud services to run computations. We ran association rule mining against the ranked area data and we ran recommendation computation code using mahout to suggest the safest area to go.</p>
+        <p>This project provided the opportunity to practice using the machine learning algorithms learned this semester on SageMaker and Hadoop in a cloud environment. Association rule mining was used against the ranked area data and with the recommendation computation code using mahout to suggest the safest area in Worcester.</p>
         <br>
         <h2>
           Table of Contents
@@ -32,7 +32,7 @@
           Association Rule Mining
         </h2>
         <p>
-          Apriori Association Rule Mining works by finding records that meet our minimum support, confidence, and lift standard. Support refers to the popularity of an item (average number of times it shows up). Confidence refers the the accuracy of a particular rule. It is calculated by dividing the items in the entire by the values in one side of the rule. Lift refers to ratio between the parts of a rule. It is calculated by dividing the confidence of the rule by the support of the result of a rule. The output is similar to Naive Bayes algorithm. In fact, Naive Bayes may have been a better algorithm to apply for this kind of data. In hindsight that algorithm may have been a better choice.
+          Apriori Association Rule Mining works by finding records that meet the minimum support threshold, confidence, and lift standard. Support refers to the popularity of an item (average number of times it shows up). Confidence refers the the accuracy of a particular rule. It is calculated by dividing the items in the entire by the values in one side of the rule. Lift refers to ratio between the parts of a rule. It is calculated by dividing the confidence of the rule by the support of the result of a rule. The output is similar to Naive Bayes algorithm. In hindsight, Naive Bayes may have been a better algorithm to apply for this kind of data.
         </p>
         <p>
           For more information about the Apriori Algorithm check out these awesome resources on <a target="_blank" href="https://adataanalyst.com/machine-learning/apriori-algorithm-python-3-0/">Data Analyst</a> and <a target="_blank" href="https://stackabuse.com/association-rule-mining-via-apriori-algorithm-in-python/">Stack Abuse</a>.
@@ -43,15 +43,15 @@
           </span>
         </p>
         <p>
-          Using the Ranked Area data that we created in the <nuxt-link to="/edu/wsu/cs/383-cloud/ranking-areas">
+          Using the Ranked Area data, created in the <nuxt-link to="/projects/wsu/383-cloud/ranking-areas">
             Ranking Areas
-          </nuxt-link> section. First step is to read in the data and import the needed libraries.
+          </nuxt-link> section, read in the data and import the needed libraries.
         </p>
         <p>
-          Another goal of the project was to practice applying machine learning algorithms to our data. I opted to use the Apyori Library for python to perform Association Rule Mining. I ran into some issues that made it a great learning experience.
+          Another goal of the project was to practice applying machine learning algorithms to our data. I opted to use the Apyori Library for python to perform Association Rule Mining. There were issues during implementation that made it an even greater learning experience.
         </p>
         <p>
-          First step is to read the data into memory. We will be running these rules against the ranked areas data sets we made before. I only ran these against the Daily and the Yearly data sets because they are the largest and smallest data sets created, respectively.
+          First step is to read the data into memory. Next the rules will be run against the ranked areas data sets. In this case it was only implemented to run against the Daily and the Yearly data sets because they are the largest and smallest data sets created, respectively.
         </p>
         <b-button v-b-toggle.collapse-toc1a class="view-code-btn" variant="secondary">
           View Code
@@ -100,7 +100,7 @@ print('You are ready to use the data')
           </span>
         </p>
         <p>
-          Using a nested for loop across every value in the data set, I attempted to create a 2D array of values that would then have association rule mining ran against it. For Yearly data it was slow but for daily data it ran for over 18 hours on my computer before I killed it because it was taking too long. I ran it on SageMaker (Like everything else after testing on my computer) and it ran in under 20 minutes.
+          In attempt 1 a nested <code>for</code> loop was used across every value in the data set to create a 2D array of values which could then have association rule mining ran against it. For Yearly data it was fairly slow, but for daily data it ran for over 18 hours on a local laptop before cancelling it for taking too long. It was then run on SageMaker and it ran in under 20 minutes - an incredible improvement.
         </p>
         <b-button v-b-toggle.collapse-toc1b class="view-code-btn" variant="secondary">
           View Code
@@ -1259,14 +1259,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
         text: 'CS383 - Cloud, Parallel & Distributed Computing',
-        to: '/edu/wsu/cs/383-cloud'
+        to: '/projects/wsu/383-cloud'
       }, {
         text: 'Machine Learning',
         active: true

@@ -50,14 +50,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
         text: 'CS383 - Cloud, Parallel & Distributed Computing',
-        to: '/edu/wsu/cs/383-cloud'
+        to: '/projects/wsu/383-cloud'
       }, {
         text: 'Forecasting',
         active: true

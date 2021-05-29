@@ -3,9 +3,9 @@
     <b-row>
       <b-col cols="md-6 sm-12">
         <h2>Common Code</h2>
-        <p>Some code is used frequently for different applications and parts of the project. Instead of showing the same code everywhere the common code is available here and referenced where needed.</p>
+        <p>Some code was used frequently for numerous parts of the project. Instead of showing the same code everywhere the common code is available here and referenced where needed.</p>
         <br>
-        <!-- <h2>
+        <h2>
           Table of Contents
         </h2>
         <b-list-group>
@@ -20,9 +20,8 @@
             </nuxt-link>
           </b-list-group-item>
         </b-list-group>
-      </b-col> -->
-        <b-col cols="md-6 sm-12" />
       </b-col>
+      <b-col cols="md-6 sm-12" />
     </b-row>
     <hr>
     <b-row id="toc-1">
@@ -101,7 +100,7 @@ print('Dataset concatenated..')
           Read Data
         </h4>
         <p>
-          This code reads in the saved csv file containing the merged data (2003-2019). It then converts the types, cleans the data, and sets the index to be the time as it is time series data. In some cases it is not ideal for the data to be time series, it was not always run that line of code.
+          This code reads in the saved csv file containing the merged data (2003-2019), converts the types, cleans the data, and sets the index to be the timestamp column - since this is time series data. In some cases it is not ideal for the data to be time series, this code was not used for every application of the project.
         </p>
         <b-button v-b-toggle.collapse-toc2 class="view-code-btn" variant="secondary">
           View Code
@@ -182,14 +181,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
-        text: 'CS483 - Big Data Capstone',
-        to: '/edu/wsu/cs/483-big-data-capstone'
+        text: 'CS383 - Cloud, Parallel & Distributed Computing',
+        to: '/projects/wsu/383-cloud'
       }, {
         text: 'Common Code',
         active: true

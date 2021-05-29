@@ -4,31 +4,31 @@
     <b-card bg-variant="default" text-variant="default" title="Card Title" no-body>
       <b-card-header header-tag="nav" style="background-color:inherit" class="sticky-top">
         <b-nav card-header tabs>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/overview">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/overview">
             Overview
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/common-code">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/common-code">
             Common Code
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/statistics">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/statistics">
             Statistics
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/incident-maps">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/incident-maps">
             Incident Maps
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/interactive-graphs">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/interactive-graphs">
             Interactive Graphs
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/forecasting">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/forecasting">
             Forecasting
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/weather">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/weather">
             Weather
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/conclusions">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/conclusions">
             Conclusions
           </b-nav-item>
-          <b-nav-item exact exact-active-class="active-nav-tab" to="/edu/wsu/cs/483-big-data-capstone/contributors">
+          <b-nav-item exact exact-active-class="active-nav-tab" to="/projects/wsu/483-big-data-capstone/contributors">
             Contributors
           </b-nav-item>
         </b-nav>
@@ -80,6 +80,13 @@
 
 <script>
 export default {
+  middleware: [
+    function({ route, redirect }) {
+      if (route.fullPath === "/projects/wsu/483-big-data-capstone") {
+        return redirect("/projects/wsu/483-big-data-capstone/overview");
+      }
+    }
+  ],
 
 }
 </script>

@@ -47,7 +47,7 @@ export default {
   router: {
     trailingSlash: false,
     middleware: [
-      'edu/breadcrumbItems'
+      'breadcrumbItems'
       //      'theme'
     ]
   },
@@ -81,7 +81,10 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/style-resources',
+    'nuxt-logger',
+    '@nuxtjs/strapi',
+    '@nuxtjs/markdownit',
+    '@nuxtjs/style-resources', // https://strapi.io/documentation
     '@nuxtjs/svg',
     'nuxt-logger',
     // Doc: https://github.com/nuxt-community/dotenv-module
@@ -133,6 +136,18 @@ export default {
   axios: {
   },
   /*
+  * Strapi Configuration
+  */
+  strapi: {
+    entities: ['educations', 'projects', 'jobs', 'categories', 'licenses'],
+    url: process.env.STRAPI_DOMAIN
+  },
+  // [optional] markdownit options
+  // See https://github.com/markdown-it/markdown-it,
+  markdownit: {
+    runtime: true // Support `$md()`
+  },
+  /*
   ** Build configuration
   */
   build: {
@@ -144,8 +159,14 @@ export default {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          use: [{
+            loader: require.resolve('eslint-loader'),
+            options: {
+              emitWarning: true,
+              failOnError: false
+            },
+        }],
         })
       }
     },
@@ -180,5 +201,9 @@ export default {
       },
       statusCode: 301
     }
-  ]
+  ],
+  logger: {
+    isEnabled: true, // true or false, defaults to true
+    logLevel: 'debug', // debug, info, warn or error, defaults to debug
+  }
 }

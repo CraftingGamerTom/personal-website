@@ -4,17 +4,17 @@
     <section id="about-me">
       <b-row>
         <b-col cols="12">
-          <b-container class="bigger-ctnr-margin">
+          <b-container class="container--1">
             <b-row>
               <b-col offset-md="3" cols="12" md="6">
                 <div class="circle">
                   <img src="~assets/icons/index/me@2x.png" />
                 </div>
-                <b-container id="index-intro" class="cover-circle ctnr-40">
+                <b-container id="index-intro" class="cover-circle container--2">
                   <h1 style="padding-top:15px;">I build solutions</h1>
-                  <p><strong>Full Stack Software Engineer</strong></p>
+                  <h6>Full Stack Software Engineer</h6>
                   <hr/>
-                  <h6 style="padding-top:15px;padding-bottom:15px;">Hey, I'm Tom. I'm a life-long learner, master of none, and love changing the world.</h6>
+                  <p style="padding-top:15px;padding-bottom:15px;">Hey, I'm Tom. I'm a life-long learner, master of none, and love changing the world.</p>
                   <!-- <h6 style="padding-top:15px;padding-bottom:15px;">I'm an open book and willing to be held accountable. Check out my personal constitution</h6> -->
                 </b-container>
               </b-col>
@@ -27,29 +27,19 @@
     <section id="projects">
       <b-row>
         <b-col cols="12">
-          <b-container id="index-recent-projects" class="bigger-ctnr-margin"> 
+          <b-container id="index-recent-projects" class="container--1"> 
             <h1 style="padding-top:25px;">Recent Projects</h1>
             <h5 style="padding-top:15px;padding-bottom:40px;">I love what I do, so I do what I love.</h5>
+    
 
-            <b-row>
-              <b-col cols="3">
-                <b-container class="ctnr-40"> 
-                  <h1>hi</h1>
-                </b-container>
-              </b-col>
-              <b-col cols="3">
-                <b-container class="ctnr-40"> 
-                  <h1>hi</h1>
-                </b-container>
-              </b-col>
-              <b-col cols="3">
-                <b-container class="ctnr-40"> 
-                  <h1>hi</h1>
-                </b-container>
-              </b-col>
-              <b-col cols="3">
-                <b-container class="ctnr-40"> 
-                  <h1>hi</h1>
+            <div v-if="recentProjects.fetchError" class="text--error">
+              <h3>Error loading recent projects</h3>
+              <p>{{ recentProjects.fetchError }}</p>
+            </div>
+            <b-row v-else>
+              <b-col cols="12" md="6" lg="3" v-for="project in recentProjects.projects" :key="project.id">
+                <b-container class="container--2"> 
+                  <h1>{{ project.name }}</h1>
                 </b-container>
               </b-col>
             </b-row>
@@ -61,12 +51,12 @@
       </b-row>
     </section>
 
-    <h1 id="index-skills-title">Skills</h1>
+    <h1 id="index-skills-title" class="in-page-title">Skills</h1>
 
     <section id="skills">
       <b-row class="align-self-md-stretch">
-        <b-col cols="12" md="6" lg="3">
-          <b-container class="bigger-ctnr-margin h-100"> 
+        <b-col cols="12" md="6" lg="3" class="margin-bottom-md">
+          <b-container class="container--1 h-100"> 
             <QuickIcon :location="''" :name="'index/microservice_2324122'" viewBox="0 0 128 128" />
             <h2>Microservices</h2>
             <p>I believe a well planned API is the cornerstone of a good product.</p>
@@ -80,8 +70,8 @@
             <p>JUnit (Juniper), Should.js</p>
           </b-container>
         </b-col>
-        <b-col cols="12" md="6" lg="3">
-          <b-container class="bigger-ctnr-margin h-100"> 
+        <b-col cols="12" md="6" lg="3" class="margin-bottom-md">
+          <b-container class="container--1 h-100"> 
             <QuickIcon :location="''" :name="'index/ui-ux_2234590'" viewBox="0 0 64 64" />
             <h2>UI / UX</h2>
             <p>I value simple problem-solving content.<br/>I also love dark modes.</p>
@@ -95,8 +85,8 @@
             <p>Figma</p>
           </b-container>
         </b-col>
-        <b-col cols="12" md="6" lg="3">
-          <b-container class="bigger-ctnr-margin h-100"> 
+        <b-col cols="12" md="6" lg="3" class="margin-bottom-md">
+          <b-container class="container--1 h-100"> 
             <QuickIcon :location="''" :name="'index/web-design_750444'" viewBox="0 0 50 50" />
             <h2>Front-End</h2>
             <p>A solid product looks and feels complete to the user.</p>
@@ -110,8 +100,8 @@
             <p>Segment, Mixpanel, AWS QuickSight (Analytics)</p>
           </b-container>
         </b-col>
-        <b-col cols="12" md="6" lg="3">
-          <b-container class="bigger-ctnr-margin h-100"> 
+        <b-col cols="12" md="6" lg="3" class="margin-bottom-md">
+          <b-container class="container--1 h-100"> 
             <QuickIcon :location="''" :name="'index/automation_1455005'" viewBox="0 0 64 64" />
             <h2>Automation</h2>
             <p>Test Driven Development streamlines productivity and reduces rework cycles.</p>
@@ -130,7 +120,7 @@
     <section id="lets-build">
       <b-row>
         <b-col cols="12">
-          <b-container class="bigger-ctnr-margin"> 
+          <b-container class="container--1"> 
             <h1 id="lets-build-text">Let's Build <timeline-text class="animated-text"/>!</h1>
             <p style="margin-top:20px;margin-bottom:35px;">Interested in building something together? <br/> Let's make it happen.</p>
             <b-button style="margin-bottom:15px;" :to="'/contact'">Chat with me</b-button>
@@ -138,9 +128,6 @@
         </b-col>
       </b-row>
     </section>
-
-    <h5 style="margin-top:25px;text-align:center;">Made with <QuickIcon :location="''" :color="'red'" :name="'love_2154176'" :width="'20'" :size="'1'" viewBox="0 0 100 100" /> in Worcester, MA</h5>
-    <h5 id="copyright" style="text-align:center;">&copy; Thomas Rokicki <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></h5>
 
   </b-col>
 </div>
@@ -154,11 +141,22 @@ export default {
   
   components: { 
     QuickIcon,
-    TimelineText 
+    TimelineText,
   },
   data () {
     return {
-      title: 'Home | Thomas Rokicki'
+      title: 'Home | Thomas Rokicki',
+      recentProjects: {
+        fetchError: null,
+        projects: null
+      }
+    }
+  },
+  async mounted () {
+    try {
+      this.recentProjects.projects = await this.$strapi.$projects.find({"_sort":"startDate:DESC", "_limit":"4"})
+    } catch (error) {
+      this.recentProjects.fetchError = error
     }
   },
   head () {
@@ -188,25 +186,46 @@ export default {
 }
 </script>
 
+<style lang="scss">
+// NOT SCOPED, ALL CHILD PAGES
+
+// theme colors
+html[theme="light"] {
+  & .container a.btn  {
+    @include theme-transition();
+    background-color: transparent;
+    color: color("light", text);
+    border: 2px solid color("light", text);
+
+    &:hover {
+      @include theme-transition();
+      background-color: color("light", primary);
+      color: color("light", text);
+    }
+  }
+}
+html[theme="dark"] {
+  & .container a.btn  {
+    @include theme-transition();
+    background-color: transparent;
+    color: color("dark", text);
+    border: 2px solid color("dark", text);
+
+    &:hover {
+      @include theme-transition();
+      background-color: color("dark", primary);
+      color: color("dark", text);
+    }
+  }
+}
+</style>
+
+
 <style lang="scss" scoped>
+// SCOPED, THIS PAGE ONLY
 #about-me {
   padding-top: 25px;
 }
-
-#index-intro, #index-recent-projects {
-  text-align: center;
-}
-
-#index-skills-title {
-  padding-bottom:25px;
-  text-align:center;
-  text-shadow: 0px 0px 15px #ffffff;
-}
-
-.bigger-ctnr-margin {
-  margin-bottom: 70px;
-}
-
 .cover-circle {
   z-index: 300;
   position: relative;
@@ -246,36 +265,7 @@ export default {
   }
 }
 
-.container a.btn  {
-  background-color: transparent;
-  border-radius: 10px;
-  font-weight: 500;
-}
-
-#skills {
-  text-align: center;
-  .col-12 {
-    margin-bottom: 70px;
-  }
-  svg {
-    margin-top: 25px;
-    margin-bottom: 15px;
-    height: 40px;
-    width: auto;
-  }
-  h2 {
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  h6 {
-    font-weight: 900;
-    margin-top: 25px;
-  }
-
-}
-
 #lets-build {
-  text-align: center;
 
   & h1#lets-build-text {
     font-kerning: 0.5em;
@@ -304,22 +294,6 @@ export default {
 
 // theme colors
 html[theme="light"] {
-  & #index-intro p {
-    @include theme-transition();
-    color: color("light", tertiary);
-  }
-  & .container a.btn  {
-    @include theme-transition();
-    background-color: transparent;
-    color: color("light", text);
-    border: 2px solid color("light", text);
-
-    &:hover {
-      @include theme-transition();
-      background-color: color("light", primary);
-      color: color("light", text);
-    }
-  }
   & #index-skills-title {
     @include theme-transition();
     color: color("light", tertiary);
@@ -329,7 +303,7 @@ html[theme="light"] {
     background-color: color("light", layout-30);
     color: color("light", text);
   }
-  & #skills h6, & #skills svg {
+  & #skills svg {
     @include theme-transition();
     color: color("light", tertiary);
     fill: color("light", tertiary);
@@ -340,22 +314,6 @@ html[theme="light"] {
   }
 }
 html[theme="dark"] {
-  & #index-intro p {
-    @include theme-transition();
-    color: color("dark", tertiary);
-  }
-  & .container a.btn  {
-    @include theme-transition();
-    background-color: transparent;
-    color: color("dark", text);
-    border: 2px solid color("dark", text);
-
-    &:hover {
-      @include theme-transition();
-      background-color: color("dark", primary);
-      color: color("dark", text);
-    }
-  }
   & #index-skills-title {
     @include theme-transition();
     color: color("dark", tertiary);

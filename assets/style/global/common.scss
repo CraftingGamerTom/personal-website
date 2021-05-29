@@ -7,3 +7,17 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+// theme colors
+html[theme="light"] {
+    & .text--error {
+        @include theme-transition();
+        color: color("light", error);
+    }
+}
+html[theme="dark"] {
+    & .text--error {
+        @include theme-transition();
+        color: color("dark", error);
+    }
+}

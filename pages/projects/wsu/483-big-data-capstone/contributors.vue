@@ -17,22 +17,22 @@
           </b-card-text>
 
           <b-card-text style="text-align:left; font-size:0.6rem;">
-            <p>Responsibilities</p>
+            <p>Contributions</p>
             <ul>
               <li>
-                Created Ranked Data
+                Created Merged Data (Common Code) from Provided Data Set
               </li>
               <li>
-                Visualized Ranked Data
+                Visualized Statistics and Maps
               </li>
               <li>
-                Created Website using Nuxt & Vue
+                Analyized Crime Data vs Weather Data
               </li>
               <li>
                 Association Rule Mining using Python
               </li>
               <li>
-                Set up Git Repository and used on SageMaker
+                Set up Git Repository and created website using Nuxt and Vue
               </li>
             </ul>
           </b-card-text>
@@ -59,16 +59,16 @@
           </b-card-text>
 
           <b-card-text style="text-align:left; font-size:0.6rem;">
-            <p>Responsibilities</p>
+            <p>Contributions</p>
             <ul>
               <li>
-                Ran computations on Hadoop Cluster
+                Created Heat Map Visualization of Crime Incidents
               </li>
               <li>
-                Computed Recommendations using Ranked Data
+                Statistical Analysis Visualizations
               </li>
               <li>
-                Created Slideshow for Presentation
+                Created Poster for Presentation
               </li>
               <li>
                 Forecasted Number of Crimes beyond 2019
@@ -85,6 +85,8 @@
         </b-card>
       </b-col>
     </b-row>
+    <br>
+    <br>
     <b-row>
       <b-col cols="6 offset-3">
         <p class="text-center">
@@ -92,6 +94,24 @@
         </p>
         <p>
           <ul>
+            <li>
+              <a target="_blank" href="https://www.kaggle.com/coeyoner/chicago-crime-visualization">Chicago Crime Visualization</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.kaggle.com/txp142130/utd-crimes-in-chicago-with-choropleth-map">[UTD] Crimes in Chicago with Choropleth Map</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.kaggle.com/skeftical/chicago-crimes-eda-spatio-temporal">Chicago Crimes EDA Spatio/Temporal</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.kaggle.com/uds5501/chicago-crime-mapping">Chicago Crime Mapping</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.kaggle.com/djonafegnem/chicago-crime-data-analysis">Chicago Crime Data Analysis</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.kaggle.com/samgdotson/is-crime-a-function-of-extreme-weather">Is Crime a Function of Extreme Weather?</a>
+            </li>
             <li>
               <a target="_blank" href="https://www.kaggle.com/currie32/crimes-in-chicago/kernels">Crimes in Chicago</a>
             </li>
@@ -112,14 +132,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
-        text: 'CS383 - Cloud, Parallel & Distributed Computing',
-        to: '/edu/wsu/cs/383-cloud'
+        text: 'CS483 - Big Data Capstone',
+        to: '/projects/wsu/483-big-data-capstone'
       }, {
         text: 'Contributors',
         active: true

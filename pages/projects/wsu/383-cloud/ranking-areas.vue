@@ -4,16 +4,16 @@
       <b-col cols="md-6 sm-12">
         <h2>Ranking Areas</h2>
         <p>
-          Oresti had mentioned to me that he was interested in ranking streets by how much crime occurs. This information could become very useful for suggesting areas people should go or should avoid. This is, however, a much more complex problem to solve than just looking at how much crime happens on each street.
+          It would be interesting if we could rank streets by how much crime occurs on them. This information could become very useful for suggesting areas people should go or should avoid when traveling. This is, however, a much more complex problem to solve than just looking at how much crime happens on each street.
         </p>
         <p>
-          First of all, streets vary in length, one section of Main Street does not have the same amount or types of crimes as another section. For this reason we decided it was best to break up the city into "chunks" (or "bins" or "sections") and look at how much crime occurs in each bin.
+          First of all, streets vary in length, one section of Main Street does not have the same amount or types of crimes as another section. For this reason it was best to break up the city into "chunks" (or "bins" or "sections") and look at how much crime occurs in each bin.
         </p>
         <p>
           This gets us closer to making accurate predictions about which areas of Worcester may be dangerous or benign, but we can go further. Some crimes that are handled by the police are less dangerous than others. For example, a murder is more dangerous than a child being truant from school. We decided it was necessary to apply a weight to each crime type to have more accurate prediction for dangerous areas.
         </p>
         <p>
-          This problem is in fact, infinitely complex. We could make this more and more accurate with more and more data. <span style="font-weight:600;">Please take this information with a grain of salt, our predictions are only as accurate as the amount of, and types of data used.</span> There are many factors that we do not have data for.
+          This problem is in fact, infinitely complex. With more data it could make this more precise and more accurate. <span style="font-weight:600;">Please take predictions and assumptions with a grain of salt, predictions are only as accurate as the amount of, and types of, data used.</span> There are many factors that have data which were not included in this project.
         </p>
         <br>
       </b-col>
@@ -28,13 +28,13 @@
           Setting Up
         </h2>
         <p>
-          First we need to read the data into memory. View the
-          <nuxt-link to="/edu/wsu/cs/383-cloud/common-code">
+          First read the data into memory. View the
+          <nuxt-link to="/projects/wsu/383-cloud/common-code">
             common code
           </nuxt-link>.
         </p>
         <p>
-          We then will make a copy of the data set for us to perform the transformation on. This is a simple copy operation.
+          Then make a copy of the data. It will be used transformed so this prevents the original data from being changed.
         </p>
         <b-button v-b-toggle.collapse-toc1 class="view-code-btn" variant="secondary">
           View Code
@@ -55,10 +55,10 @@ ranked_crimes = crimes.copy()
           Put Incidents into Bins
         </h2>
         <p>
-          We want to group incidents into bins to create a better representation of areas danger level.
+          Incidents will be grouped into bins to create a better representation of an area's danger level.
         </p>
         <p>
-          Now we will decide how big a bin should be (in latitude / longitude values). We decided to use 0.005 as our variable. These bins are not too big but not so small that they are practically single points like our original data set.
+          Now decide how big a bin should be (in latitude / longitude values). The size of the bin matters for precision. For this example <code>0.005</code> will be used. These bins are not too big but not so small that they are practically single points like the original data set.
         </p>
         <b-button v-b-toggle.collapse-toc2 class="view-code-btn" variant="secondary">
           View Code
@@ -83,7 +83,7 @@ ranked_crimes["lonbin"] = ranked_crimes.LONGITUDE.map(to_bin)
           Evaluate each Incident Type
         </h2>
         <p>
-          In order to apply a weight to each type fo crime we need to look at all the types of incidents and categorize them. An arbitrary weight number to each group based on how they sounded. This is another possible source for error in determining how dangerous an area may be. The code clearly shows the numbers applied.
+          In order to apply a weight to each type of crime a good look at all the types of incidents is required to categorize them. An arbitrary weight number to each group based on how they sounded - this introduces bias but its somewhere to start. The problem is this is a possible source for error in determining how dangerous an area may be. The code shows the numbers applied.
         </p>
         <b-button v-b-toggle.collapse-toc3 class="view-code-btn" variant="secondary">
           View Code
@@ -143,7 +143,7 @@ print(unique_incident_values)
           Apply Weights to Each Incident Type
         </h2>
         <p>
-          A csv string was manually written based on the unique incident types and added a weight value that represents higher level group of incident types. This will simplify the process of visualizing as well as automatically create our groups of incidents based on weight.
+          A csv string was manually written based on the unique incident types and added a weight value that represents higher level group of incident types. This will simplify the process of visualizing as well as automatically create groups of incidents based on weight.
         </p>
         <pre>
 <p>
@@ -164,7 +164,7 @@ print(unique_incident_values)
           <b-card class="codeblock">
             <pre>
 <code class="card-text">
-# import the StrinIO function
+# import the StringIO function
 # from io module
 from io import StringIO
 
@@ -256,13 +256,13 @@ ranked_crimes = pd.merge(ranked_crimes, weighted_incidents[["INCIDENT_CODE","INC
           Rank Each Bin
         </h2>
         <p>
-          Now it is time to create a new ranked data set. We need to merge the weighted incident list data frame with the original data, then we can run Aggregate functions on the data frame to get our ranked Bins.
+          Now it is time to create a new ranked data set. Merge the weighted incident list data frame with the original data, then run Aggregate functions on the data frame to get ranked Bins.
         </p>
         <p>
-          To give us many options when working with the data we are creating I wrote three different functions for to create three data sets: ranked bins by day, ranked bins by month, and ranked bins by year.
+          To provide many options when working with the data creating three different functions were written to create three data sets: ranked bins by day, ranked bins by month, and ranked bins by year.
         </p>
         <p>
-          Finally the data frames are saved as a csv files so that way we can use them in other jobs in the future as well as share them with you, the reader. These data sets are available on the <a href="https://github.com/CraftingGamerTom/wsu-computer-science/tree/master/CS-383_Cloud-Computing_2020-Spring" target="_blank">Github</a>.
+          Finally the data frames are saved as a csv files so they can be used in future jobs and share publicly. These data sets are available on <a href="https://github.com/CraftingGamerTom/wsu-computer-science/tree/master/CS-383_Cloud-Computing_2020-Spring" target="_blank">Github</a>.
         </p>
         <b-button v-b-toggle.collapse-toc5 class="view-code-btn" variant="secondary">
           View Code
@@ -352,7 +352,7 @@ RANK
 </p>
         </pre>
         <p>
-          We took the data and ran it in a very powerful graphing tool called Tableau. We got a student license and were able to make a number of amazing visualizations. There is so much more available than what we made use of as we wanted to keep it basic since we were not writing code to use it. If you need to make a visualization quickly, Tableau is pretty awesome.
+          The new dataset was run in a very powerful graphing tool called Tableau. A student license was used to make a number of amazing visualizations. There is so much more available in Tableau than what was used in this project. If a visualization is needed quickly, Tableau is pretty awesome.
         </p>
       </b-col>
       <b-col cols="8 offset-2">
@@ -383,14 +383,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
         text: 'CS383 - Cloud, Parallel & Distributed Computing',
-        to: '/edu/wsu/cs/383-cloud'
+        to: '/projects/wsu/383-cloud'
       }, {
         text: 'Ranking Areas',
         active: true

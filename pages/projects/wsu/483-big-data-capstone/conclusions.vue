@@ -84,14 +84,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
         text: 'CS483 - Big Data Capstone',
-        to: '/edu/wsu/cs/483-big-data-capstone'
+        to: '/projects/wsu/483-big-data-capstone'
       }, {
         text: 'Conclusions',
         active: true

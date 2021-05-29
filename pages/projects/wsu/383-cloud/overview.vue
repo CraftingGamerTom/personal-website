@@ -13,10 +13,10 @@
           <b-card
             id="overview-title-card"
             overlay
-            img-src="~/assets/page/edu/wsu/cs/483-big-data-capstone/overview/worcester.jpg"
+            img-src="~/assets/page/edu/wsu/cs/383-cloud/overview/worcester.jpg"
             img-alt="worcester-img"
             text-variant="white"
-            title="Worcester Crimes Data – Analysis and Predictions"
+            title="Analysing Worcester Crime Data using Amazon Web Services"
             title-tag="h1"
             title-text-variant="white"
             sub-title="Thomas Rokicki & Oresti Duro"
@@ -25,10 +25,10 @@
             class="text-center"
           >
             <b-card-text>
-              Capstone Project
+              Cloud Final Project
               <br>
               Spring 2020
-              <cite><a target="_blank" href="https://www.wbjournal.com/sites/default/files/styles/article_small_cover_image/public/2020-04/img_20200401_124853.jpg?h=c115cddf&itok=C97SaImn">Image Source</a></cite>
+              <cite><a target="_blank" href="https://images.squarespace-cdn.com/content/v1/599045bb59cc681bb44b2672/1570913578388-J5RODIH4HM8PM1OJTWFD/ke17ZwdGBToddI8pDm48kPipPbz1MywG1-PB7aWaKvgUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcTaqKnC3B9BACTsC_CqadS_ucBwEFLvfhNErqSvMfRgEejIks295oVN--9IliyEWp/worcester-ma-public-insurance-adjusters-massachusetts.jpg?format=2500w">Image Source</a></cite>
             </b-card-text>
           </b-card>
         </div>
@@ -38,13 +38,13 @@
           <b-row class="d-sm-block d-md-none">
             <b-col cols="12">
               <h1 class="text-center">
-                Worcester Crimes Data – Analysis and Predictions
+                Analyzing Worcester Crime Data using Amazon Web Services
               </h1>
               <h6 class="text-center">
                 Oresti Duro & Thomas Rokicki
               </h6>
               <h6 class="text-center">
-                Capstone Project
+                Cloud Final Project
               </h6>
               <h6 class="text-center">
                 Spring 2020
@@ -54,61 +54,60 @@
           </b-row>
           <b-row>
             <h1>Abstract</h1>
-            <p>The intent of this project is to understand a Worcester crime data set. Some of the questions we ask are: What are the most dangerous neighborhoods in Worcester? What are the week days, time of the day with the highest crime rate? Does a crime type depend of a geographical location? The project involves visualization and statistical analysis of the dataset. The use of heat maps serves a great role in understanding the most dangerous locations within the city. Facebook's Forecasting package, Prophet, as well as other R packages are used for the visualization and statistical analysis. We also are trying to predict where a crime may occur in the future. We are using a variety of Data Mining algorithms to construct an effective prediction model. This would help the police move towards a proactive approach for policing rather than reactive approach. This can help us better understand how to make our city safer.</p>
+            <p>Datasets of all Worcester crime incident records from 2003 to 2019 were obtained from Worcester City Hall. The goal of this project was to practice using tools on AWS, machine learning using python, and to predict how crimes rates may trend in the future. Python packages, such as Facebook's Prophet package, will be used to predict and visualize these trends of the future.</p>
             <p>
-              For more information about this data set check out our <nuxt-link to="/edu/wsu/cs/383-cloud/overview">
-                Cloud Project
-              </nuxt-link>.
+              For more information about this dataset see <nuxt-link to="/projects/wsu/483-big-data-capstone/overview">
+                Worcester Crimes Data – Analysis and Predictions
+              </nuxt-link> a project for a big data capstone assignment.
             </p>
           </b-row>
           <b-row>
             <h1>Goals</h1>
             <ul>
-              <li>Better understand Worcester's Incident rate and locations</li>
-              <li>Determine what areas are more dangerous than others</li>
-              <li>Create graphs to visualize statistics for the data set</li>
-              <li>Implement Facebook's Prophet Forecasting library (written in R) to predict crime rates</li>
-              <li>Apply data Mining algorithms learned in class</li>
+              <li>Become more familiar with SageMaker, import data from S3 and export results to S3</li>
+              <li>Rank areas of Worcester by how dangerous they are over time</li>
+              <li>Apply Association Mining to the Ranked Data to predict future dangerous areas</li>
+              <li>Make a prediction and forecasting of how will the crimes be in the near future using the Prophet library in Python then visualize</li>
+              <li>Stretch Goal: Based on the ranked crime areas find the safest route from one place to another</li>
+              <li>Stretch Goal: Do ML using mahout to practice using Hadoop</li>
             </ul>
           </b-row>
           <b-row>
             <h1>Milestones</h1>
             <ul>
-              <li>Generate statistics for the data set</li>
+              <li>Become more familiar with SageMaker, import data from S3 and export results to S3</li>
               <ul>
-                <li>Calculate interesting statistics for Worcester</li>
-                <li>Visualize statistics</li>
+                <li>Load Data from S3 or import Git Repository to access saved CSV files</li>
+                <li>Write and Run Python code to run on SageMaker</li>
+                <li>Export the data to S3</li>
               </ul>
-              <li>Create time series maps of crime incidents</li>
+              <li>Rank areas of Worcester by how dangerous they are over time</li>
               <ul>
-                <li>Use Python to create maps</li>
-                <li>Try out Tableau as a quick way to create advanced models</li>
+                <li>Group areas of the city into bins (by latitude / longitude & time)</li>
+                <li>Apply weights to each crime type to better represent danger</li>
+                <li>Scale each sum of weighted incidents from 0 to 1 to normalize the crime rates over time</li>
               </ul>
-              <li>Determine if weather affects crime rates</li>
+              <li>Apply Association Mining to the Ranked Data to predict future dangerous areas</li>
               <ul>
-                <li>Obtain weather data for Worcester</li>
-                <li>Merge time series data - incidents and weather</li>
-                <li>Determine correlation between rain and incidents</li>
-                <li>Determine correlation between average temperature and incidents</li>
+                <li>Using the Ranked Data now stored in S3, apply Association Mining and report Accuracy</li>
               </ul>
-              <li>Predict future crime rates</li>
+              <li>Prophet Forecasting and Visualization</li>
               <ul>
-                <li>Use Facebook's Prophet library to predict and visualize future crimes</li>
-              </ul>
-              <li>Create a website to share our findings with the world</li>
-              <ul>
-                <li>Use Git to share the code with the group and consolidate results</li>
-                <li>Learn about and implement Nuxt / Vue application</li>
-                <li>Write website content and include visualizations</li>
+                <li>Implement Forecasting for our data</li>
+                <li>Plot the data and the forecast to a time series graph</li>
               </ul>
             </ul>
           </b-row>
           <b-row>
             <h1>Stretch Goals</h1>
             <ul>
-              <li>Apply clustering or classification machine learning</li>
-              <li>Predict where incidents will occur based on collected incident and weather history</li>
+              <li>Determine least dangerous path to travel based on a starting and ending location</li>
+              <li>Run Cluster or Association Rule Mining algorithm with our data using Hadoop</li>
+              <li>Practice using Mahout for Machine Learning</li>
             </ul>
+
+            <h1>Group Size Justification</h1>
+            <p>A group of 2 is necessary as a means to do more with this real dataset from our home city. The goal is to analyze, clean, and transform the data into other useful information. Additionally, the hope is to have more practice with machine learning (association mining) and produce visualizations. All of this will be performed on AWS, which is unfamiliar territory requiring additional research.</p>
           </b-row>
         </b-col>
         <b-col class="wrapper" cols="lg-5 offset-lg-1 sm-12">
@@ -116,17 +115,11 @@
           <b-img
             class="body-image"
             style="margin-bottom:25px;"
-            src="~/assets/page/edu/wsu/cs/483-big-data-capstone/overview/overview-dataset.png"
+            src="~/assets/page/edu/wsu/cs/383-cloud/overview/overview-dataset.png"
             fluid
             alt="overview-dataset"
             @click="$parent.$parent.expandImage"
           />
-          <h4>Information</h4>
-          <p>
-            <strong>Entries:</strong> 231999<br>
-            <strong>Dates:</strong> <code>2003-01-08 08:37:00</code> to <code>2019-10-28 21:00:00</code><br>
-            <strong>Size:</strong> 15.9 MB <br>
-          </p>
           <h4>Attributes</h4>
           <p>
             Year <br>
@@ -167,15 +160,6 @@
     </b-row>
   </div>
 </template>
-
-<style scoped>
-ul {
-  width: 100%; /* fix overlap */
-}
-ul ul li {
-  font-size: 0.75rem;
-}
-</style>
 
 <style lang="css">
   #overview-title-card-parent {
@@ -230,14 +214,14 @@ export default {
   meta: {
     breadcrumbItems: [
       {
-        text: 'Education',
-        to: '/edu'
+        text: 'Projects',
+        to: '/projects'
       }, {
         text: 'Worcester State University',
-        to: '/edu/wsu'
+        to: '/projects/wsu'
       }, {
-        text: 'CS483 - Big Data Capstone',
-        to: '/edu/wsu/cs/483-big-data-capstone'
+        text: 'CS383 - Cloud, Parallel & Distributed Computing',
+        to: '/projects/wsu/383-cloud'
       }, {
         text: 'Overview',
         active: true
