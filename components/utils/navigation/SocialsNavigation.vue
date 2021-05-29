@@ -12,17 +12,17 @@ export default {
   data () {
     return {
       navItems: [{
-        img: "//s.svgbox.net/social.svg?fill=ffffff#linkedin", 
-        link: "https://www.linkedin.com/in/tcrokicki/"
-      },{
-        img: "//s.svgbox.net/hero-outline.svg?fill=ffffff#chat-alt-2", 
+        img: "//s.svgbox.net/hero-outline.svg?fill=FF9AA2#chat-alt-2",
         link: "/contact"
       },{
-        img: "//s.svgbox.net/hero-outline.svg?fill=ffffff#color-swatch", 
-        link: "#color-picker"
+        img: "//s.svgbox.net/social.svg?fill=0077b5#linkedin", 
+        link: "https://www.linkedin.com/in/tcrokicki/"
       },{
-        img: "//s.svgbox.net/hero-outline.svg?fill=ffffff#cog", 
-        link: "/settings"
+        img: "//s.svgbox.net/files.svg?#gitlab", 
+        link: "https://gitlab.com/CraftingGamerTom"
+      },{
+        img: "//s.svgbox.net/social.svg?fill=ffffff#github",
+        link: "https://github.com/CraftingGamerTom"
       }]
     }
   },
