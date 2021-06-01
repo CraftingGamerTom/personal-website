@@ -4,16 +4,33 @@
       <b-row>
         <b-col cols="12">
           <b-container id="index-recent-projects" class="container--1">
-            <h2 style="padding-top:25px;padding-bottom:0px;">
-              I'm a professional
+            <h2 style="padding-top:25px;padding-bottom:0px;margin-bottom:2rem;">
+              Transparency, Leadership, Impact-Centered
             </h2>
-            <p style="padding-top:0px;padding-bottom:0px;margin-bottom:0px;">
-              Have a look for yourself with my resume customizer.
+            <p>
+              I built a <strong>resume-customizer</strong> because it represents
+              who I am. I'm not afraid to air out my dirty laundry by showing
+              off <strong>past projects</strong>.
+            </p>
+            <p>
+              I desire to <strong>lead the industry</strong> to new heights
+              through <strong>learning to communicate</strong> and understand
+              solutions better, together.
+            </p>
+            <p>
+              I realize I'm not the right fit for every company, and not every
+              company has the values I seek -
+              <strong>thanks for checking out my website</strong>, in any case.
             </p>
 
             <b-row>
               <b-col cols="8" offset="2" md="6" offset-md="3">
-                <div>
+                <div style="margin-bottom:2rem;">
+                  <p
+                    style="    text-align: left;margin-bottom: 0;margin-top: 2rem;font-weight: 600;"
+                  >
+                    What position are you looking to fill?
+                  </p>
                   <b-form-select
                     v-model="selected"
                     :options="options"
@@ -70,28 +87,38 @@
                     <strong>{{ job.position }}</strong>
                   </p>
 
-                  <p class="resume-item-description">
+                  <p
+                    class="resume-item-description"
+                    style="margin-bottom:10px;"
+                  >
                     {{ job.roleDescription }}
                   </p>
 
                   <!-- get stored project from main list or sorted list -->
                   <div v-if="selected == null && sortedProjects == null">
-                    <p
-                      v-for="project in job.projects"
-                      :key="project.id"
-                      class="resume-item-description"
-                    >
-                      {{ project.name }}
-                    </p>
+                    <div v-for="project in job.projects" :key="project.id">
+                      <div
+                        v-if="project.resumeDescription !== null"
+                        v-html="
+                          $md.render(project.resumeDescription.toString())
+                        "
+                        class="resume-item-markdown"
+                      ></div>
+                    </div>
                   </div>
                   <div v-else>
-                    <p
+                    <div
                       v-for="project in sortedProjects.get(job.id)"
                       :key="project.id"
-                      class="resume-item-description"
                     >
-                      {{ project.name }}
-                    </p>
+                      <div
+                        v-if="project.resumeDescription !== null"
+                        v-html="
+                          $md.render(project.resumeDescription.toString())
+                        "
+                        class="resume-item-markdown"
+                      ></div>
+                    </div>
                   </div>
                 </b-col>
               </b-row>
@@ -295,6 +322,23 @@ export default {
       line-height: 1.1em;
       font-size: 0.9em;
       padding-top: 2px;
+    }
+    & .resume-item-markdown::v-deep {
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1em;
+      font-size: 0.9em;
+      & ul {
+        list-style-type: square;
+        margin: 0;
+        padding-left: 20px;
+      }
+      & li {
+        margin: 5px 0;
+      }
+      & p {
+        margin: 0;
+      }
     }
   }
 }
