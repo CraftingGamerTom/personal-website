@@ -38,8 +38,11 @@
             </div>
             <b-row v-else>
               <b-col cols="12" md="6" lg="3" v-for="project in recentProjects.projects" :key="project.id">
-                <b-container class="container--2"> 
-                  <h1>{{ project.name }}</h1>
+                <img class="recent-project-img" :src="project.technicalDesign | imageOrMissing"/>
+                <b-container class="container--2 recent-project-body"> 
+                  <h3 style="padding-top: 25px;">{{ project.name }}</h3>
+                  <p>{{ project.shortDescription }}</p>
+                  <b-button class="recent-project-btn" :to="'/projects/' + project.slug">View Project</b-button>
                 </b-container>
               </b-col>
             </b-row>
@@ -157,6 +160,16 @@ export default {
       this.recentProjects.projects = await this.$strapi.$projects.find({"_sort":"startDate:DESC", "_limit":"4"})
     } catch (error) {
       this.recentProjects.fetchError = error
+    }
+  },
+  filters: {
+    imageOrMissing: function (technicalDesign) {
+      if(technicalDesign) {
+        return 'https://content.thomasrokicki.com' + technicalDesign.url
+      } else {
+        // return '~/assets/icons/missing-file.jpg'
+        return '/v2/resources/img/missing-file.jpg'
+      }
     }
   },
   head () {
@@ -291,6 +304,43 @@ html[theme="dark"] {
   }
 
 }
+
+#projects {
+  & .recent-project-img {
+    overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+    height: 175px;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / 50%);
+    z-index: 0;
+    margin-bottom: -1px; // make sure its touching body
+  }
+  & .recent-project-btn {
+    width: 80%;
+    bottom: 25px;
+    position: absolute;
+    left: 10%;
+  }
+  & .recent-project-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    position: relative;
+    height: 300px;
+  }
+  @include media-query(medium) {
+    & .recent-project-body {
+    height: 325px;
+    }
+  }
+  @include media-query(large) {
+    & .recent-project-body {
+      height: 400px;
+    }
+  }
+}  
 
 // theme colors
 html[theme="light"] {

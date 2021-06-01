@@ -104,6 +104,9 @@ button:focus {
 .margin-bottom-md {
   margin-bottom: 70px;
 }
+.margin-bottom-lg {
+  margin-bottom: 125px;
+}
 .in-page-title {
   padding-bottom:25px;
   text-align:center;

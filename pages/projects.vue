@@ -11,19 +11,14 @@
               <h3>Error loading projects</h3>
               <p>{{ allProjects.fetchError }}</p>
             </b-col>
-            <b-col v-else cols="12" md="6" lg="3" class="margin-bottom-md" v-for="project in allProjects.projects" :key="project.id">
-              <b-container class="container--1 h-100"> 
-                <QuickIcon :location="''" :name="'index/microservice_2324122'" viewBox="0 0 128 128" />
-                <h2>{{ project.name }}</h2>
-                <p>I believe a well planned API is the cornerstone of a good product.</p>
-                <br/>
-                <h6>My go-to frameworks</h6>
-                <p>Spring, NodeJS</p>
-                <h6>Technology</h6>
-                <p>AWS (ECR, ECS, EC2, RDS, S3, KMS)</p>
-                <p>Spring Boot, ExpressJS</p>
-                <p>PostgreSQL, MongoDB, MySQL</p>
-                <p>JUnit (Juniper), Should.js</p>
+            <b-col v-else cols="12" md="6" lg="3" class="margin-bottom-lg" v-for="project in allProjects.projects" :key="project.id">
+              <img class="project-img" :src="project.technicalDesign | imageOrMissing"/>
+              <p class="status-tag">{{project.status | jobStatus}}</p>
+              <b-container class="container--1 h-75 project-body"> 
+                <p class="project-job">{{ project.job.employer }}</p>
+                <h2 class="project-name">{{ project.name }}</h2>
+                <p>{{ project.shortDescription }}</p>
+                <b-button class="project-btn" :to="'/projects/' + project.slug">View Project</b-button>
               </b-container>
             </b-col>
           </b-row>
@@ -33,9 +28,8 @@
     </div>
     <div v-else>
       <b-breadcrumb :items="breadcrumbItems" />
+      <nuxt-child />
     </div>
-
-    <nuxt-child />
   </div>
 </template>
 
@@ -67,6 +61,34 @@ export default {
       this.allProjects.fetchError = error
     }
   },
+  filters: {
+    imageOrMissing: function (technicalDesign) {
+      if(technicalDesign) {
+        return 'https://content.thomasrokicki.com' + technicalDesign.url
+      } else {
+        // return '~/assets/icons/missing-file.jpg'
+        return '/v2/resources/img/missing-file.jpg'
+      }
+    },
+    jobStatus: function (statusEnum) {
+      switch(statusEnum) {
+        case 'future': 
+          return "In Planning"
+        case 'inProgress': 
+          return "In Progress"
+        case 'complete': 
+          return "Complete"
+        case 'abandoned': 
+          return "Abandoned"
+        case 'movedOn': 
+          return "Handed Off"
+        case 'maintenance': 
+          return "Maintaining"
+        default:
+          return "Unknown"
+      }
+    }
+  },
   // page component definitions
   head () {
     return {
@@ -94,5 +116,75 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.project-img {
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 50%);
+  z-index: 0;
+  margin-bottom: -1px; // make sure its touching body
+}
+.project-body {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: relative;
+}
+.status-tag {
+  border-style: solid;
+  border-radius: 5px;
+  width: fit-content;
+  padding: 0 5px;
+  display: inline-block;
+
+  position: absolute;
+  top: 10px;
+  right: 25px;
+
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 700;
+}
+.project-job {
+  padding-top: 25px;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.project-name {
+  padding-top: 0;
+}
+.project-btn {
+  width: 80%;
+  bottom: 25px;
+  position: absolute;
+  left: 10%;
+}
+
+
+// theme colors
+html[theme="light"] {
+  & .status-tag {
+    @include theme-transition();
+    background: color("light", primary);
+    color: color("light", text-accent);
+  }
+  & .project-job {
+    @include theme-transition();
+    color: color("light", tertiary);
+  }
+}
+html[theme="dark"] {
+  & .status-tag {
+    @include theme-transition();
+    background: color("dark", primary);
+    color: color("dark", text-accent);
+  }
+  & .project-job {
+    @include theme-transition();
+    color: color("dark", tertiary);
+  }
+}
 </style>
