@@ -26,7 +26,7 @@ input {
 
 // theme colors
 html[theme="light"] {
-    & input {
+    & input, & textarea {
         @include theme-transition();
         background-color: color("light", form-field);
         color: color("light", text-accent);
@@ -36,6 +36,8 @@ html[theme="light"] {
             @include theme-transition();
             background-color: color("light", form-field-active);
             color: color("light", text-accent);
+            border-color: color("light", form-field-border-active);
+            box-shadow: none;
         }
         &[type=number]::-webkit-inner-spin-button {
             @include theme-transition();
@@ -49,7 +51,7 @@ html[theme="light"] {
     }
 }
 html[theme="dark"] {
-    & input {
+    & input, & textarea {
         @include theme-transition();
         background-color: color("dark", form-field);
         color: color("dark", text-accent);
@@ -59,6 +61,8 @@ html[theme="dark"] {
             @include theme-transition();
             background-color: color("dark", form-field-active);
             color: color("dark", text-accent);
+            border-color: color("dark", form-field-border-active);
+            box-shadow: none;
         }
         &[type=number]::-webkit-inner-spin-button {
             @include theme-transition();

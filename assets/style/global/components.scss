@@ -12,7 +12,7 @@
 
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.50); // TODO decide if non theme is okay
 
-    & a.btn  {
+    & a.btn, & button.btn  {
         background-color: transparent;
         border-radius: 10px;
         font-weight: 500;
@@ -72,6 +72,24 @@ html[theme="light"] {
             @include theme-transition();
             background-color: color("light", layout-40);
         }
+
+        & a.btn, & .btn {
+            @include theme-transition();
+            background-color: transparent;
+            color: color("light", text);
+            border: 2px solid color("light", text);
+        
+            &:hover {
+              @include theme-transition();
+              background-color: color("light", primary);
+              color: color("light", text);
+            }
+        }
+
+        & .container-bottom-btn {
+            width: 80%;
+            left: 10%;
+        }
     }
 }
 html[theme="dark"] {
@@ -89,6 +107,24 @@ html[theme="dark"] {
         &.container--2 {
             @include theme-transition();
             background-color: color("dark", layout-40)
+        }
+
+        & a.btn, & .btn {
+            @include theme-transition();
+            background-color: transparent;
+            color: color("dark", text);
+            border: 2px solid color("dark", text);
+        
+            &:hover {
+              @include theme-transition();
+              background-color: color("dark", primary);
+              color: color("dark", text);
+            }
+        }
+
+        & .container-bottom-btn {
+            width: 80%;
+            left: 10%;
         }
     }
 }
