@@ -1,9 +1,9 @@
 <template>
-  <slide-out-navigation class="socials-nav" :navItems="navItems" :activator="'//s.svgbox.net/hero-outline.svg?fill=ffffff#cursor-click'" />
+  <slide-out-navigation class="socials-nav" :nav-items="navItems" :activator="'//s.svgbox.net/hero-outline.svg?fill=ffffff#cursor-click'" />
 </template>
 
 <script>
-import SlideOutNavigation from '~/components/utils/navigation/SlideOutNavigation.vue';
+import SlideOutNavigation from '~/components/utils/navigation/SlideOutNavigation.vue'
 
 export default {
   components: {
@@ -12,20 +12,20 @@ export default {
   data () {
     return {
       navItems: [{
-        img: "//s.svgbox.net/hero-outline.svg?fill=FF9AA2#chat-alt-2",
-        link: "/contact"
-      },{
-        img: "//s.svgbox.net/social.svg?fill=0077b5#linkedin", 
-        link: "https://www.linkedin.com/in/tcrokicki/"
-      },{
-        img: "//s.svgbox.net/files.svg?#gitlab", 
-        link: "https://gitlab.com/CraftingGamerTom"
-      },{
-        img: "//s.svgbox.net/social.svg?fill=ffffff#github",
-        link: "https://github.com/CraftingGamerTom"
+        img: '//s.svgbox.net/hero-outline.svg?fill=FF9AA2#chat-alt-2',
+        link: '/contact'
+      }, {
+        img: '//s.svgbox.net/social.svg?fill=0077b5#linkedin',
+        link: 'https://www.linkedin.com/in/tcrokicki/'
+      }, {
+        img: '//s.svgbox.net/files.svg?#gitlab',
+        link: 'https://gitlab.com/CraftingGamerTom'
+      }, {
+        img: '//s.svgbox.net/social.svg?fill=ffffff#github',
+        link: 'https://github.com/CraftingGamerTom'
       }]
     }
-  },
+  }
 }
 </script>
 

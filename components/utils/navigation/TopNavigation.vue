@@ -1,6 +1,6 @@
 <template>
-    <navigation-topbar :nav-items="topbarItems" :brand-image="brandImage" >
-      <!-- <template v-slot:user-actions-desktop>
+  <navigation-topbar :nav-items="topbarItems" :brand-image="brandImage">
+    <!-- <template v-slot:user-actions-desktop>
         <b-button variant="danger">Button</b-button>
       </template>
       <template v-slot:user-actions-mobile-dropdown>
@@ -9,50 +9,49 @@
       <template v-slot:user-actions-mobile-bar>
         <b-button variant="info">Button</b-button>
       </template> -->
-      <template v-slot:user-actions-mobile-bar> 
-        <settings-on-navigation />
-      </template>
-      <template v-slot:user-actions-desktop>
-        <settings-on-navigation />
-      </template>
-    </navigation-topbar>
+    <template #user-actions-mobile-bar>
+      <settings-on-navigation />
+    </template>
+    <template #user-actions-desktop>
+      <settings-on-navigation />
+    </template>
+  </navigation-topbar>
 </template>
-
 
 <script>
 import { NavigationTopbar } from '@craftinggamertom/webslack-bits'
-import SettingsOnNavigation from '~/components/utils/navigation/SettingsOnNavigation.vue';
+import SettingsOnNavigation from '~/components/utils/navigation/SettingsOnNavigation.vue'
 
 export default {
   components: {
     NavigationTopbar,
     SettingsOnNavigation
   },
-  data() {
-      return {
-          
+  data () {
+    return {
+
       topbarItems: [
-            {
-              title: 'projects',
-              link: '/projects'
-            },
-            {
-              title: 'career',
-              link: '/career'
-            },
-            {
-              title: 'learn',
-              link: '/learn'
-            }
-          ],
-          brandImage: {
-            icon: "logo-long",
-            managedIconLocation: "~/assets/icons",
-            width: "1",
-            size: "1",
-            iconType: "managed"
-          }
+        {
+          title: 'projects',
+          link: '/projects'
+        },
+        {
+          title: 'career',
+          link: '/career'
+        },
+        {
+          title: 'learn',
+          link: '/learn'
+        }
+      ],
+      brandImage: {
+        icon: 'logo-long',
+        managedIconLocation: '~/assets/icons',
+        width: '1',
+        size: '1',
+        iconType: 'managed'
       }
+    }
   }
 }
 </script>
@@ -67,7 +66,7 @@ nav {
         padding-bottom: 1px;
     }
 
-    &.navbar a svg.size--1x { 
+    &.navbar a svg.size--1x {
       height: 1.5em;
       width: inherit;
     }
