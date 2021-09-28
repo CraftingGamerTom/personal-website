@@ -4,13 +4,32 @@ export default {
   /*
   ** Headers of the page
   */
-  
+
   head: {
     title: 'Thomas Rokicki',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'author', name: 'author', content: 'Thomas Rokicki' },
+      // { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { hid: 'description', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!", name: 'description' },
+      { hid: 'ogTitle', content: 'Thomas Rokicki', property: 'og:title' },
+      { hid: 'ogDescription', name: 'description', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!", property: 'og:description' },
+      { hid: 'ogUrl', content: 'https://www.thomasrokicki.com/', property: 'og:url' },
+      { hid: 'ogImage', content: 'https://www.thomasrokicki.com/v2/resources/img/header-bg.jpg', property: 'og:image' },
+      { hid: 'siteName', content: 'Thomas Rokicki', property: 'og:site_name' },
+      { hid: 'propName', content: 'Thomas Rokicki', itemprop: 'name' },
+      { hid: 'propDescription', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Technology / Let's Build Something!", itemprop: 'description' },
+      { hid: 'propImage', content: 'https://www.thomasrokicki.com/v2/resources/img/header-bg.jpg', itemprop: 'image' },
+      { hid: 'twitterCard', content: 'summary_large_image', name: 'twitter:card' },
+      { hid: 'twitterTitle', content: 'Thomas Rokicki', name: 'twitter:title' },
+      { hid: 'twitterDescription', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!", name: 'twitter:description' },
+      { hid: 'twitterImage', content: 'https://www.thomasrokicki.com/v2/resources/img/header-bg.jpg', name: 'twitter:image' },
+      { hid: 'application_url', name: 'application-url', content: 'https://www.thomasrokicki.com' },
+      { hid: 'citation_author', name: 'citation_author', content: 'Thomas Rokicki' },
+      { hid: 'citation_author_email', name: 'citation_author_email', content: 'tcrokicki@gmail.com' },
+      { hid: 'geo_region', name: 'geo.region', content: 'US-MA' },
+      { hid: 'license', name: 'license', content: 'MIT' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
@@ -28,13 +47,13 @@ export default {
       //   hid: 'textfit', src: '~/static/common/js/libs/jquery/fittext.js', defer: true
       // },
       { // slide-out-navigation
-        hid: 'gsap', 
+        hid: 'gsap',
         src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js',
-        defer: true 
+        defer: true
       }, { // slide-out-navigation
-        hid: 'cssruleplugin', 
+        hid: 'cssruleplugin',
         src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js',
-        defer: true 
+        defer: true
       }
     ]
   },
@@ -68,7 +87,8 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    'nuxt-animejs'
+    'nuxt-animejs',
+    ['@nuxtjs/dotenv', { systemvars: true, filename: '.env' }]
   ],
   /*
   ** Nuxt.js modules
@@ -132,12 +152,13 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: '/api'
   },
   /*
   * Strapi Configuration
   */
   strapi: {
-    entities: ['educations', 'projects', 'jobs', 'categories', 'licenses'],
+    entities: ['educations', 'projects', 'jobs', 'categories', 'tags', 'licenses', 'changelog'],
     url: process.env.STRAPI_DOMAIN
   },
   // [optional] markdownit options
@@ -163,8 +184,8 @@ export default {
             options: {
               emitWarning: true,
               failOnError: false
-            },
-        }],
+            }
+          }]
         })
       }
     },
@@ -200,8 +221,5 @@ export default {
       statusCode: 301
     }
   ],
-  logger: {
-    isEnabled: true, // true or false, defaults to true
-    logLevel: 'debug', // debug, info, warn or error, defaults to debug
-  }
+  serverMiddleware: ['~/api/contact.js']
 }

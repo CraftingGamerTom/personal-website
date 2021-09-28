@@ -3,18 +3,18 @@
     <top-navigation />
     <div class="body-wrapper">
       <nuxt />
-      <socials-navigation />
-      <settings-modal/>
-      <copyright />
+      <socials-navigation id="layout-socials-nav" />
+      <settings-modal />
+      <copyright id="layout-footer" />
     </div>
   </div>
 </template>
 
 <script>
-import { CONST_STORAGE_KEY_THEME } from '~/utils/constants';
+import { CONST_STORAGE_KEY_THEME } from '~/utils/constants'
 import TopNavigation from '~/components/utils/navigation/TopNavigation.vue'
-import SocialsNavigation from '~/components/utils/navigation/SocialsNavigation.vue';
-import SettingsModal from '~/components/utils/modals/SettingsModal.vue';
+import SocialsNavigation from '~/components/utils/navigation/SocialsNavigation.vue'
+import SettingsModal from '~/components/utils/modals/SettingsModal.vue'
 import Copyright from '~/components/utils/modals/Copyright.vue'
 
 export default {
@@ -28,29 +28,29 @@ export default {
     return {
     }
   },
-  mounted() {
-    let theme = localStorage.getItem(CONST_STORAGE_KEY_THEME);
-
-    console.log('theme found', theme)
-
-    if(theme === null) {
-      theme = "light"
-      this.setTheme("light")
-    }
-
-    let htmlElement = document.documentElement;
-    htmlElement.setAttribute('theme', theme)
-
-    this.$root.$on('changethemeviasettings', filter => { this.setTheme(filter.theme) })
-  },
   computed: {
     breadcrumbItems () { return this.$store.state.breadcrumbs.crumbs }
   },
+  mounted () {
+    let theme = localStorage.getItem(CONST_STORAGE_KEY_THEME)
+
+    console.log('theme found', theme)
+
+    if (theme === null) {
+      theme = 'light'
+      this.setTheme('light')
+    }
+
+    const htmlElement = document.documentElement
+    htmlElement.setAttribute('theme', theme)
+
+    this.$root.$on('changethemeviasettings', (filter) => { this.setTheme(filter.theme) })
+  },
   methods: {
-    setTheme(themeString) {
-      localStorage.setItem(CONST_STORAGE_KEY_THEME, themeString);
-      let htmlElement = document.documentElement;
-      htmlElement.setAttribute('theme', themeString);
+    setTheme (themeString) {
+      localStorage.setItem(CONST_STORAGE_KEY_THEME, themeString)
+      const htmlElement = document.documentElement
+      htmlElement.setAttribute('theme', themeString)
     }
   }
 }
@@ -112,6 +112,15 @@ button:focus {
   text-align:center;
   text-shadow: 0px 0px 15px #ffffff;
 }
+
+/* body form input.form-control {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+} */
 </style>
 
 <style lang="scss">
