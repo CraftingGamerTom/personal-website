@@ -1,0 +1,130 @@
+.container {
+    margin-bottom:50px;
+    border-radius: border-radius(container);
+    font-family: font(secondary);
+    display: block;
+
+    padding-bottom: 10px;
+    margin-bottom: 60px;
+  
+    width: 100%;
+    min-height: 50px;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.50); // TODO decide if non theme is okay
+
+    & a.btn, & button.btn  {
+        background-color: transparent;
+        border-radius: 10px;
+        font-weight: 500;
+    }
+
+    &.container--1 {
+        text-align: center;
+        & svg {
+            margin-top: 25px;
+            margin-bottom: 5px;
+            height: 40px;
+            width: auto;
+        }
+        & h2 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+        & h6 {
+            font-weight: 900;
+            margin-top: 0;
+            padding-top: 15px;
+        }
+    }
+    &.container--2 {
+        // must include anything from container--1 if nested, to override
+        text-align: center;
+        & h6 {
+            font-weight: 900;
+            margin-top: 0;
+            padding-top: 0px;
+        }
+        & p {
+            font-weight: 500;
+            line-height: 1.2;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+}
+
+
+// theme colors
+html[theme="light"] {
+    & .container {
+        @include theme-transition();
+        background-color: color("light", layout-20);
+        color: color("light", text);
+
+        & h6 {
+            @include theme-transition();
+            color: color("light", tertiary);
+            fill: color("light", tertiary);
+        }
+
+        &.container--2 {
+            @include theme-transition();
+            background-color: color("light", layout-40);
+        }
+
+        & a.btn, & .btn {
+            @include theme-transition();
+            background-color: transparent;
+            color: color("light", text);
+            border: 2px solid color("light", text);
+        
+            &:hover {
+              @include theme-transition();
+              background-color: color("light", primary);
+              color: color("light", text);
+            }
+        }
+
+        & .container-bottom-btn {
+            width: 80%;
+            left: 10%;
+        }
+    }
+}
+html[theme="dark"] {
+    & .container {
+        @include theme-transition();
+        background-color: color("dark", layout-20);
+        color: color("dark", text);
+
+        & h6 {
+            @include theme-transition();
+            color: color("dark", tertiary);
+            fill: color("dark", tertiary);
+        }
+
+        &.container--2 {
+            @include theme-transition();
+            background-color: color("dark", layout-40)
+        }
+
+        & a.btn, & .btn {
+            @include theme-transition();
+            background-color: transparent;
+            color: color("dark", text);
+            border: 2px solid color("dark", text);
+        
+            &:hover {
+              @include theme-transition();
+              background-color: color("dark", primary);
+              color: color("dark", text);
+            }
+        }
+
+        & .container-bottom-btn {
+            width: 80%;
+            left: 10%;
+        }
+    }
+}

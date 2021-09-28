@@ -1,0 +1,140 @@
+$colors-light: (
+    // Base Colors
+    primary: #FF9AA2,
+    primary-accent: #EACDD0,
+
+    secondary: #A3A6A3,
+    secondary-accent: #A3A6A3, // currently same as non-accent
+
+    tertiary: #3972AC,
+    tertiary-accent: #3972AC,  // currently same as non-accent
+
+    quarternary: #9AFFF7,
+    quarternary-accent: #9AFFF7, // currently same as non-accent
+
+    // Main Colors
+    layout: #FBF9F9,
+    layout-10: #E1E0E0,
+    layout-11: lighten(#FBF9F9, 6.5%),
+    layout-20: #C8C7C7, // container 1
+    layout-21: lighten(#FBF9F9, 13%),
+    layout-30: #AFAEAE,
+    layout-31: lighten(#FBF9F9, 19.5%),
+    layout-40: #969595, // container 2
+    layout-41: lighten(#FBF9F9, 26%),
+
+    // Navigation
+    nav: #212121, // primary
+    nav-accent: darken(#212121, 2%), // primary * darken 2% = 1c1c1c
+
+    // Text
+    text-hover: #353535,
+    text: #141414,
+    text-accent: #424242,
+    text-disabled: #727272,
+
+    // Buttons
+    btn: #676767, 
+    btn-hover: #404040, 
+    btn-disabled: #2C2C2C, 
+    btn-disabled-hover: #2C2C2C, 
+    btn-border: #676767, 
+    btn-border-hover: #2C2C2C,
+
+    // Forms
+    form-field: #EACDD0, // was primary accent
+    form-field-active: #EED7D9,
+    form-field-border: #EACDD0,
+    form-field-border-active: #A38F91,
+
+    // Specific Colors
+    error: #FF2444,
+    warning: #FFC107,
+    success: #70C041,
+    attention: #E107FF,
+    null-state: #355998,
+);
+
+$colors-dark: (
+    // Base Colors
+    primary: #212121,
+    primary-accent: #404040,
+
+    secondary: #124173,
+    secondary-accent: #526488,
+
+    tertiary: #FF9AA2,
+
+    // Main Colors
+    layout: #121212,
+    layout-10: #292929,
+    layout-11: lighten(#121212, 6.5%),
+    layout-20: #414141, // container 1
+    layout-21: lighten(#121212, 13%),
+    layout-30: #595959,
+    layout-31: lighten(#121212, 19.5%),
+    layout-40: #707070, // container 2
+    layout-41: lighten(#121212, 26%),
+
+    // Navigation
+    nav: #212121, // primary
+    nav-accent: darken(#212121, 2%), // primary * darken 2% = 1c1c1c
+
+    // Text
+    text-hover: #E6E6E6,
+    text: #D8D8D8,
+    text-accent: #B5B5B5,
+    text-disabled: #848484,
+
+    // Buttons
+    btn: #676767, 
+    btn-hover: #404040, 
+    btn-disabled: #2C2C2C, 
+    btn-disabled-hover: #2C2C2C, 
+    btn-border: #676767, 
+    btn-border-hover: #2C2C2C,
+
+    // Forms
+    form-field: #404040, // was primary accent
+    form-field-active: #363636,
+    form-field-border: #404040,
+    form-field-border-active: #2C2C2C,
+
+    // Specific Colors
+    error: #FF2444,
+    warning: #FFC107,
+    success: #70C041,
+    attention: #E107FF,
+    null-state: #355998,
+);
+
+// Transparency Values
+$transparency-values: (
+    transparent: 100%,
+    opacity-light: 80%,
+    opacity-medium: 40%,
+    opacity-heavy: 20%,
+    opaque: 0%,
+);
+
+
+// Functions
+
+@function color($theme, $color-name) {
+    @if $theme == $CONST-THEME-LIGHT {
+        @return map-get($colors-light, $color-name);
+    } @else if $theme == $CONST_THEME_DARK {
+        @return map-get($colors-dark, $color-name);
+    } @else {
+        @return map-get($colors-light, $color-name);
+    }
+
+};
+
+@function transparent($transparency-name) {
+    @return map-get($transparency-values, $transparency-name)
+};
+
+@function transparentColor($color-name, $transparency-name) {
+    @return rgba(color($color-name), transparent($transparency-name))
+};
