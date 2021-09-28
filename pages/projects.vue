@@ -2,45 +2,94 @@
   <div>
     <div v-if="$route.fullPath === '/projects'">
       <b-col cols="12">
-
-        <h1 class="in-page-title">Projects</h1>
+        <h1 class="in-page-title">
+          Projects
+        </h1>
 
         <section id="all-projects">
           <b-row class="align-self-md-stretch">
-            <b-col v-if="allProjects.fetchError" cols="12" style="text-align:center;" class="text--error">
+            <b-col
+              v-if="allProjects.fetchError"
+              cols="12"
+              style="text-align: center"
+              class="text--error"
+            >
               <h3>Error loading projects</h3>
               <p>{{ allProjects.fetchError }}</p>
             </b-col>
-            <b-col v-else cols="12" md="6" lg="3" class="margin-bottom-lg" v-for="project in allProjects.projects" :key="project.id">
-              <img class="project-img" :src="project.technicalDesign | imageOrMissing"/>
-              <p class="status-tag">{{project.status | jobStatus}}</p>
-              <b-container class="container--1 h-75 project-body"> 
-                <p class="project-job">{{ project.job.employer }}</p>
-                <h2 class="project-name">{{ project.name }}</h2>
+            <b-col
+              v-for="project in allProjects.projects"
+              v-else
+              :key="project.id"
+              cols="12"
+              md="6"
+              lg="3"
+              class="margin-bottom-lg"
+            >
+              <img
+                class="project-img"
+                :src="project.headerImage | imageOrMissing"
+              >
+              <p class="status-tag">
+                {{ project.status | jobStatus }}
+              </p>
+              <b-container class="container--1 h-75 project-body">
+                <p class="project-job">
+                  {{ project.job.employer }}
+                </p>
+                <h2 class="project-name">
+                  {{ project.name }}
+                </h2>
                 <p>{{ project.shortDescription }}</p>
-                <b-button class="project-btn" :to="'/projects/' + project.slug">View Project</b-button>
+                <b-button
+                  class="project-btn container-bottom-btn"
+                  :to="'/projects/' + project.slug"
+                >
+                  View Project
+                </b-button>
               </b-container>
             </b-col>
           </b-row>
         </section>
-
       </b-col>
     </div>
     <div v-else>
-      <b-breadcrumb :items="breadcrumbItems" />
       <nuxt-child />
     </div>
   </div>
 </template>
 
-<style scoped>
-  
-</style>
-
 <script>
+import ENV from '@/env'
+
 export default {
-  computed: {
-    breadcrumbItems () { return this.$store.state.breadcrumbs.crumbs }
+  filters: {
+    imageOrMissing (headerImage) {
+      if (headerImage) {
+        return ENV.strapi.domain + headerImage.url
+      } else {
+        // return '~/assets/icons/missing-file.jpg'
+        return '/v2/resources/img/missing-file.jpg'
+      }
+    },
+    jobStatus (statusEnum) {
+      switch (statusEnum) {
+        case 'future':
+          return 'In Planning'
+        case 'inProgress':
+          return 'In Progress'
+        case 'complete':
+          return 'Complete'
+        case 'abandoned':
+          return 'Abandoned'
+        case 'movedOn':
+          return 'Handed Off'
+        case 'maintenance':
+          return 'Maintaining'
+        default:
+          return 'Unknown'
+      }
+    }
   },
   layout (context) {
     return context.isMobile ? 'mobile' : 'default'
@@ -54,41 +103,6 @@ export default {
       }
     }
   },
-  async mounted () {
-    try {
-      this.allProjects.projects = await this.$strapi.$projects.find({"_sort":"startDate:DESC"})
-    } catch (error) {
-      this.allProjects.fetchError = error
-    }
-  },
-  filters: {
-    imageOrMissing: function (technicalDesign) {
-      if(technicalDesign) {
-        return 'https://content.thomasrokicki.com' + technicalDesign.url
-      } else {
-        // return '~/assets/icons/missing-file.jpg'
-        return '/v2/resources/img/missing-file.jpg'
-      }
-    },
-    jobStatus: function (statusEnum) {
-      switch(statusEnum) {
-        case 'future': 
-          return "In Planning"
-        case 'inProgress': 
-          return "In Progress"
-        case 'complete': 
-          return "Complete"
-        case 'abandoned': 
-          return "Abandoned"
-        case 'movedOn': 
-          return "Handed Off"
-        case 'maintenance': 
-          return "Maintaining"
-        default:
-          return "Unknown"
-      }
-    }
-  },
   // page component definitions
   head () {
     return {
@@ -98,20 +112,26 @@ export default {
           hid: 'jquery',
           src: 'https://code.jquery.com/jquery-3.4.1.slim.min.js',
           type: 'text/javascript',
-          callback: () => { this.isJqueryLoaded = true }
-        }, {
-          hid: 'textfit', src: '/common/js/libs/jquery/fittext.js', defer: true
+          callback: () => {
+            this.isJqueryLoaded = true
+          }
+        },
+        {
+          hid: 'textfit',
+          src: '/common/js/libs/jquery/fittext.js',
+          defer: true
         }
       ]
     }
   },
-  meta: {
-    breadcrumbItems: [
-      {
-        text: 'Education',
-        active: true
-      }
-    ]
+  async mounted () {
+    try {
+      this.allProjects.projects = await this.$strapi.$projects.find({
+        _sort: 'startDate:DESC'
+      })
+    } catch (error) {
+      this.allProjects.fetchError = error
+    }
   }
 }
 </script>
@@ -145,7 +165,7 @@ export default {
   right: 25px;
 
   text-align: center;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 700;
 }
 .project-job {
@@ -157,12 +177,9 @@ export default {
   padding-top: 0;
 }
 .project-btn {
-  width: 80%;
-  bottom: 25px;
   position: absolute;
-  left: 10%;
+  bottom: 25px;
 }
-
 
 // theme colors
 html[theme="light"] {
