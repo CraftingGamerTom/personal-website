@@ -972,7 +972,7 @@ export default {
         text: 'CS483 - Big Data Capstone',
         to: '/projects/wsu/483-big-data-capstone'
       }, {
-        text: 'Incident Maps',
+        text: 'Statistics',
         active: true
       }
     ]

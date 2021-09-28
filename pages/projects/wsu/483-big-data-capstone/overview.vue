@@ -168,6 +168,46 @@
   </div>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      showDataFrame: false
+
+    }
+  },
+  head () {
+    return {
+      script: [
+
+      ]
+    }
+  },
+  methods: {
+    runFitText () {
+      // window.$('#overview-title-card h1').fitText()
+    }
+  },
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Projects',
+        to: '/projects'
+      }, {
+        text: 'Worcester State University',
+        to: '/projects/wsu'
+      }, {
+        text: 'CS483 - Big Data Capstone',
+        to: '/projects/wsu/483-big-data-capstone'
+      }, {
+        text: 'Overview',
+        active: true
+      }
+    ]
+  }
+}
+</script>
+
 <style scoped>
 ul {
   width: 100%; /* fix overlap */
@@ -206,43 +246,3 @@ ul ul li {
   }
 
 </style>
-
-<script>
-export default {
-  data () {
-    return {
-      showDataFrame: false
-
-    }
-  },
-  methods: {
-    runFitText () {
-      // window.$('#overview-title-card h1').fitText()
-    }
-  },
-  head () {
-    return {
-      script: [
-
-      ]
-    }
-  },
-  meta: {
-    breadcrumbItems: [
-      {
-        text: 'Projects',
-        to: '/projects'
-      }, {
-        text: 'Worcester State University',
-        to: '/projects/wsu'
-      }, {
-        text: 'CS483 - Big Data Capstone',
-        to: '/projects/wsu/483-big-data-capstone'
-      }, {
-        text: 'Overview',
-        active: true
-      }
-    ]
-  }
-}
-</script>

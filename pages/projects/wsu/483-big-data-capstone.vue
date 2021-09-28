@@ -81,12 +81,12 @@
 <script>
 export default {
   middleware: [
-    function({ route, redirect }) {
-      if (route.fullPath === "/projects/wsu/483-big-data-capstone") {
-        return redirect("/projects/wsu/483-big-data-capstone/overview");
+    function ({ route, redirect }) {
+      if (route.fullPath === '/projects/wsu/483-big-data-capstone') {
+        return redirect('/projects/wsu/483-big-data-capstone/overview')
       }
     }
-  ],
+  ]
 
 }
 </script>

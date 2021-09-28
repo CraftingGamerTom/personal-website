@@ -161,6 +161,46 @@
   </div>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      showDataFrame: false
+
+    }
+  },
+  head () {
+    return {
+      script: [
+
+      ]
+    }
+  },
+  methods: {
+    runFitText () {
+      // window.$('#overview-title-card h1').fitText()
+    }
+  },
+  meta: {
+    breadcrumbItems: [
+      {
+        text: 'Projects',
+        to: '/projects'
+      }, {
+        text: 'Worcester State University',
+        to: '/projects/wsu'
+      }, {
+        text: 'CS383 - Cloud, Parallel & Distributed Computing',
+        to: '/projects/wsu/383-cloud'
+      }, {
+        text: 'Overview',
+        active: true
+      }
+    ]
+  }
+}
+</script>
+
 <style lang="css">
   #overview-title-card-parent {
     overflow: hidden;
@@ -190,43 +230,3 @@
   }
 
 </style>
-
-<script>
-export default {
-  data () {
-    return {
-      showDataFrame: false
-
-    }
-  },
-  methods: {
-    runFitText () {
-      // window.$('#overview-title-card h1').fitText()
-    }
-  },
-  head () {
-    return {
-      script: [
-
-      ]
-    }
-  },
-  meta: {
-    breadcrumbItems: [
-      {
-        text: 'Projects',
-        to: '/projects'
-      }, {
-        text: 'Worcester State University',
-        to: '/projects/wsu'
-      }, {
-        text: 'CS383 - Cloud, Parallel & Distributed Computing',
-        to: '/projects/wsu/383-cloud'
-      }, {
-        text: 'Overview',
-        active: true
-      }
-    ]
-  }
-}
-</script>

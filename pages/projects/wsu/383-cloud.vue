@@ -53,11 +53,11 @@
 <script>
 export default {
   middleware: [
-    function({ route, redirect }) {
-      if (route.fullPath === "/projects/wsu/383-cloud") {
-        return redirect("/projects/wsu/383-cloud/overview");
+    function ({ route, redirect }) {
+      if (route.fullPath === '/projects/wsu/383-cloud') {
+        return redirect('/projects/wsu/383-cloud/overview')
       }
     }
-  ],
+  ]
 }
 </script>
