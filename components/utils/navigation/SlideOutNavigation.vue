@@ -12,7 +12,7 @@
     <slide v-if="openOnRight" v-show="currentlyOpen" id="slide-right">
       <ul>
         <li v-for="item in navItems" :key="item.link">
-          <a :href="item.link"><img :src="item.img"></a>
+          <a :href="item.link" target="_blank"><img :src="item.img"></a>
         </li>
       </ul>
     </slide>
@@ -20,7 +20,7 @@
     <slide v-if="!openOnRight" v-show="currentlyOpen" id="slide-left">
       <ul>
         <li v-for="item in navItems" :key="item.link">
-          <a :href="item.link"><img :src="item.img"></a>
+          <a :href="item.link" target="_blank"><img :src="item.img"></a>
         </li>
       </ul>
     </slide>
