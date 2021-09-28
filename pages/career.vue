@@ -10,7 +10,12 @@ export default {
   components: { ResumeBuilder },
   data () {
     return {
-
+      title: 'Career | Thomas Rokicki'
+    }
+  },
+  head () {
+    return {
+      title: this.title
     }
   }
 }
