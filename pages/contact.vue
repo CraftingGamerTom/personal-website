@@ -117,7 +117,7 @@ export default {
       event.preventDefault()
       if (this.checkForm()) {
         const _this = this
-        await this.$axios.post('/api/contact', this.form)
+        await this.$axios.post('/contact', this.form)
           .then((response) => {
             _this.$log.debug(response)
             _this.submissionSuccess = response.status
