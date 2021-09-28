@@ -3,7 +3,7 @@
     <top-navigation />
     <div class="body-wrapper">
       <nuxt />
-      <socials-navigation id="layout-socials-nav" />
+      <socials-navigation />
       <settings-modal />
       <copyright id="layout-footer" />
     </div>
