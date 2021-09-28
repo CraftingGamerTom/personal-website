@@ -1,14 +1,20 @@
 <template>
   <div style="margin-top:25px;">
     <p style="text-align:center;">
-        <nuxt-link :to="'/licenses'">Licenses</nuxt-link>
+      <nuxt-link :to="'/licenses'">
+        Licenses
+      </nuxt-link>
+      |
+      <nuxt-link :to="'/changelog'">
+        Changelog
+      </nuxt-link>
     </p>
     <h5 id="copyright" style="text-align:center;">
       &copy; Thomas Rokicki
       <script>
         document
-          .getElementById("copyright")
-          .appendChild(document.createTextNode(new Date().getFullYear()));
+        .getElementById("copyright")
+        .appendChild(document.createTextNode(new Date().getFullYear()));
       </script>
     </h5>
     <h5 style="text-align:center;">
@@ -27,10 +33,10 @@
 </template>
 
 <script>
-import { QuickIcon } from "@craftinggamertom/webslack-bits";
+import { QuickIcon } from '@craftinggamertom/webslack-bits'
 export default {
   components: {
     QuickIcon
   }
-};
+}
 </script>
