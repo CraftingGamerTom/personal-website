@@ -158,7 +158,7 @@ export default {
   * Strapi Configuration
   */
   strapi: {
-    entities: ['educations', 'projects', 'jobs', 'categories', 'tags', 'licenses', 'changelog'],
+    entities: ['educations', 'projects', 'posts', 'jobs', 'categories', 'tags', 'licenses', 'changelog'],
     url: process.env.STRAPI_DOMAIN
   },
   // [optional] markdownit options
