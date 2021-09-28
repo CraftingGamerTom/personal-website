@@ -3,7 +3,7 @@
     <section>
       <b-row>
         <b-col cols="12">
-          <b-container id="index-recent-projects" class="container--1">
+          <b-container id="index-career-intro" class="container--1">
             <h2 style="padding-top:25px;padding-bottom:0px;margin-bottom:2rem;">
               Transparency, Leadership, Impact-Centered
             </h2>
@@ -34,10 +34,10 @@
                   <b-form-select
                     v-model="selected"
                     :options="options"
-                    @change="onCategorySelected()"
                     size="sm"
                     class="mt-3"
-                  ></b-form-select>
+                    @change="onCategorySelected()"
+                  />
                 </div>
               </b-col>
             </b-row>
@@ -45,29 +45,32 @@
         </b-col>
       </b-row>
     </section>
-    <section id="resume">
+    <section id="index-career-resume">
       <b-row>
         <b-col cols="12" offset="0" md="6" offset-md="3">
           <b-container
-            id="index-recent-projects"
             class="container--1 resume-content"
           >
             <h3 style="padding-top:15px;">
               Thomas Rokicki <small style="font-size:1rem;">(he/him)</small>
             </h3>
-            <h5 style="float:left">Rutland, MA</h5>
-            <h5 style="float:right">thomasrokicki.com</h5>
-            <hr style="clear:both;" />
+            <h5 style="float:left">
+              Rutland, MA
+            </h5>
+            <h5 style="float:right">
+              thomasrokicki.com
+            </h5>
+            <hr style="clear:both;">
             <h6 style="padding-top:15px;text-decoration: underline;">
               Experience
             </h6>
             <div v-for="job in jobs" :key="job.id">
               <b-row
-                class="resume-item"
                 v-if="
                   (selected == null && sortedProjects == null) ||
                     (sortedProjects != null && sortedProjects.has(job.id))
                 "
+                class="resume-item"
               >
                 <!-- only show job if relevant project -->
                 <b-col cols="12">
@@ -99,11 +102,11 @@
                     <div v-for="project in job.projects" :key="project.id">
                       <div
                         v-if="project.resumeDescription !== null"
+                        class="resume-item-markdown"
                         v-html="
                           $md.render(project.resumeDescription.toString())
                         "
-                        class="resume-item-markdown"
-                      ></div>
+                      />
                     </div>
                   </div>
                   <div v-else>
@@ -113,11 +116,11 @@
                     >
                       <div
                         v-if="project.resumeDescription !== null"
+                        class="resume-item-markdown"
                         v-html="
                           $md.render(project.resumeDescription.toString())
                         "
-                        class="resume-item-markdown"
-                      ></div>
+                      />
                     </div>
                   </div>
                 </b-col>
@@ -150,10 +153,8 @@
                   </p>
 
                   <p style="clear:both;">
-                    <strong
-                      >{{ educationItem.degree }},
-                      {{ educationItem.major }}</strong
-                    >
+                    <strong>{{ educationItem.degree }},
+                      {{ educationItem.major }}</strong>
                     {{ educationItem.gpa }} GPA
                   </p>
 
@@ -164,29 +165,40 @@
               </b-row>
             </div>
 
-            <h6 style="padding-top:15px;text-decoration: underline;">Skills</h6>
+            <h6 style="padding-top:15px;text-decoration: underline;">
+              Skills
+            </h6>
+
+            <div style="display:inline-flex;">
+              <div style="width:100%;margin-bottom:25px">
+                <img v-for="skill in sortedSkills" :key="skill.id" :src="skill.avatar.url | contentSiteImageUrl" :title="skill.name" class="resume-skill-icon">
+              </div>
+            </div>
 
             <!-- <div v-if="recentProjects.fetchError" class="text--error">
-                    <h3>Error loading recent projects</h3>
-                    <p>tttt</p>
-                    </div>
-                    <b-row v-else>
-                    <b-col cols="12" md="6" lg="3" v-for="project in recentProjects.projects" :key="project.id">
-                        <b-container class="container--2"> 
-                        <h1>t</h1>
-                        </b-container>
-                    </b-col>
-                    </b-row> -->
+              <h3>Error loading recent projects</h3>
+              <p>tttt</p>
+            </div>
+            <b-row v-else>
+              <b-col v-for="project in recentProjects.projects" :key="project.id" cols="12" md="6" lg="3">
+                <b-container class="container--2">
+                  <h1>t</h1>
+                </b-container>
+              </b-col>
+            </b-row> -->
 
             <b-row>
-              <b-col cols="8" offset="2"> </b-col>
+              <b-col cols="8" offset="2" />
             </b-row>
 
             <b-row>
               <b-col style="text-align:center;" cols="12">
-                <b-button style="margin-bottom:15px;" :to="'/contact'"
-                  >Contact Me</b-button
+                <b-button
+                  style="margin-bottom:15px;"
+                  :to="'/contact'"
                 >
+                  Contact Me
+                </b-button>
               </b-col>
             </b-row>
           </b-container>
@@ -197,112 +209,158 @@
 </template>
 
 <script>
+import ENV from '@/env'
+
 export default {
-  data() {
+  filters: {
+    ifDateNullSetPresent (date) {
+      if (date) {
+        return date
+      } else {
+        return 'Present'
+      }
+    },
+    friendlyDate_Year (date) {
+      if (date === 'Present') { return date }
+      const friendlyDate = new Date(date)
+      return friendlyDate.getFullYear()
+    },
+    friendlyDate_Month_Year (date) {
+      const month = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec'
+      ]
+
+      if (date === 'Present') { return date }
+      const friendlyDate = new Date(date)
+      return (
+        month[friendlyDate.getUTCMonth()] + ' ' + friendlyDate.getFullYear()
+      )
+    },
+    contentSiteImageUrl (url) {
+      return ENV.strapi.domain + url
+    }
+  },
+  data () {
     return {
       selected: null,
       options: [
-        { value: null, text: "CV (All Experience)" },
-        { value: "fullstack", text: "Full Stack Engineer" },
-        { value: "frontend", text: "Web Frontend Developer" },
-        { value: "mobile", text: "Mobile Developer" },
-        { value: "backend", text: "Backend Engineer" },
-        { value: "software-developer", text: "Software Developer" },
-        { value: "test-engineer", text: "Test Engineer" },
-        { value: "entry-level", text: "Entry Level" }
+        { value: null, text: 'CV (All Experience)' },
+        { value: 'fullstack', text: 'Full Stack Engineer' },
+        { value: 'frontend', text: 'Web Frontend Developer' },
+        { value: 'mobile', text: 'Mobile Developer' },
+        { value: 'backend', text: 'Backend Engineer' },
+        { value: 'software-developer', text: 'Software Developer' },
+        { value: 'test-engineer', text: 'Test Engineer' },
+        { value: 'entry-level', text: 'Entry Level' }
       ],
       jobs: [],
       educations: [],
       sortedProjects: null,
-      sortedEducation: null
-    };
+      sortedEducation: null,
+      sortedSkills: []
+    }
   },
-  async mounted() {
+  async mounted () {
     try {
-      this.jobs = await this.$strapi.$jobs.find({ _sort: "endDate:DESC" });
+      this.jobs = await this.$strapi.$jobs.find({ _sort: 'endDate:DESC' })
       this.educations = await this.$strapi.$educations.find({
-        _sort: "endDate:DESC"
-      });
+        _sort: 'endDate:DESC'
+      })
+      // this.sortedSkills = this.sortSkills(this.jobs)
+      this.sortedSkills = await this.$strapi.$tags.find()
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
   },
   methods: {
-    async onCategorySelected() {
+    sortSkills (jobs) {
+      let localProjects = null
+      if (this.sortedProjects == null) {
+        const projects = []
+        for (const job in this.jobs) {
+          for (const project in job.projects) {
+            projects.push(project)
+          }
+        }
+        localProjects = projects
+      } else {
+        localProjects = this.sortedProjects.values()
+      }
+
+      console.log(this.jobs)
+      console.log(this.sortedProjects)
+      console.log(localProjects)
+      const skillsMap = new Map()
+      for (let i = 0; i < localProjects.length; i++) {
+        const project = localProjects[i]
+
+        for (const tag in project.tags) { // skills
+          if (skillsMap.has(tag.id)) {
+            // do nothing, skill exists
+          } else {
+            skillsMap.set(tag.id, tag)
+          }
+        }
+      }
+      console.log(skillsMap)
+      return skillsMap
+    },
+    async onCategorySelected () {
       if (this.selected) {
         const response = await this.$strapi.$categories.find({
           slug: this.selected
-        });
-        const category = response[0];
+        })
+        const category = response[0]
 
         // filter projects
-        let projectsMap = new Map();
+        const projectsMap = new Map()
+        const skillsMap = new Map()
+        console.log(skillsMap)
         for (let i = 0; i < category.projects.length; i++) {
-          let project = category.projects[i];
-          const jobId = project.job;
-          if (projectsMap.has(jobId)) {
-            let sorted = projectsMap.get(jobId);
-            sorted.push(project);
-            projectsMap.set(jobId, sorted);
+          const project = category.projects[i]
+          const jobId = project.job
+          if (projectsMap.has(jobId)) { // projects
+            const sorted = projectsMap.get(jobId)
+            sorted.push(project)
+            projectsMap.set(jobId, sorted)
           } else {
-            projectsMap.set(jobId, [project]);
+            projectsMap.set(jobId, [project])
           }
         }
-        this.sortedProjects = projectsMap;
+        this.sortedProjects = projectsMap
+
+        // filter skills
+        this.sortedSkills = this.sortSkills(projectsMap.values())
 
         // filter educations
-        let educationList = [];
+        const educationList = []
         for (let i = 0; i < category.educations.length; i++) {
-          educationList.push(category.educations[i].id);
+          educationList.push(category.educations[i].id)
         }
-        this.sortedEducation = educationList;
+        this.sortedEducation = educationList
       } else {
-        this.sortedProjects = null;
-        this.sortedEducation = null;
+        this.sortedProjects = null
+        this.skillsMap = null
+        this.sortedEducation = null
       }
-    }
-  },
-  filters: {
-    ifDateNullSetPresent(date) {
-      if (date) {
-        return date;
-      } else {
-        return "Present";
-      }
-    },
-    friendlyDate_Year(date) {
-      if (date === "Present") return date;
-      let friendlyDate = new Date(date);
-      return friendlyDate.getFullYear();
-    },
-    friendlyDate_Month_Year(date) {
-      var month = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
-      ];
-
-      if (date === "Present") return date;
-      let friendlyDate = new Date(date);
-      return (
-        month[friendlyDate.getUTCMonth()] + " " + friendlyDate.getFullYear()
-      );
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-#resume {
+#index-career-resume {
   user-select: none;
 
   & .resume-content {
@@ -339,6 +397,16 @@ export default {
       & p {
         margin: 0;
       }
+    }
+  }
+  & .resume-skill-icon {
+    height:5vh;
+    width:5vh;
+    border-radius:5px;
+    object-fit:cover;
+    margin: 2px;
+    &:hover {
+
     }
   }
 }
