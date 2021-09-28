@@ -1,0 +1,77 @@
+input {
+    border-radius: border-radius(form-field);
+
+    &.form-control {
+    transition: border-color 0.15s ease-in;
+    }
+
+    &.form-control:active, &.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    }
+
+    &[type=number] {
+        -webkit-appearance: textfield;
+           -moz-appearance: textfield;
+                appearance: textfield;
+    }
+    &[type=number]::-webkit-inner-spin-button {
+        background-color: red // temp
+    }
+    &[type=number]::-webkit-outer-spin-button { 
+        // -webkit-appearance: none;
+        background: transparent url('~assets/icons/check-icon.svg') no-repeat center/8px 10px;
+    }
+}
+
+// theme colors
+html[theme="light"] {
+    & input, & textarea {
+        @include theme-transition();
+        background-color: color("light", form-field);
+        color: color("light", text-accent);
+        border: 1px solid color("light", form-field-border);
+    
+        &.form-control:active, &.form-control:focus {
+            @include theme-transition();
+            background-color: color("light", form-field-active);
+            color: color("light", text-accent);
+            border-color: color("light", form-field-border-active);
+            box-shadow: none;
+        }
+        &[type=number]::-webkit-inner-spin-button {
+            @include theme-transition();
+            background-color: red
+        }
+        &[type=number]::-webkit-outer-spin-button { 
+            @include theme-transition();
+            background-color: color("light", layout-40);
+            color: color("light", text);
+        }
+    }
+}
+html[theme="dark"] {
+    & input, & textarea {
+        @include theme-transition();
+        background-color: color("dark", form-field);
+        color: color("dark", text-accent);
+        border: 1px solid color("dark", form-field-border);
+    
+        &.form-control:active, &.form-control:focus {
+            @include theme-transition();
+            background-color: color("dark", form-field-active);
+            color: color("dark", text-accent);
+            border-color: color("dark", form-field-border-active);
+            box-shadow: none;
+        }
+        &[type=number]::-webkit-inner-spin-button {
+            @include theme-transition();
+            background-color: red
+        }
+        &[type=number]::-webkit-outer-spin-button { 
+            @include theme-transition();
+            background-color: color("dark", layout-40);
+            color: color("dark", text);
+        }
+    }
+}

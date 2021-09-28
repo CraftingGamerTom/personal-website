@@ -1,38 +1,63 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="primary">
-      <b-navbar-brand href="#">
-        Thomas Rokicki
-      </b-navbar-brand>
-
-      <b-navbar-toggle target="nav-collapse" />
-
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
-          <b-nav-item to="/">
-            Home
-          </b-nav-item>
-          <b-nav-item to="/projects">
-            Projects
-          </b-nav-item>
-          <b-nav-item to="/edu">
-            Education
-          </b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
-    </b-navbar>
-    <b-alert variant="danger" show>
-      <span style="font-weight:800">MIGRATION IN PROGRESS</span> Please excuse the ugliness while I transition from my static site code to using Nuxt.js and Vue.js - Thank you for understanding!
-    </b-alert>
-
-    <nuxt />
+    <top-navigation />
+    <div class="body-wrapper">
+      <nuxt />
+      <socials-navigation />
+      <settings-modal />
+      <copyright id="layout-footer" />
+    </div>
   </div>
 </template>
 
+<script>
+import { CONST_STORAGE_KEY_THEME } from '~/utils/constants'
+import TopNavigation from '~/components/utils/navigation/TopNavigation.vue'
+import SocialsNavigation from '~/components/utils/navigation/SocialsNavigation.vue'
+import SettingsModal from '~/components/utils/modals/SettingsModal.vue'
+import Copyright from '~/components/utils/modals/Copyright.vue'
+
+export default {
+  components: {
+    TopNavigation,
+    SocialsNavigation,
+    SettingsModal,
+    Copyright
+  },
+  data () {
+    return {
+    }
+  },
+  computed: {
+    breadcrumbItems () { return this.$store.state.breadcrumbs.crumbs }
+  },
+  mounted () {
+    let theme = localStorage.getItem(CONST_STORAGE_KEY_THEME)
+
+    console.log('theme found', theme)
+
+    if (theme === null) {
+      theme = 'light'
+      this.setTheme('light')
+    }
+
+    const htmlElement = document.documentElement
+    htmlElement.setAttribute('theme', theme)
+
+    this.$root.$on('changethemeviasettings', (filter) => { this.setTheme(filter.theme) })
+  },
+  methods: {
+    setTheme (themeString) {
+      localStorage.setItem(CONST_STORAGE_KEY_THEME, themeString)
+      const htmlElement = document.documentElement
+      htmlElement.setAttribute('theme', themeString)
+    }
+  }
+}
+</script>
+
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -40,6 +65,18 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+
+  background-image: url(~assets/icons/background-code.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+  background-size: 125vw 125vh;
+}
+
+body {
+  background-color: transparent;
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 *,
@@ -49,32 +86,55 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+button:focus {
+  outline: none;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.body-wrapper {
+  margin-top: 55px;
+}
+.margin-bottom-md {
+  margin-bottom: 70px;
+}
+.margin-bottom-lg {
+  margin-bottom: 125px;
+}
+.in-page-title {
+  padding-bottom:25px;
+  text-align:center;
+  text-shadow: 0px 0px 15px #ffffff;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+/* body form input.form-control {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+} */
+</style>
+
+<style lang="scss">
+// theme colors
+html[theme="light"] {
+  & .in-page-title {
+    @include theme-transition();
+    color: color("light", tertiary);
+  }
+}
+html[theme="dark"] {
+  & .in-page-title {
+    @include theme-transition();
+    color: color("dark", tertiary);
+  }
 }
 </style>

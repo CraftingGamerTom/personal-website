@@ -1,0 +1,7 @@
+// Extend/fix some Bootstrap grid features/issues
+
+@include media-query(extra-small) {
+    .col-none {
+        display: none;
+    }
+}

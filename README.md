@@ -19,4 +19,21 @@ $ npm run start
 $ npm run generate
 ```
 
+## Docker Setup
+```
+docker build -t tcrokicki/personal_site_frontend .
+```
+Use dockerhub desktop to store and pull or
+
+```
+docker login --username=tcrokicki --email=youremail@company.com
+
+docker tag tcrokicki/personal_site_frontend ${yourhubusername}/tcrokicki/personal_site_frontend:latest
+
+docker push tcrokicki/personal_site_frontend
+```
+
+
+## Nuxt
+
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

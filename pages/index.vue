@@ -1,437 +1,188 @@
 <template>
   <div>
-    <!-- START V2 STYLESHEETS - NOT IDEAL FOR NUXT -->
-    <!-- Tab Icon -->
-    <link rel="shortcut icon" href="resources/img/boy.png">
-    <!-- Bootstrap core CSS -->
-    <link href="/v2/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="/v2/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="/v2/resources/css/agency.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> <!-- Title -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> <!-- Text -->
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet"> <!-- Important -->
-    <!-- END V2 STYLESHEETS - NOT IDEAL FOR NUXT -->
-
-    <a id="back2Top" title="Back to top" href="#"><i class="fas fa-arrow-right" /></a>
-
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">
-            Hey, I'm
-          </div>
-          <div class="intro-heading text-uppercase">
-            Thomas Rokicki
-          </div>
-          <div class="intro-lead-in">
-            Let's Build Something!
-          </div>
-          <br>
-          <br>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" target="_blank" href="https://drive.google.com/file/d/1cDr2-JurKnziEpslMjFZroDU1QYnPVmV/edit">Resume</a>
-        </div>
-      </div>
-    </header>
-
-    <!-- Jobs -->
-    <section id="jobs">
-      <div class="container">
-        <div class="row scroll-effect">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">
-              It's what I do
-            </h2>
-            <h3 class="section-subheading text-muted">
-              What I have been up to lately.
-            </h3>
-          </div>
-        </div>
-        <!-- Job 1 -->
-        <div class="row text-center row-job scroll-effect">
-          <div class="col-md-4">
-            <img class="tom-job-img img-fluid" src="/v2/resources/img/jobs/worcester-state.jpg">
-          </div>
-          <div class="col-md-8">
-            <h4 class="tom-job-heading">
-              Worcester State University
-            </h4>
-            <h4 class="tom-job-desc">
-              Bachelor of Science - Computer Science, 2020
-            </h4>
-            <br>
-            <ul class="tom-job-list">
-              <li class="text-muted job-text">
-                3.4 GPA
-              </li>
-              <li class="text-muted job-text">
-                Computer Science Club
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- Job 2 -->
-        <div class="row text-center row-job scroll-effect">
-          <div class="col-md-4">
-            <img class="tom-job-img img-fluid" src="/v2/resources/img/jobs/blustream.jpg">
-          </div>
-          <div class="col-md-8">
-            <h4 class="tom-job-heading">
-              Blustream
-            </h4>
-            <h4 class="tom-job-desc">
-              Full Stack Software Engineer, Since May 2018
-            </h4>
-            <br>
-            <ul class="tom-job-list">
-              <li class="text-muted job-text">
-                Designed, built, implemented, & maintained micro-service built on SPRING using Docker, AWS Device Farm, S3, ELB, & EC2
-                [Screenshot + Comparison tool to warn developers of undesired changes to UI/UX]
-              </li>
-              <li class="text-muted job-text">
-                Designed and maintained PostgreSQL Database (Screenshot + Comparison DB)
-              </li>
-              <li class="text-muted job-text">
-                Agile (Scrum) environment using the GitFlow Branching Model
-              </li>
-              <li class="text-muted job-text">
-                Various Front-end and Back-end tasks needed (Startup environment)
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- Job 3 -->
-        <div class="row text-center row-job scroll-effect">
-          <div class="col-md-4">
-            <img class="tom-job-img img-fluid" src="/v2/resources/img/jobs/spudata.jpg">
-          </div>
-          <div class="col-md-8">
-            <h4 class="tom-job-heading">
-              Spudata
-            </h4>
-            <h4 class="tom-job-desc">
-              Full Stack Software Engineer, Since May 2018
-            </h4>
-            <br>
-            <ul class="tom-job-list">
-              <li class="text-muted job-text">
-                Design build and maintain authentication services and REST APIs using Spring Boot in front of MongoDB
-              </li>
-              <li class="text-muted job-text">
-                Front-end implementation and advising for iOS, Android, Desktop App, and Web
-              </li>
-              <li class="text-muted job-text">
-                Development Team Leader
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- Job 4 -->
-        <div class="row text-center row-job scroll-effect">
-          <div class="col-md-4">
-            <img class="tom-job-img img-fluid" src="/v2/resources/img/jobs/qcc.jpg">
-          </div>
-          <div class="col-md-8">
-            <h4 class="tom-job-heading">
-              Quinsigamond Community College
-            </h4>
-            <h4 class="tom-job-desc">
-              Associate in Science - Computer Science, 2018
-            </h4>
-            <br>
-            <ul class="tom-job-list">
-              <li class="text-muted job-text">
-                Phi Theta Kappa Honor Society Member
-              </li>
-              <li class="text-muted job-text">
-                Volunteer work for Phi Theta Kappa Greenhouse
-              </li>
-              <li class="text-muted job-text">
-                3.8 GPA
-              </li>
-            </ul>
-          </div>
-        </div><!-- Job 5 -->
-        <div class="row text-center row-job scroll-effect">
-          <div class="col-md-4">
-            <img class="tom-job-img img-fluid" src="/v2/resources/img/jobs/blustream.jpg">
-          </div>
-          <div class="col-md-8">
-            <h4 class="tom-job-heading">
-              Blustream
-            </h4>
-            <h4 class="tom-job-desc">
-              Mobile App QA Intern, Oct 2017 - Dec 2018
-            </h4>
-            <br>
-            <ul class="tom-job-list">
-              <li class="text-muted job-text">
-                Quality Assurance Testing on mobile applications for multiple Blustream partner companies
-              </li>
-              <li class="text-muted job-text">
-                Regression Testing for releases
-              </li>
-              <li class="text-muted job-text">
-                Intern Training
-              </li>
-            </ul>
-          </div>
-        </div><!-- Job 6 -->
-        <div class="row text-center row-job scroll-effect">
-          <div class="col-md-4">
-            <img class="tom-job-img img-fluid" src="/v2/resources/img/jobs/PTK.jpg">
-          </div>
-          <div class="col-md-8">
-            <h4 class="tom-job-heading">
-              PTK Greenhouse
-            </h4>
-            <h4 class="tom-job-desc">
-              Full Stack Software Engineer, Since April 2017
-            </h4>
-            <br>
-            <ul class="tom-job-list">
-              <li class="text-muted job-text">
-                Worked with team of learners to design and develop software and hardware to track our greenhouse
-              </li>
-              <li class="text-muted job-text">
-                Designed and built front-end, back-end, and MongoDB for sensor data
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center scroll-effect">
-            <h2 class="section-heading">
-              Let's Talk Projects
-            </h2>
-            <h3 class="section-subheading text-muted">
-              Here are a few projects I have worked on so far.
-            </h3>
-          </div>
-        </div>
-        <div class="scrolling-wrapper">
-          <div class="row">
-            <!-- Project 01 -->
-            <div class="col-md-4 col-sm-6 project-col">
-              <div class="project-item scroll-effect">
-                <nuxt-link to="v2/projects/blustream-qa-automation">
-                  <img class="img-fluid project-img" src="/v2/resources/img/projects/main-site/device_farm_2.png" alt="">
-                  <div class="project-caption">
-                    <h4>QA Automation</h4>
-                    <p class="text-muted">
-                      Blustream
-                    </p>
+    <b-col cols="12">
+      <section id="about-me">
+        <b-row>
+          <b-col cols="12">
+            <b-container class="container--1">
+              <b-row>
+                <b-col offset-md="3" cols="12" md="6">
+                  <div class="circle">
+                    <img src="~assets/icons/index/me2-light.png">
                   </div>
-                </nuxt-link>
+                  <b-container id="index-intro" class="cover-circle container--2">
+                    <h1 style="padding-top:15px;">
+                      I build solutions
+                    </h1>
+                    <h6>Full Stack Software Engineer</h6>
+                    <hr>
+                    <p style="padding-top:15px;padding-bottom:15px;">
+                      Hey, I'm Tom. I'm a life-long learner, master of none, and love changing the world.
+                    </p>
+                  <!-- <h6 style="padding-top:15px;padding-bottom:15px;">I'm an open book and willing to be held accountable. Check out my personal constitution</h6> -->
+                  </b-container>
+                </b-col>
+              </b-row>
+            </b-container>
+          </b-col>
+        </b-row>
+      </section>
+
+      <section id="projects">
+        <b-row>
+          <b-col cols="12">
+            <b-container id="index-recent-projects" class="container--1">
+              <h1 style="padding-top:25px;">
+                Recent Projects
+              </h1>
+              <h5 style="padding-top:15px;padding-bottom:40px;">
+                I love what I do, so I do what I love.
+              </h5>
+
+              <div v-if="recentProjects.fetchError" class="text--error">
+                <h3>Error loading recent projects</h3>
+                <p>{{ recentProjects.fetchError }}</p>
               </div>
-            </div>
-            <!-- Project 02 -->
-            <div class="col-md-4 col-sm-6 project-col">
-              <div class="project-item scroll-effect">
-                <nuxt-link to="v2/projects/fuelio-text-to-csv">
-                  <img class="img-fluid project-img" src="/v2/resources/img/projects/main-site/fuelio.png" alt="">
-                  <div class="project-caption">
-                    <h4>Fuelio Data I/O</h4>
-                    <p class="text-muted">
-                      Self
-                    </p>
-                  </div>
-                </nuxt-link>
-              </div>
-            </div>
-            <!-- Project 03 -->
-            <div class="col-md-4 col-sm-6 project-col">
-              <div class="project-item scroll-effect">
-                <nuxt-link to="v2/projects/image-bay">
-                  <img class="img-fluid project-img" src="/v2/resources/img/projects/main-site/image-bay.png" alt="">
-                  <div class="project-caption">
-                    <h4>Image Bay</h4>
-                    <p class="text-muted">
-                      Blustream
-                    </p>
-                  </div>
-                </nuxt-link>
-              </div>
-            </div>
-            <!-- Project 04 -->
-            <div class="col-md-4 col-sm-6 project-col">
-              <div class="project-item scroll-effect">
-                <nuxt-link to="v2/projects/aqua-iot">
-                  <img class="img-fluid project-img" src="/v2/resources/img/projects/main-site/aquarium-hardware.jpg" alt="">
-                  <div class="project-caption">
-                    <h4>Aqua IoT</h4>
-                    <p class="text-muted">
-                      For Gift
-                    </p>
-                  </div>
-                </nuxt-link>
-              </div>
-            </div>
-            <!-- Project 05 -->
-            <div class="col-md-4 col-sm-6 project-col">
-              <div class="project-item scroll-effect">
-                <nuxt-link to="v2/projects/greengrow-plus">
-                  <img class="img-fluid project-img" src="/v2/resources/img/projects/main-site/greengrow-logo.png" alt="">
-                  <div class="project-caption">
-                    <h4>GreenGrow+</h4>
-                    <p class="text-muted">
-                      Big Gaming
-                    </p>
-                  </div>
-                </nuxt-link>
-              </div>
-            </div>
-            <!-- Project 06 -->
-            <div class="col-md-4 col-sm-6 project-col">
-              <div class="project-item scroll-effect">
-                <nuxt-link to="v2/projects/view-all">
-                  <img class="img-fluid project-img" src="/v2/resources/img/projects/main-site/mixpanel-logo.png" alt="">
-                  <div class="project-caption">
-                    <h4>View More</h4>
-                    <p class="text-muted">
-                      <i class="fas fa-arrow-right" />
-                    </p>
-                  </div>
-                </nuxt-link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+              <b-row v-else>
+                <b-col v-for="project in recentProjects.projects" :key="project.id" cols="12" md="6" lg="3">
+                  <img class="recent-project-img" :src="project.headerImage | imageOrMissing">
+                  <b-container class="container--2 recent-project-body">
+                    <h3 style="padding-top: 25px;">
+                      {{ project.name }}
+                    </h3>
+                    <p>{{ project.shortDescription }}</p>
+                    <b-button class="recent-project-btn" :to="'/projects/' + project.slug">
+                      View Project
+                    </b-button>
+                  </b-container>
+                </b-col>
+              </b-row>
 
-    <!-- About -->
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center scroll-effect">
-            <h2 class="section-heading">
-              Time Well Spent
-            </h2>
-            <h3 class="section-subheading text-muted">
-              Although I love programming, I do get away sometimes.
-            </h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="timeline">
-              <li class="timeline-inverted scroll-effect">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="/v2/resources/img/about/snowboarding.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>Snowboarding</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">
-                      I've been snowboarding for about 10 years now. I love the feeling of carving over fresh corduroy. You'll find e mostly in the terrain park - riding rails and rocking the flat-ground tricks. I taught people of all ages to ride for 5 years and worked in the terrain park, maintaining / installing features for a few as well. I enjoyed every moment of it - the cold never bothered me anyway.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="scroll-effect">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="/v2/resources/img/about/gardening.jpg" alt="">
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>Gardening</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">
-                      I don't garden as much as I'd like to, growing up I had my very own garden for my family and I have had a helping hand in the Phi Thete Kappa Greenhouse on Quinsigamond Community College's main campus. Recently I have been very interested in Bonsai. I plan to start my very own Japanese Red Maple Bonsai tree - and collect some data with a Raspberry Pi along the way!
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="timeline-inverted scroll-effect">
-                <div class="timeline-image">
-                  <img class="rounded-circle img-fluid" src="/v2/resources/img/about/outdoors.jpg" alt="">
-                <!-- <img class="rounded-circle img-fluid" src="/v2/resources/img/about/swimming.jpg" alt=""> -->
-                </div>
-                <div class="timeline-panel">
-                  <div class="timeline-heading">
-                    <h4>Swimming</h4>
-                  </div>
-                  <div class="timeline-body">
-                    <p class="text-muted">
-                      Up until recently I have always been a cat around water. Now you'll see me diving in the pool after a hot day of yardwork. It is a relaxing way to cool off and enjoy a beautiful summer afternoon - it's even better with friends!
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+              <b-button style="margin-bottom:15px;" :to="'/projects'">
+                View All
+              </b-button>
+            </b-container>
+          </b-col>
+        </b-row>
+      </section>
 
-    <!-- Social -->
-    <section id="social" class="bg-light scroll-effect">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">
-              Let's Build Something!
-            </h2>
-            <h3 class="section-subheading text-muted">
-              Message me on LinkedIn.
-            </h3>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a target="_blank" href="https://github.com/CraftingGamerTom">
-                  <i class="fab fa-github" />
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a target="_blank" href="https://www.linkedin.com/in/tcrokicki/">
-                  <i class="fab fa-linkedin-in" />
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a target="_blank" href="https://stackoverflow.com/users/7589862/thomas-rokicki">
-                  <i class="fab fa-stack-overflow" />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <h1 id="index-skills-title" class="in-page-title">
+        Skills
+      </h1>
 
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center" />
-        </div>
-      </div>
-    </section>
+      <section id="skills">
+        <b-row class="align-self-md-stretch">
+          <b-col cols="12" md="6" lg="3" class="margin-bottom-md">
+            <b-container class="container--1 h-100">
+              <QuickIcon :location="''" :name="'index/microservice_2324122'" viewBox="0 0 128 128" />
+              <h2>Microservices</h2>
+              <p>I believe a well planned API is the cornerstone of a good product.</p>
+              <br>
+              <h6>My go-to frameworks</h6>
+              <p>Spring, NodeJS</p>
+              <h6>Technology</h6>
+              <p>AWS (ECR, ECS, EC2, RDS, S3, KMS)</p>
+              <p>Spring Boot, ExpressJS</p>
+              <p>PostgreSQL, MongoDB, MySQL</p>
+              <p>JUnit (Juniper), Should.js</p>
+            </b-container>
+          </b-col>
+          <b-col cols="12" md="6" lg="3" class="margin-bottom-md">
+            <b-container class="container--1 h-100">
+              <QuickIcon :location="''" :name="'index/ui-ux_2234590'" viewBox="0 0 64 64" />
+              <h2>UI / UX</h2>
+              <p>I value simple problem-solving content.<br>I also love dark modes.</p>
+              <br>
+              <h6>I enjoy designing</h6>
+              <p>Websites, Mobile Apps, Components</p>
+              <h6>Design Tools</h6>
+              <p>Sketch</p>
+              <p>Abstract, Plant, Zeplin</p>
+              <p>Adobe Illustrator</p>
+              <p>Figma</p>
+            </b-container>
+          </b-col>
+          <b-col cols="12" md="6" lg="3" class="margin-bottom-md">
+            <b-container class="container--1 h-100">
+              <QuickIcon :location="''" :name="'index/web-design_750444'" viewBox="0 0 50 50" />
+              <h2>Front-End</h2>
+              <p>A solid product looks and feels complete to the user.</p>
+              <br>
+              <h6>Frameworks of choice</h6>
+              <p>Vue, Nuxt, Wordpress, Android</p>
+              <h6>Languages</h6>
+              <p>Bootstrap, Vuetify</p>
+              <p>JS, HTML, CSS, SASS, PHP</p>
+              <p>Java, Kotlin, Android Studio</p>
+              <p>Segment, Mixpanel, AWS QuickSight (Analytics)</p>
+            </b-container>
+          </b-col>
+          <b-col cols="12" md="6" lg="3" class="margin-bottom-md">
+            <b-container class="container--1 h-100">
+              <QuickIcon :location="''" :name="'index/automation_1455005'" viewBox="0 0 64 64" />
+              <h2>Automation</h2>
+              <p>Test Driven Development streamlines productivity and reduces rework cycles.</p>
+              <br>
+              <h6>My specialty</h6>
+              <p>Selenium, Appium, AWS Device Farm</p>
+              <h6>Familiar Optimizations</h6>
+              <p>Daily App Screenshot Comparisons (UI Integrity)</p>
+              <p>Unit Test Coverage and Result Auditing</p>
+              <p>Functional Automated Testing (Regression, Smoke, Sanity)</p>
+            </b-container>
+          </b-col>
+        </b-row>
+      </section>
+
+      <section id="lets-build">
+        <b-row>
+          <b-col cols="12">
+            <b-container class="container--1">
+              <h1 id="lets-build-text">
+                Let's Build <timeline-text class="animated-text" />!
+              </h1>
+              <p style="margin-top:20px;margin-bottom:35px;">
+                Interested in building something together? <br> Let's make it happen.
+              </p>
+              <b-button style="margin-bottom:15px;" :to="'/contact'">
+                Chat with me
+              </b-button>
+            </b-container>
+          </b-col>
+        </b-row>
+      </section>
+    </b-col>
   </div>
 </template>
 
 <script>
-// // Bootstrap core JavaScript
-// import '~/static/v2/resources/vendor/jquery/jquery.min.js'
-// import '~/static/v2/resources/vendor/bootstrap/js/bootstrap.bundle.min.js'
+import { QuickIcon } from '@craftinggamertom/webslack-bits'
+import TimelineText from '~/components/utils/animations/TimelineText.vue'
+import ENV from '@/env'
 
-// // Plugin JavaScript
-// import '~/static/v2/resources/vendor/jquery-easing/jquery.easing.min.js'
-
-// // Contact form JavaScript
-// import '~/static/v2/resources/js/jqBootstrapValidation.js'
-// import '~/static/v2/resources/js/contact_me.js'
-
-// // Custom scripts for this template
-// import '~/static/v2/resources/js/agency.min.js'
 export default {
+
+  components: {
+    QuickIcon,
+    TimelineText
+  },
+  filters: {
+    imageOrMissing (headerImage) {
+      if (headerImage) {
+        return ENV.strapi.domain + headerImage.url
+      } else {
+        // return '~/assets/icons/missing-file.jpg'
+        return '/v2/resources/img/missing-file.jpg'
+      }
+    }
+  },
   data () {
     return {
-      title: 'Home | Thomas Rokicki'
+      title: 'Home | Thomas Rokicki',
+      recentProjects: {
+        fetchError: null,
+        projects: null
+      }
     }
   },
   head () {
@@ -439,246 +190,167 @@ export default {
       title: this.title,
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'viewport', name: 'viewport', content: 'width:device-width, initial-scale:1, shrink-to-fit:no' },
-        { hid: 'author', name: 'author', content: 'Thomas Rokicki' },
-        { hid: 'description', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!", name: 'description' },
-        { hid: 'ogTitle', content: 'Thomas Rokicki', property: 'og:title' },
-        { hid: 'ogDescription', name: 'description', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!", property: 'og:description' },
-        { hid: 'ogUrl', content: 'http://www.thomasrokicki.com/', property: 'og:url' },
-        { hid: 'ogImage', content: 'http://www.thomasrokicki.com/v2/resources/img/header-bg.png', property: 'og:image' },
-        { hid: 'siteName', content: 'Thomas Rokicki', property: 'og:site_name' },
-        { hid: 'ogDescription', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!", property: 'og:description' },
-        { hid: 'propName', content: 'Thomas Rokicki', itemprop: 'name' },
-        { hid: 'propDescription', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Technology / Let's Build Something!", itemprop: 'description' },
-        { hid: 'propImage', content: 'http://www.thomasrokicki.com/v2/resources/img/header-bg.png', itemprop: 'image' },
-        { hid: 'twitterCard', content: 'summary_large_image', name: 'twitter:card' },
-        { hid: 'twitterTitle', content: 'Thomas Rokicki', name: 'twitter:title' },
-        { hid: 'twitterDescription', content: "Full Stack Software Engineer / Java Developer / Spring Boot Experience / Computer Science Major / Worcester State University / Quinsigamond Community College / Snowboarding / Gardening / Farming / Plant Lover / Let's Build Something!", name: 'twitter:description' },
-        { hid: 'twitterImage', content: 'http://www.thomasrokicki.com/v2/resources/img/header-bg.png', name: 'twitter:image' }
+        // { hid: 'viewport', name: 'viewport', content: 'width:device-width, initial-scale:1, shrink-to-fit:no' },
       ]
+    }
+  },
+  async mounted () {
+    try {
+      this.recentProjects.projects = await this.$strapi.$projects.find({ _sort: 'startDate:DESC', _limit: '4' })
+    } catch (error) {
+      this.recentProjects.fetchError = error
     }
   }
 }
 </script>
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
+<style lang="scss" scoped>
+// SCOPED, THIS PAGE ONLY
+#about-me {
+  padding-top: 25px;
+}
+.cover-circle {
+  z-index: 300;
+  position: relative;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+.circle {
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.50); // TODO decide if non theme is okay
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+  // width: 209px; // for testing
+  // height: 195px; // for testing
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 280px;
 
-.links {
-  padding-top: 15px;
-}
-</style>
-
-<!-- SCOPED CSS -->
-<style scoped>
-header.masthead {
-  background-image: url(/v2/resources/img/header-bg.jpg);
-  height: 100vh;
-}
-header.masthead .intro-text .intro-heading {
-  font-family: 'Raleway';
-  font-size: 50px;
-}
-header.masthead .intro-text .intro-lead-in {
-  font-family: 'Raleway';
-  font-size: 30px;
-}
-a, a:hover {
-  color: #212529;
-  text-decoration: none;
-}
-p {
-  font-family: 'Open Sans Condensed'!important;
-}
-
-.btn-primary {
-  font-family: 'PT Sans';
-  border-radius: 15px;
-  background-color: #60c5de;
-  border-color: transparent;
-  padding: 10px 15px;
-  width: 15vw;
-  min-width: 100px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-shadow: 2px 2px rgba(0,0,0,0.2);
-}
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color: #55839f!important;
-    border-color: #55839f!important;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)!important;
-}
-.tom-job-img {
-  border-radius: 30px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-section {
-  padding: 75px 0;
-}
-section h2.section-heading {
-  font-family: 'Raleway';
-}
-@media (max-width: 768px) {
-  section {
-    padding: 50px 0!important;
-  }
-  .tom-job-heading {
-    margin-top: 30px!important;
-  }
-
-}
-@media (min-width: 767px) {
-  .project-item {
-    margin: 0 0 30px!important;
-    display: block!important;
-    width: 100%!important;
-  }
-  .scrolling-wrapper {
-    overflow: hidden!important;
-  }
-  .scrolling-wrapper .row {
-    flex-wrap: wrap!important;
-  }
-  .project-col {
-    padding-right: 15px!important;
-    padding-left: 15px!important;
-  }
-  .project-caption h4 {
-    font-size: 1.5rem!important;
-  }
-  .project-caption p {
-    font-size: 1.2rem!important;
-  }
-}
-
-.tom-job-heading {
-  margin: 0;
-  text-transform: none;
-  text-align: left;
-  font-family: 'PT Sans';
-  font-weight: 500;
-  color: #60c5de;
-}
-.row-job {
-  padding-bottom: 30px;
-}
-.tom-job-desc {   margin-top: 10px;
-  text-transform: none;
-  text-align: left;
-  font-family: 'PT Sans';
-  font-size: 1.2rem;
-  color: #62b83d;
-}
-.tom-job-list {
-  padding: 0 15px;
-}
-.job-text {
-  line-height: 1.5;
-  text-align: left;
-  font-family: 'Open Sans Condensed';
-  margin-bottom: 10px;
-}
-
-.project-item {
-  width: 35vw;
-  margin: 0 0 15px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: inline-block;
-}
-.project-item:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.38);
-  cursor: pointer;
-}
-
-.project-item .project-img {
-  border-radius: 15px 15px 0 0;
-}
-.project-item .project-caption {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 15px;
-  text-align: left;
-}
-.project-caption h4 {
-  font-size: .75rem;
-}
-.project-caption p {
-  font-size: 1rem;
-}
-
-/* scrolling */
-.scrolling-wrapper {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.scrolling-wrapper .row {
-  flex-wrap: nowrap;
-}
-.project-col {
-  padding-right: 10px;
-  padding-left: 10px;
-}
-ul.social-buttons li a {
-  background-color: #60c5de;
-}
-ul.social-buttons li a:hover {
-  background-color: #55839f!important;
-  border-color: #55839f!important;
-}
-
-#back2Top {
-  width: 40px;
-  line-height: 40px;
   overflow: hidden;
-  z-index: 999;
-  display: none;
-  cursor: pointer;
-  -moz-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
-  position: fixed;
-  bottom: 2vh;
-  right: 2vw;
-  background-color: #DDD;
-  color: #555;
+  padding-top: 40px;
+  margin-top: 50px;
+  margin-bottom: -15px;
+  z-index: 200;
   text-align: center;
-  font-size: 30px;
-  text-decoration: none;
+
+  & img {
+    // width: 151px; // for testing
+    // height: 208px; // for testing
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+
+    position: relative;
+    z-index: 301;
+  }
 }
-#back2Top:hover {
-  background-color: #DDF;
-  color: #000;
+
+#lets-build {
+
+  & h1#lets-build-text {
+    font-kerning: 0.5em;
+    font-style: italic;
+    font-weight: font-weight(light);
+    font-family: font(primary);
+    padding-top: 15px;
+  }
+
+  & .animated-text {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    font-size: 0.8em;
+    position: relative;
+    top: 6px;
+    width: 20vw;
+    min-width: 275px;
+    text-align: center;
+    border-bottom: 5px solid black;
+    border-radius: 2px;
+    line-height: .5em;
+  }
+
+}
+
+#projects {
+  & .recent-project-img {
+    overflow: hidden;
+    object-fit: cover;
+    width: 100%;
+    height: 175px;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / 50%);
+    z-index: 0;
+    margin-bottom: -1px; // make sure its touching body
+  }
+  & .recent-project-btn {
+    width: 80%;
+    bottom: 25px;
+    position: absolute;
+    left: 10%;
+  }
+  & .recent-project-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    position: relative;
+    height: 300px;
+  }
+  @include media-query(medium) {
+    & .recent-project-body {
+    height: 325px;
+    }
+  }
+  @include media-query(large) {
+    & .recent-project-body {
+      height: 400px;
+    }
+  }
+}
+
+// theme colors
+html[theme="light"] {
+  & #index-skills-title {
+    @include theme-transition();
+    color: color("light", tertiary);
+  }
+  & .circle {
+    @include theme-transition();
+    background-color: color("light", layout-30);
+    color: color("light", text);
+  }
+  & #skills svg {
+    @include theme-transition();
+    color: color("light", tertiary);
+    fill: color("light", tertiary);
+  }
+  & #lets-build .animated-text {
+    @include theme-transition();
+    border-bottom-color: color("light", text);
+  }
+}
+html[theme="dark"] {
+  & #index-skills-title {
+    @include theme-transition();
+    color: color("dark", tertiary);
+  }
+  & .circle {
+    @include theme-transition();
+    background-color: color("dark", layout-30);
+    color: color("dark", text);
+  }
+  & #skills h6, & #skills svg {
+    @include theme-transition();
+    color: color("dark", tertiary);
+    fill: color("dark", tertiary);
+  }
+  & #lets-build .animated-text {
+    @include theme-transition();
+    border-bottom-color: color("dark", text);
+  }
 }
 </style>
