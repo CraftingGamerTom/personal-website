@@ -1,4 +1,4 @@
-FROM node:14.8.0
+FROM --platform=linux/amd64 node:14.17.6
 
 # create destination directory
 RUN mkdir -p /usr/src/nuxt-app
