@@ -25,11 +25,19 @@ docker build -t tcrokicki/personal_site_frontend .
 ```
 Use dockerhub desktop to store and pull or
 
+Example
 ```
 docker login --username=tcrokicki --email=youremail@company.com
 
-docker tag tcrokicki/personal_site_frontend ${yourhubusername}/tcrokicki/personal_site_frontend:latest
+docker tag tcrokicki/personal_site_frontend ${yourhubusername}/personal_site_frontend:latest
 
+docker push tcrokicki/personal_site_frontend
+```
+
+Implementation
+```
+docker login --username=tcrokicki
+docker tag tcrokicki/personal_site_frontend tcrokicki/personal_site_frontend:latest
 docker push tcrokicki/personal_site_frontend
 ```
 
