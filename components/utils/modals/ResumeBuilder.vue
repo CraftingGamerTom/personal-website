@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <b-row>
+      <b-row style="margin-left:0;margin-right:0;">
         <b-col cols="12">
           <b-container id="index-career-intro" class="container--1">
             <h2 style="padding-top:25px;padding-bottom:0px;margin-bottom:2rem;">
@@ -46,7 +46,7 @@
       </b-row>
     </section>
     <section id="index-career-resume">
-      <b-row>
+      <b-row style="margin-left:0;margin-right:0;">
         <b-col cols="12" offset="0" md="6" offset-md="3">
           <b-container
             class="container--1 resume-content"

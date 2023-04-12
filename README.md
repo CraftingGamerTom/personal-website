@@ -21,26 +21,18 @@ $ npm run generate
 
 ## Docker Setup
 ```
-docker build -t tcrokicki/personal_site_frontend .
+docker build -t registry.sharpnub.com/craftinggamertom/personal-website .
 ```
 Use dockerhub desktop to store and pull or
 
 Example
 ```
-docker login --username=tcrokicki --email=youremail@company.com
+docker login --username=tcrokicki registry.sharpnub.com
 
-docker tag tcrokicki/personal_site_frontend ${yourhubusername}/personal_site_frontend:latest
+docker tag registry.sharpnub.com/craftinggamertom/personal-website registry.sharpnub.com/craftinggamertom/personal-website:vVERSION
 
-docker push tcrokicki/personal_site_frontend
+docker push registry.sharpnub.com/craftinggamertom/personal-website:vVERSION
 ```
-
-Implementation
-```
-docker login --username=tcrokicki
-docker tag tcrokicki/personal_site_frontend tcrokicki/personal_site_frontend:latest
-docker push tcrokicki/personal_site_frontend
-```
-
 
 ## Nuxt
 
